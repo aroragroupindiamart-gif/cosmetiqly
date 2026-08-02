@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Us - Cosmetiqly" description="Get in touch with the Cosmetiqly editorial and technical support team for product requests, INCI updates, or publisher inquiries.">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <h1 class="text-3xl font-extrabold font-outfit text-white mb-3">Contact Cosmetiqly Team</h1>
+    <p class="text-slate-400 text-sm mb-8">Have a question about an INCI ingredient check, brand addition request, or partnership inquiry? Reach out to our technical team.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+      <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+        <div class="text-rose-400 font-bold text-lg mb-1">📧 Editorial & Support</div>
+        <p class="text-xs text-slate-400 mb-3">For general inquiries, ingredient database updates, or product requests:</p>
+        <a href="mailto:support@cosmetiqly.com" class="text-sm font-semibold text-rose-400 hover:underline">support@cosmetiqly.com</a>
+      </div>
+
+      <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
+        <div class="text-purple-400 font-bold text-lg mb-1">💼 Business & Publishers</div>
+        <p class="text-xs text-slate-400 mb-3">For advertising partnerships, affiliate inquiries, or data licensing:</p>
+        <a href="mailto:contact@cosmetiqly.com" class="text-sm font-semibold text-purple-400 hover:underline">contact@cosmetiqly.com</a>
+      </div>
+    </div>
+
+    <!-- Contact Form Interface -->
+    <form class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-4" onsubmit="event.preventDefault(); alert('Thank you for contacting Cosmetiqly! Our support team will respond shortly.');">
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Name</label>
+        <input type="text" required placeholder="Jane Doe" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-rose-500" />
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Email Address</label>
+        <input type="email" required placeholder="jane@example.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-rose-500" />
+      </div>
+      <div>
+        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Message</label>
+        <textarea rows="4" required placeholder="Tell us how we can help..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-rose-500"></textarea>
+      </div>
+      <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-rose-500 to-purple-600 font-bold text-white text-sm hover:shadow-lg hover:shadow-rose-500/25 transition-all">
+        Send Message to Cosmetiqly &rarr;
+      </button>
+    </form>
+  </div>
+</Layout>

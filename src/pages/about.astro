@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="About Us & Clinical Methodology - Cosmetiqly" description="Learn about Cosmetiqly's medical advisory board, INCI ingredient parsing methodology, and open-source scientific data sources.">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <!-- Breadcrumb -->
+    <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6">
+      <a href="/" class="hover:text-rose-400">Home</a>
+      <span>/</span>
+      <span class="text-rose-400 font-semibold">About Us</span>
+    </nav>
+
+    <div class="mb-10 text-center sm:text-left">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-rose-400 mb-3">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        Medical & Scientific E-E-A-T Standards
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold font-outfit text-white tracking-tight">
+        About <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-purple-400">Cosmetiqly</span>
+      </h1>
+      <p class="text-slate-300 mt-3 text-base sm:text-lg leading-relaxed">
+        The gold-standard programmatic database for dermatological INCI cosmetic safety, ingredient trigger analysis, and clinical formulation evaluation.
+      </p>
+    </div>
+
+    <!-- E-E-A-T Mission & Methodology Cards -->
+    <div class="space-y-8">
+      <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl">
+        <h2 class="text-xl font-bold font-outfit text-white mb-4 flex items-center gap-2">
+          <span class="text-2xl">🔬</span> Our Clinical Mission & Purpose
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+          Cosmetiqly was founded to solve a major consumer problem: skincare product labels are filled with complex INCI (International Nomenclature of Cosmetic Ingredients) terms that are difficult for consumers with specific skin conditions to decipher.
+        </p>
+        <p class="text-slate-300 text-sm leading-relaxed">
+          Whether you suffer from Fungal Acne (Malassezia folliculitis), severe Rosacea, pore-clogging comedogenicity, or are navigating obstetric safety during pregnancy, Cosmetiqly provides instant, rule-based ingredient verification across **1,000,000+ safety checks** and **67,000+ cosmetic formulations**.
+        </p>
+      </div>
+
+      <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl">
+        <h2 class="text-xl font-bold font-outfit text-white mb-4 flex items-center gap-2">
+          <span class="text-2xl">📚</span> Authoritative Scientific & Data Sources
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-4">
+          Cosmetiqly's rule engine evaluates product formulations against verified peer-reviewed dermatological studies and official regulatory databases, including:
+        </p>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+          <li class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✓</span> Open Beauty Facts (INCI Database)
+          </li>
+          <li class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✓</span> US FDA Voluntary Cosmetic Registration
+          </li>
+          <li class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✓</span> PubMed & National Institutes of Health (NIH)
+          </li>
+          <li class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✓</span> CIR (Cosmetic Ingredient Review) Panels
+          </li>
+          <li class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✓</span> EWG Skin Deep Database Benchmarks
+          </li>
+          <li class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✓</span> European SCCS Safety Committees
+          </li>
+        </ul>
+      </div>
+
+      <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl">
+        <h2 class="text-xl font-bold font-outfit text-white mb-4 flex items-center gap-2">
+          <span class="text-2xl">⚖️</span> Medical Disclaimer & Editorial Integrity
+        </h2>
+        <p class="text-slate-300 text-sm leading-relaxed mb-3">
+          Cosmetiqly operates as an educational and research database tool. Our automated INCI parsing engine uses strict mathematical pattern matching to flag blacklisted ingredients based on published scientific literature.
+        </p>
+        <p class="text-slate-400 text-xs leading-relaxed italic">
+          Disclaimer: Information provided on Cosmetiqly does not constitute medical advice or a formal physician diagnosis. Consumers with severe skin disorders, allergies, or obstetric concerns should always consult a board-certified dermatologist or healthcare provider before introducing new products into their routine.
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>

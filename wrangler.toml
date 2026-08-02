@@ -1,0 +1,8 @@
+name = "cosmetiqly"
+compatibility_date = "2024-09-23"
+pages_build_output_dir = "./dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cosmetiqly-db"
+database_id = "local-cosmetiqly-d1-id"

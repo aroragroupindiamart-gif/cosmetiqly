@@ -1,0 +1,189 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getPopularChecks } from '../lib/db.js';
+
+const runtimeEnv = Astro.locals?.runtime?.env;
+const popularChecks = await getPopularChecks(12, runtimeEnv);
+
+const safetyRulesList = [
+  { name: 'Fungal Acne (Malassezia)', slug: 'fungal-acne', icon: '🧬', desc: 'Lipids, fatty acids & esters that feed yeast.' },
+  { name: 'Pregnancy & Lactation', slug: 'pregnancy', icon: '👶', desc: 'Retinoids, hydroquinone & chemical sunscreens.' },
+  { name: 'Non-Comedogenic', slug: 'non-comedogenic', icon: '✨', desc: 'Pore-clogging ratings 4-5 ingredients.' },
+  { name: 'Silicone-Free', slug: 'silicone-free', icon: '💧', desc: 'Occlusive dimethicones & siloxanes.' },
+  { name: 'Fragrance-Free', slug: 'fragrance-free', icon: '🌿', desc: 'Synthetic perfumes & essential plant oils.' },
+  { name: 'Paraben-Free', slug: 'paraben-free', icon: '🛡️', desc: 'Alkyl ester preservatives & fixatives.' },
+  { name: 'Sulfate-Free', slug: 'sulfate-free', icon: '🧼', desc: 'Harsh cleansing surfactants (SLS/SLES).' },
+  { name: 'Alcohol-Free', slug: 'alcohol-free', icon: '🚫', desc: 'Simple drying denatured alcohols.' },
+  { name: 'Vegan & Cruelty-Free', slug: 'vegan-cruelty-free', icon: '🌱', desc: 'Animal-derived mucin, lanolin & beeswax.' },
+  { name: 'Reef-Safe Sunscreen', slug: 'reef-safe', icon: '🪸', desc: 'Coral bleaching UV filters.' },
+  { name: 'Rosacea & Eczema', slug: 'rosacea-eczema', icon: '🌸', desc: 'Stinging acids, retinoids & fragrance triggers.' },
+  { name: 'Nut-Allergy Safe', slug: 'nut-allergy-safe', icon: '🥜', desc: 'Tree nut botanical oils & shell powders.' }
+];
+---
+
+<Layout title="Cosmetiqly - Cosmetic & Skincare 1M+ Ingredient Safety Database">
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28 border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_center,rgba(244,63,94,0.15),transparent_50%)] pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-rose-400 mb-6 shadow-xl">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        1,005,000+ Programmatic Safety Pages Live
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold font-outfit text-white tracking-tight leading-none mb-6">
+        Instant <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-purple-400">INCI Cosmetic Safety</span> Engine
+      </h1>
+
+      <p class="max-w-3xl mx-auto text-base sm:text-xl text-slate-300 font-normal mb-10 leading-relaxed">
+        Verify if any cosmetic, skincare, or hair product is safe for Fungal Acne, Pregnancy, Pore-Clogging, Silicones, Fragrance, and 15+ medical filters with Cosmetiqly.
+      </p>
+
+      <!-- Search Component -->
+      <div id="search" class="max-w-2xl mx-auto relative mb-12">
+        <div class="relative flex items-center">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Type a product or brand (e.g. CeraVe, The Ordinary, Salicylic Acid)..."
+            class="w-full bg-slate-900/90 border-2 border-slate-700 focus:border-rose-500 rounded-2xl py-4 pl-12 pr-4 text-sm sm:text-base text-white placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-rose-500/20 shadow-2xl transition-all"
+          />
+          <svg class="w-6 h-6 text-rose-400 absolute left-4 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </div>
+
+        <!-- Autocomplete Results Dropdown -->
+        <div id="searchResults" class="hidden absolute top-full left-0 right-0 mt-2 bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden z-50 text-left divide-y divide-slate-800">
+        </div>
+      </div>
+
+      <!-- Key Metrics -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 border-t border-slate-800/80">
+        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+          <div class="text-2xl sm:text-3xl font-extrabold font-outfit text-rose-400">1,005,000+</div>
+          <div class="text-xs text-slate-400 font-medium">Programmatic Pages</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+          <div class="text-2xl sm:text-3xl font-extrabold font-outfit text-purple-400">67,000+</div>
+          <div class="text-xs text-slate-400 font-medium">Beauty Formulations</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+          <div class="text-2xl sm:text-3xl font-extrabold font-outfit text-emerald-400">15</div>
+          <div class="text-xs text-slate-400 font-medium">Medical Rules</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800">
+          <div class="text-2xl sm:text-3xl font-extrabold font-outfit text-cyan-400">&lt;10ms</div>
+          <div class="text-xs text-slate-400 font-medium">Indexed Response</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular Safety Checks Grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold font-outfit text-white">Popular Live Safety Checks</h2>
+        <p class="text-slate-400 text-sm mt-1">Explore real-time INCI evaluation results from our database.</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {popularChecks.map((item: any) => (
+        <a href={`/check/${item.slug}`} class="group p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-rose-500/50 hover:shadow-xl hover:shadow-rose-950/30 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-xs font-semibold text-rose-400">{item.brand}</span>
+              <span class={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                item.status === 'PASS' ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
+              }`}>
+                {item.status === 'PASS' ? 'SAFE' : 'NOT SAFE'}
+              </span>
+            </div>
+            <h3 class="font-bold text-sm text-white group-hover:text-rose-300 transition-colors line-clamp-2">
+              {item.product_name}
+            </h3>
+            <p class="text-xs text-slate-400 mt-2 font-medium">
+              Filter: <span class="text-slate-300">{item.rule_name}</span>
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-500">
+            <span>Score: <strong class={item.status === 'PASS' ? 'text-emerald-400' : 'text-rose-400'}>{item.safety_score}%</strong></span>
+            <span class="text-rose-400 group-hover:translate-x-1 transition-transform">Check &rarr;</span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- 15 Safety Rules Explorer Grid -->
+  <section id="rules" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-800/80">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h2 class="text-3xl sm:text-4xl font-extrabold font-outfit text-white">Supported Medical Safety Filters</h2>
+      <p class="text-slate-400 text-sm mt-2">Every formulation in our 67,000+ database is evaluated against these 15 medical & lifestyle rules.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {safetyRulesList.map((rule) => (
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-slate-700 transition-all">
+          <div class="text-3xl mb-3">{rule.icon}</div>
+          <h3 class="font-bold text-base text-white font-outfit mb-1">{rule.name}</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">{rule.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Client-side Instant Search Autocomplete JS -->
+  <script>
+    const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+    const searchResults = document.getElementById('searchResults') as HTMLDivElement;
+
+    let debounceTimer: any;
+
+    if (searchInput && searchResults) {
+      searchInput.addEventListener('input', (e) => {
+        const query = (e.target as HTMLInputElement).value.trim();
+        clearTimeout(debounceTimer);
+
+        if (query.length < 2) {
+          searchResults.classList.add('hidden');
+          return;
+        }
+
+        debounceTimer = setTimeout(async () => {
+          try {
+            const res = await fetch(`/api/search.json?q=${encodeURIComponent(query)}`);
+            const data = await res.json();
+
+            if (data && data.length > 0) {
+              searchResults.innerHTML = data.map((item: any) => `
+                <a href="/check/is-${slugify(item.brand)}-${slugify(item.name)}-fungal-acne-safe" class="block p-3 hover:bg-slate-800 transition-colors">
+                  <div class="font-semibold text-xs text-rose-400">${item.brand}</div>
+                  <div class="text-sm font-medium text-white">${item.name}</div>
+                  <div class="text-[11px] text-slate-400">Category: ${item.category || 'Skincare'}</div>
+                </a>
+              `).join('');
+              searchResults.classList.remove('hidden');
+            } else {
+              searchResults.innerHTML = `<div class="p-4 text-xs text-slate-400 text-center">No products found matching "${query}"</div>`;
+              searchResults.classList.remove('hidden');
+            }
+          } catch (err) {
+            console.error('Search fetch error:', err);
+          }
+        }, 200);
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target as Node) && !searchResults.contains(e.target as Node)) {
+          searchResults.classList.add('hidden');
+        }
+      });
+    }
+
+    function slugify(text: string) {
+      return text.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    }
+  </script>
+</Layout>

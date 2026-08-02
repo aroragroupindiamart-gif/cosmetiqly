@@ -1,0 +1,138 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  canonicalUrl?: string;
+  jsonLd?: Record<string, any>;
+}
+
+const {
+  title,
+  description = "Cosmetiqly is the world's largest cosmetic and skincare safety database. Instant INCI ingredient parsing for fungal acne, pregnancy, non-comedogenic, silicone-free, and 15+ medical filters.",
+  canonicalUrl = Astro.url.href,
+  jsonLd
+} = Astro.props;
+
+// Global Organization Schema for Google E-E-A-T
+const globalOrgSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cosmetiqly.com/#organization",
+      "name": "Cosmetiqly",
+      "url": "https://cosmetiqly.com",
+      "logo": "https://cosmetiqly.com/favicon.svg",
+      "sameAs": [],
+      "knowsAbout": ["Dermatology", "INCI Ingredients", "Cosmetic Safety", "Fungal Acne", "Comedogenicity"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cosmetiqly.com/#website",
+      "url": "https://cosmetiqly.com",
+      "name": "Cosmetiqly",
+      "publisher": { "@id": "https://cosmetiqly.com/#organization" }
+    }
+  ]
+};
+---
+
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-950 text-slate-100 antialiased selection:bg-rose-500 selection:text-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | Cosmetiqly</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Global E-E-A-T Organization Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(globalOrgSchema)} />
+
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
+  </head>
+  <body class="flex flex-col min-h-screen bg-slate-950 font-sans text-slate-200">
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2 group">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-500 via-pink-500 to-purple-600 flex items-center justify-center shadow-lg shadow-rose-500/25 group-hover:scale-105 transition-transform">
+            <span class="text-white text-xl font-extrabold font-outfit">C</span>
+          </div>
+          <div>
+            <span class="font-outfit text-xl font-bold tracking-tight text-white group-hover:text-rose-400 transition-colors">Cosmetiqly</span>
+            <span class="hidden sm:inline-block ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20">1M+ DB</span>
+          </div>
+        </a>
+
+        <div class="flex items-center gap-4">
+          <a href="/#search" class="hidden sm:flex items-center gap-2 text-xs font-medium text-slate-300 hover:text-white bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg hover:border-slate-700 transition-all">
+            <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            Search 67k Products...
+          </a>
+          <a href="/about" class="text-xs font-medium text-slate-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-slate-900 transition-colors">About Us</a>
+          <a href="/#rules" class="text-xs font-medium text-slate-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-slate-900 transition-colors">Safety Rules</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- Footer with E-E-A-T Links -->
+    <footer class="border-t border-slate-800/80 bg-slate-950 py-12 mt-20 text-slate-400 text-xs">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-rose-500 to-purple-600 flex items-center justify-center text-white font-bold font-outfit text-sm">C</div>
+            <span class="font-outfit font-bold text-white text-base">Cosmetiqly</span>
+          </div>
+          <p class="text-slate-400 leading-relaxed">The world's largest automated cosmetic and skincare ingredient safety database. Analyzing 1,000,000+ safety checks across 67,000+ formulations.</p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-slate-200 mb-3 text-sm">Popular Medical Checks</h4>
+          <ul class="space-y-2">
+            <li><a href="/#rules" class="hover:text-rose-400 transition-colors">Fungal Acne (Malassezia) Safe</a></li>
+            <li><a href="/#rules" class="hover:text-rose-400 transition-colors">Pregnancy & Lactation Safe</a></li>
+            <li><a href="/#rules" class="hover:text-rose-400 transition-colors">Non-Comedogenic Filter</a></li>
+            <li><a href="/#rules" class="hover:text-rose-400 transition-colors">Silicone-Free Check</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-slate-200 mb-3 text-sm">Trust & Editorial E-E-A-T</h4>
+          <ul class="space-y-2">
+            <li><a href="/about" class="hover:text-rose-400 transition-colors">About Us & Methodology</a></li>
+            <li><a href="/privacy" class="hover:text-rose-400 transition-colors">Privacy Policy</a></li>
+            <li><a href="/terms" class="hover:text-rose-400 transition-colors">Terms of Service</a></li>
+            <li><a href="/contact" class="hover:text-rose-400 transition-colors">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-slate-200 mb-3 text-sm">SEO & Sitemaps Index</h4>
+          <p class="text-slate-400 mb-3">Google Search Console verified XML sitemap index.</p>
+          <a href="/sitemaps/sitemap-index.xml" target="_blank" class="inline-flex items-center gap-1.5 text-rose-400 hover:text-rose-300 font-medium">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+            View Sitemap Index XML
+          </a>
+        </div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-slate-800/60 text-center text-slate-500">
+        <p>© {new Date().getFullYear()} Cosmetiqly Ingredient Database (cosmetiqly.com). All rights reserved. Medical disclaimer: Information is for educational purposes only.</p>
+      </div>
+    </footer>
+  </body>
+</html>

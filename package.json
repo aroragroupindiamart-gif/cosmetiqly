@@ -1,0 +1,28 @@
+{
+  "name": "cosmetiqly",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "ingest": "node scripts/ingest_data.js",
+    "generate:matrix": "node scripts/generate_matrix.js",
+    "generate:sitemaps": "node scripts/generate_sitemaps.js",
+    "prepare:d1": "node scripts/prepare_d1.js"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.2.0",
+    "@astrojs/tailwind": "^6.0.0",
+    "astro": "^5.2.0",
+    "better-sqlite3": "^11.8.1",
+    "canvas-confetti": "^1.9.4",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "wrangler": "^3.107.2"
+  }
+}
