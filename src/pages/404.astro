@@ -1,16 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+// 301 Permanent Redirect all legacy/404 URLs on this expired domain to the homepage
+// This passes legacy backlink authority, PageRank, and link equity to cosmetiqly.com
+return Astro.redirect('/', 301);
 ---
-
-<Layout title="Page Not Found - GlowCheck">
-  <div class="max-w-3xl mx-auto px-4 py-24 text-center">
-    <div class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-rose-500/10 text-rose-400 text-4xl border border-rose-500/20 mb-6">
-      🔍
-    </div>
-    <h1 class="text-4xl font-extrabold font-outfit text-white mb-3">Safety Check Not Found</h1>
-    <p class="text-slate-400 text-base mb-8">The requested product safety page could not be located in our database index.</p>
-    <a href="/" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-rose-500 to-purple-600 text-white font-semibold text-sm hover:shadow-lg hover:shadow-rose-500/25 transition-all">
-      Return to GlowCheck Search &rarr;
-    </a>
-  </div>
-</Layout>
