@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getPageData, getRelatedChecks, getSafeAlternative } from '../../lib/db.js';
+import { getPageData, getRelatedChecks, getBrandChecks, getSafeAlternative } from '../../lib/db.js';
 import { synthesizeBreakdown, generateFAQ } from '../../lib/template_synthesizer.js';
 
 const { slug } = Astro.params;
@@ -55,8 +55,11 @@ const faqs = generateFAQ({
   safetyScore: safety_score
 });
 
-// Fetch internal link related checks for same product
+// Fetch internal link related checks for same product (Product Silo)
 const relatedChecks = await getRelatedChecks(product_id, rule_id, runtimeEnv);
+
+// Fetch internal link related checks for same brand (Brand Silo)
+const brandChecks = await getBrandChecks(brand, product_id, runtimeEnv);
 
 // Fetch safe alternative recommendation if product is NOT SAFE (FAIL)
 const safeAlternative = !isPass ? await getSafeAlternative(rule_id, category, product_id, runtimeEnv) : null;
@@ -120,9 +123,9 @@ const sephoraAffiliateUrl = `https://www.sephora.com/search?keyword=${affiliateS
 
 <Layout title={pageTitle} description={metaDesc} jsonLd={jsonLd}>
   <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-    <!-- Breadcrumbs -->
+    <!-- Breadcrumbs Link Silo -->
     <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6 overflow-x-auto whitespace-nowrap">
-      <a href="/" class="hover:text-rose-400">Home</a>
+      <a href="/" class="hover:text-rose-400 transition-colors">Home</a>
       <span>/</span>
       <span class="text-slate-300">{brand}</span>
       <span>/</span>
@@ -304,7 +307,7 @@ const sephoraAffiliateUrl = `https://www.sephora.com/search?keyword=${affiliateS
       </div>
     </div>
 
-    <!-- Related Product Safety Checks -->
+    <!-- PRODUCT SILO: Other Safety Checks for this same product -->
     {relatedChecks.length > 0 && (
       <div class="bg-slate-900/60 rounded-2xl p-6 md:p-8 border border-slate-800 mb-10">
         <h3 class="text-lg font-bold font-outfit text-white mb-4">
@@ -322,6 +325,31 @@ const sephoraAffiliateUrl = `https://www.sephora.com/search?keyword=${affiliateS
                 </span>
               </div>
               <p class="text-xs text-slate-400 line-clamp-1">{brand} {product_name}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- BRAND SILO: More products by the same brand -->
+    {brandChecks.length > 0 && (
+      <div class="bg-slate-900/60 rounded-2xl p-6 md:p-8 border border-slate-800 mb-10">
+        <h3 class="text-lg font-bold font-outfit text-white mb-4">
+          More Formulations Evaluated by {brand}
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          {brandChecks.map((b: any) => (
+            <a href={`/check/${b.slug}`} class="group p-4 rounded-xl bg-slate-950 border border-slate-800 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-950/20 transition-all">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-semibold text-purple-400">{brand}</span>
+                <span class={`text-[10px] font-bold px-2 py-0.5 rounded ${
+                  b.status === 'PASS' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-rose-500/20 text-rose-400'
+                }`}>
+                  {b.status === 'PASS' ? 'SAFE' : 'FAIL'}
+                </span>
+              </div>
+              <h4 class="text-xs font-bold text-slate-200 group-hover:text-purple-300 transition-colors line-clamp-2">{b.product_name}</h4>
+              <p class="text-[11px] text-slate-500 mt-2">{b.rule_name}</p>
             </a>
           ))}
         </div>

@@ -118,6 +118,38 @@ export async function getRelatedChecks(productId, currentRuleId, runtimeEnv) {
   return [];
 }
 
+export async function getBrandChecks(brand, currentProductId, runtimeEnv) {
+  if (runtimeEnv && runtimeEnv.DB) {
+    try {
+      const res = await runtimeEnv.DB.prepare(`
+        SELECT pm.slug, pm.status, pm.safety_score, p.name as product_name, r.name as rule_name
+        FROM page_matrix pm
+        JOIN products p ON pm.product_id = p.id
+        JOIN safety_rules r ON pm.rule_id = r.id
+        WHERE p.brand = ? AND p.id != ? AND pm.rule_id = 1
+        LIMIT 4
+      `).bind(brand, currentProductId).all();
+      if (res && res.results) return res.results;
+    } catch (e) {}
+  }
+
+  const db = await getLocalDb();
+  if (db) {
+    try {
+      return db.prepare(`
+        SELECT pm.slug, pm.status, pm.safety_score, p.name as product_name, r.name as rule_name
+        FROM page_matrix pm
+        JOIN products p ON pm.product_id = p.id
+        JOIN safety_rules r ON pm.rule_id = r.id
+        WHERE p.brand = ? AND p.id != ? AND pm.rule_id = 1
+        LIMIT 4
+      `).all(brand, currentProductId);
+    } catch (e) {}
+  }
+
+  return [];
+}
+
 export async function searchProducts(query, runtimeEnv) {
   if (!query || query.length < 2) return [];
   const searchTerm = `%${query}%`;
