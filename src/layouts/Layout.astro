@@ -43,6 +43,16 @@ const globalOrgSchema = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="oDgEzYkTlxyzQD-qZYuQFSA7AhuQvaq3NekVFX2e4Qk" />
+
+    <!-- Google Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XH4EEXJLN5"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XH4EEXJLN5');
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Cosmetiqly</title>
     <meta name="description" content={description} />
