@@ -5,4 +5,4 @@ pages_build_output_dir = "./dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "cosmetiqly-db"
-database_id = "local-cosmetiqly-d1-id"
+database_id = "dda11c5e-f780-453e-9eff-f8fcf2cddca4"
