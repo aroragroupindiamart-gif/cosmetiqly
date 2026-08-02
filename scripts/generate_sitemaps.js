@@ -7,6 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const dbPath = path.join(__dirname, '../beauty_pseo.db');
 const sitemapsDir = path.join(__dirname, '../public/sitemaps');
+const publicDir = path.join(__dirname, '../public');
 
 if (!fs.existsSync(sitemapsDir)) {
   fs.mkdirSync(sitemapsDir, { recursive: true });
@@ -55,7 +56,7 @@ if (currentUrlCount > 0) {
   console.log(`  Saved ${filename} (${currentUrlCount.toLocaleString()} URLs)`);
 }
 
-// Generate sitemap-index.xml
+// Generate sitemap-index.xml and sitemap.xml
 let indexXml = '<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 for (const sfile of sitemapFiles) {
   indexXml += `  <sitemap><loc>${SITE_URL}/sitemaps/${sfile}</loc><lastmod>${today}</lastmod></sitemap>\n`;
@@ -63,6 +64,8 @@ for (const sfile of sitemapFiles) {
 indexXml += '</sitemapindex>';
 
 fs.writeFileSync(path.join(sitemapsDir, 'sitemap-index.xml'), indexXml);
-console.log(`🎉 Successfully generated ${sitemapFiles.length} sitemaps and sitemap-index.xml for Cosmetiqly.com!`);
+fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), indexXml);
+fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), indexXml);
+console.log(`🎉 Successfully generated ${sitemapFiles.length} sitemaps, sitemap.xml, and sitemap-index.xml for Cosmetiqly.com!`);
 
 db.close();
