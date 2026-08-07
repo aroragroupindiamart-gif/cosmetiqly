@@ -150,6 +150,36 @@ export async function getBrandChecks(brand, currentProductId, runtimeEnv) {
   return [];
 }
 
+export async function getTopBrands(limit = 40, runtimeEnv) {
+  if (runtimeEnv && runtimeEnv.DB) {
+    try {
+      const res = await runtimeEnv.DB.prepare(`
+        SELECT brand, COUNT(id) as product_count
+        FROM products
+        GROUP BY brand
+        ORDER BY product_count DESC
+        LIMIT ?
+      `).bind(limit).all();
+      if (res && res.results) return res.results;
+    } catch (e) {}
+  }
+
+  const db = await getLocalDb();
+  if (db) {
+    try {
+      return db.prepare(`
+        SELECT brand, COUNT(id) as product_count
+        FROM products
+        GROUP BY brand
+        ORDER BY product_count DESC
+        LIMIT ?
+      `).all(limit);
+    } catch (e) {}
+  }
+
+  return [];
+}
+
 export async function searchProducts(query, runtimeEnv) {
   if (!query || query.length < 2) return [];
   const searchTerm = `%${query}%`;
@@ -181,7 +211,7 @@ export async function searchProducts(query, runtimeEnv) {
   return [];
 }
 
-export async function getPopularChecks(limit = 12, runtimeEnv) {
+export async function getPopularChecks(limit = 24, runtimeEnv) {
   if (runtimeEnv && runtimeEnv.DB) {
     try {
       const res = await runtimeEnv.DB.prepare(`

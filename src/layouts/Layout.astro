@@ -9,9 +9,16 @@ interface Props {
 const {
   title,
   description = "Cosmetiqly is the leading skincare and cosmetic ingredient safety database. Instant INCI ingredient analysis for fungal acne, pregnancy, non-comedogenic, silicone-free, and 15+ medical filters.",
-  canonicalUrl = Astro.url.href,
+  canonicalUrl,
   jsonLd
 } = Astro.props;
+
+// Enforce production domain canonical URL
+const SITE_DOMAIN = 'https://cosmetiqly.com';
+const currentPath = Astro.url.pathname;
+const cleanCanonical = canonicalUrl 
+  ? canonicalUrl.replace(/^https?:\/\/[^\/]+/, SITE_DOMAIN)
+  : `${SITE_DOMAIN}${currentPath === '/' ? '' : currentPath}`;
 
 // Global Organization Schema for Google E-E-A-T
 const globalOrgSchema = {
@@ -56,7 +63,14 @@ const globalOrgSchema = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Cosmetiqly</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonicalUrl} />
+    <link rel="canonical" href={cleanCanonical} />
+
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content={`${title} | Cosmetiqly`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={cleanCanonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Cosmetiqly" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -89,6 +103,7 @@ const globalOrgSchema = {
             <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
             Search 67k Products...
           </a>
+          <a href="/directory" class="text-xs font-medium text-slate-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-slate-900 transition-colors">Brand Directory</a>
           <a href="/about" class="text-xs font-medium text-slate-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-slate-900 transition-colors">About Us</a>
           <a href="/#rules" class="text-xs font-medium text-slate-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-slate-900 transition-colors">Safety Rules</a>
         </div>
@@ -100,7 +115,7 @@ const globalOrgSchema = {
       <slot />
     </main>
 
-    <!-- Footer with E-E-A-T Links -->
+    <!-- Footer with E-E-A-T Links & HTML Directory Links -->
     <footer class="border-t border-slate-800/80 bg-slate-950 py-12 mt-20 text-slate-400 text-xs">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
@@ -125,6 +140,7 @@ const globalOrgSchema = {
           <h4 class="font-semibold text-slate-200 mb-3 text-sm">Trust & Editorial E-E-A-T</h4>
           <ul class="space-y-2">
             <li><a href="/about" class="hover:text-rose-400 transition-colors">About Us & Methodology</a></li>
+            <li><a href="/directory" class="hover:text-rose-400 transition-colors">Brand Directory A-Z</a></li>
             <li><a href="/privacy" class="hover:text-rose-400 transition-colors">Privacy Policy</a></li>
             <li><a href="/terms" class="hover:text-rose-400 transition-colors">Terms of Service</a></li>
             <li><a href="/contact" class="hover:text-rose-400 transition-colors">Contact Us</a></li>
