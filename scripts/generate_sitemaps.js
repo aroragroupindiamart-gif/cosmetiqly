@@ -9,15 +9,17 @@ const dbPath = path.join(__dirname, '../beauty_pseo.db');
 const sitemapsDir = path.join(__dirname, '../public/sitemaps');
 const publicDir = path.join(__dirname, '../public');
 
-if (!fs.existsSync(sitemapsDir)) {
-  fs.mkdirSync(sitemapsDir, { recursive: true });
+// Clean up old sitemap files
+if (fs.existsSync(sitemapsDir)) {
+  fs.rmSync(sitemapsDir, { recursive: true, force: true });
 }
+fs.mkdirSync(sitemapsDir, { recursive: true });
 
-console.log('🗺️ Starting XML Sitemap Generator for Cosmetiqly.com (1,000,000+ URLs)...');
+console.log('🗺️ Starting High-Performance XML Sitemap Generator (5,000 URLs per file)...');
 const db = new Database(dbPath, { readonly: true });
 
 const SITE_URL = 'https://cosmetiqly.com';
-const URLS_PER_SITEMAP = 50000;
+const URLS_PER_SITEMAP = 5000;
 
 const stmt = db.prepare('SELECT slug FROM page_matrix ORDER BY slug ASC');
 const iterator = stmt.iterate();
@@ -39,7 +41,6 @@ for (const row of iterator) {
     const filePath = path.join(sitemapsDir, filename);
     fs.writeFileSync(filePath, xmlContent);
     sitemapFiles.push(filename);
-    console.log(`  Saved ${filename} (${currentUrlCount.toLocaleString()} URLs)`);
 
     fileIndex++;
     currentUrlCount = 0;
@@ -53,7 +54,6 @@ if (currentUrlCount > 0) {
   const filePath = path.join(sitemapsDir, filename);
   fs.writeFileSync(filePath, xmlContent);
   sitemapFiles.push(filename);
-  console.log(`  Saved ${filename} (${currentUrlCount.toLocaleString()} URLs)`);
 }
 
 // Generate sitemap-index.xml and sitemap.xml
@@ -66,6 +66,6 @@ indexXml += '</sitemapindex>';
 fs.writeFileSync(path.join(sitemapsDir, 'sitemap-index.xml'), indexXml);
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), indexXml);
 fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), indexXml);
-console.log(`🎉 Successfully generated ${sitemapFiles.length} sitemaps, sitemap.xml, and sitemap-index.xml for Cosmetiqly.com!`);
+console.log(`🎉 Successfully generated ${sitemapFiles.length} lightweight sitemaps, sitemap.xml, and sitemap-index.xml for Cosmetiqly.com!`);
 
 db.close();

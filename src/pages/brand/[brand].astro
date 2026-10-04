@@ -1,0 +1,103 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getBrandProducts } from '../../lib/db.js';
+
+const { brand = '' } = Astro.params;
+const formattedBrandName = decodeURIComponent(brand).replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+const runtimeEnv = Astro.locals?.runtime?.env;
+const products = await getBrandProducts(formattedBrandName, runtimeEnv);
+
+if (!products || products.length === 0) {
+  // If not found by title-case, try raw brand string
+  const rawProducts = await getBrandProducts(brand, runtimeEnv);
+  if (!rawProducts || rawProducts.length === 0) {
+    return Astro.redirect('/directory');
+  }
+}
+
+const displayProducts = products && products.length > 0 ? products : [];
+const actualBrandName = displayProducts[0]?.brand || formattedBrandName;
+
+function slugify(text: string) {
+  return text.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+}
+
+const safetyRules = [
+  { name: 'Fungal Acne', slug: 'fungal-acne' },
+  { name: 'Pregnancy Safe', slug: 'pregnancy' },
+  { name: 'Non-Comedogenic', slug: 'non-comedogenic' },
+  { name: 'Silicone-Free', slug: 'silicone-free' },
+  { name: 'Fragrance-Free', slug: 'fragrance-free' },
+  { name: 'Paraben-Free', slug: 'paraben-free' }
+];
+---
+
+<Layout
+  title={`${actualBrandName} Skincare & Cosmetic Safety Checks`}
+  description={`Full INCI ingredient safety reviews for all ${actualBrandName} products. Evaluated across 15+ sensitive skin rules including Fungal Acne, Pregnancy, and Pore-Clogging.`}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6">
+      <a href="/" class="hover:text-rose-400">Home</a>
+      <span>/</span>
+      <a href="/directory" class="hover:text-rose-400">Brand Directory</a>
+      <span>/</span>
+      <span class="text-rose-400 font-semibold">{actualBrandName}</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-10 text-center max-w-3xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-rose-400 mb-3">
+        <span>🏷️</span> Verified Brand Hub
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-extrabold font-outfit text-white tracking-tight">
+        {actualBrandName} <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-purple-400">Ingredient Safety Reviews</span>
+      </h1>
+      <p class="text-slate-400 text-sm sm:text-base mt-3">
+        Browse {displayProducts.length} formulations by {actualBrandName} analyzed against dermatological and sensitive skin standards.
+      </p>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      {displayProducts.map((p: any) => (
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-all flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider">{p.category || 'Skincare'}</span>
+            <h3 class="font-bold text-base text-white mt-1 mb-3 line-clamp-2">{p.product_name}</h3>
+            
+            <p class="text-xs text-slate-400 mb-4">Explore safety check verdicts:</p>
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              {safetyRules.map((rule) => (
+                <a
+                  href={`/check/is-${slugify(p.brand)}-${slugify(p.product_name)}-${rule.slug}-safe`}
+                  class="px-2.5 py-1 rounded-lg bg-slate-950 border border-slate-800 hover:border-rose-500/50 hover:text-rose-300 text-[11px] text-slate-300 transition-all"
+                >
+                  {rule.name} &rarr;
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs">
+            <a
+              href={`/check/is-${slugify(p.brand)}-${slugify(p.product_name)}-fungal-acne-safe`}
+              class="text-rose-400 hover:text-rose-300 font-semibold inline-flex items-center gap-1"
+            >
+              Full INCI Breakdown &rarr;
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Back to Directory -->
+    <div class="text-center pt-8 border-t border-slate-800/80">
+      <a href="/directory" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 border border-slate-800 text-white hover:border-rose-500 text-xs font-semibold transition-colors">
+        &larr; Return to All Brands Directory
+      </a>
+    </div>
+  </div>
+</Layout>
