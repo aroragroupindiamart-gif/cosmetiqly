@@ -73,10 +73,10 @@ const metaTitle = page ? `Is ${brand} ${product_name} ${rule_name} Safe? INCI An
 const metaDescription = page
   ? `Full INCI ingredient review for ${brand} ${product_name}. ${isPass ? 'Zero flagged triggers' : `Contains ${conflictList.length} Flagged Trigger(s)`} for ${rule_name}.`
   : 'The requested ingredient safety review was not found.';
-const canonicalUrl = `https://cosmetiqly.com/check/${slug}`;
+const canonicalUrl = page ? `https://cosmetiqly.com/check/${slug}` : undefined;
 ---
 
-<Layout title={metaTitle} description={metaDescription} canonicalUrl={canonicalUrl}>
+<Layout title={metaTitle} description={metaDescription} canonicalUrl={canonicalUrl} noindex={!page}>
   {!page ? (
     <div class="max-w-4xl mx-auto px-4 py-20 text-center">
       <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-2xl font-bold mb-6">

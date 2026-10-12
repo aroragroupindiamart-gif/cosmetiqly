@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://cosmetiqly.com/sitemap.xml
-Sitemap: https://cosmetiqly.com/sitemaps/sitemap-index.xml

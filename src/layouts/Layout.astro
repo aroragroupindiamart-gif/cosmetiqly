@@ -4,21 +4,37 @@ interface Props {
   description?: string;
   canonicalUrl?: string;
   jsonLd?: Record<string, any>;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = "Cosmetiqly is the leading skincare and cosmetic ingredient safety database. Instant INCI ingredient analysis for fungal acne, pregnancy, non-comedogenic, silicone-free, and 15+ medical filters.",
   canonicalUrl,
-  jsonLd
+  jsonLd,
+  noindex = false
 } = Astro.props;
 
 // Enforce production domain canonical URL
 const SITE_DOMAIN = 'https://cosmetiqly.com';
 const currentPath = Astro.url.pathname;
-const cleanCanonical = canonicalUrl 
-  ? canonicalUrl.replace(/^https?:\/\/[^\/]+/, SITE_DOMAIN)
-  : `${SITE_DOMAIN}${currentPath === '/' ? '' : currentPath}`;
+
+// RFC 3986 & Google Canonical Standards:
+// 1. Root domain MUST have trailing slash: https://cosmetiqly.com/
+// 2. Subpaths MUST NOT have trailing slash: https://cosmetiqly.com/check/slug
+let cleanCanonical: string;
+if (canonicalUrl) {
+  cleanCanonical = canonicalUrl.replace(/^https?:\/\/[^\/]+/, SITE_DOMAIN);
+} else if (currentPath === '/' || currentPath === '') {
+  cleanCanonical = `${SITE_DOMAIN}/`;
+} else {
+  cleanCanonical = `${SITE_DOMAIN}${currentPath.replace(/\/+$/, '')}`;
+}
+
+// Canonical edge case check: if bare domain without slash, ensure trailing slash
+if (cleanCanonical === SITE_DOMAIN) {
+  cleanCanonical = `${SITE_DOMAIN}/`;
+}
 
 // Global Organization Schema for Google E-E-A-T
 const globalOrgSchema = {
@@ -28,7 +44,7 @@ const globalOrgSchema = {
       "@type": "Organization",
       "@id": "https://cosmetiqly.com/#organization",
       "name": "Cosmetiqly",
-      "url": "https://cosmetiqly.com",
+      "url": "https://cosmetiqly.com/",
       "logo": "https://cosmetiqly.com/favicon.svg",
       "sameAs": [],
       "knowsAbout": ["Dermatology", "INCI Ingredients", "Cosmetic Safety", "Fungal Acne", "Comedogenicity"]
@@ -36,7 +52,7 @@ const globalOrgSchema = {
     {
       "@type": "WebSite",
       "@id": "https://cosmetiqly.com/#website",
-      "url": "https://cosmetiqly.com",
+      "url": "https://cosmetiqly.com/",
       "name": "Cosmetiqly",
       "publisher": { "@id": "https://cosmetiqly.com/#organization" }
     }
@@ -63,7 +79,15 @@ const globalOrgSchema = {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Cosmetiqly</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={cleanCanonical} />
+
+    {noindex ? (
+      <meta name="robots" content="noindex, follow" />
+    ) : (
+      <>
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={cleanCanonical} />
+      </>
+    )}
 
     <!-- Open Graph Meta -->
     <meta property="og:title" content={`${title} | Cosmetiqly`} />
