@@ -2,86 +2,79 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout 
-  title="About Us & Clinical Methodology - Cosmetiqly" 
-  description="Learn about Cosmetiqly's medical advisory board, INCI ingredient parsing methodology, and open-source scientific data sources."
-  canonicalUrl="https://cosmetiqly.com/about"
+<Layout
+  title="About Cosmetiqly — Independent Formulation Safety Analysis"
+  description="Learn about Cosmetiqly: our mission to provide transparent, citation-backed INCI cosmetic ingredient analysis, our editorial review process, and data provenance."
+  canonicalPath="/about"
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-    <!-- Breadcrumb -->
-    <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6">
-      <a href="/" class="hover:text-rose-400">Home</a>
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6">
+      <a href="/" class="hover:text-slate-900">Home</a>
       <span>/</span>
-      <span class="text-rose-400 font-semibold">About Us</span>
+      <span class="text-slate-700 font-medium">About</span>
     </nav>
 
-    <div class="mb-10 text-center sm:text-left">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-rose-400 mb-3">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        Medical & Scientific E-E-A-T Standards
-      </div>
-      <h1 class="text-3xl sm:text-5xl font-extrabold font-outfit text-white tracking-tight">
-        About <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-purple-400">Cosmetiqly</span>
+    <header class="mb-10 pb-6 border-b border-slate-200">
+      <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 block mb-1">
+        About Cosmetiqly
+      </span>
+      <h1 class="font-serif text-3xl sm:text-5xl text-slate-900 font-semibold tracking-tight">
+        Independent Formulation Analysis
       </h1>
-      <p class="text-slate-300 mt-3 text-base sm:text-lg leading-relaxed">
-        The gold-standard programmatic database for dermatological INCI cosmetic safety, ingredient trigger analysis, and clinical formulation evaluation.
+      <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+        Building the most transparent, citation-backed cosmetic safety database on the open web.
       </p>
-    </div>
+    </header>
 
-    <!-- E-E-A-T Mission & Methodology Cards -->
-    <div class="space-y-8">
-      <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl">
-        <h2 class="text-xl font-bold font-outfit text-white mb-4 flex items-center gap-2">
-          <span class="text-2xl">🔬</span> Our Clinical Mission & Purpose
-        </h2>
-        <p class="text-slate-300 text-sm leading-relaxed mb-4">
-          Cosmetiqly was founded to solve a major consumer problem: skincare product labels are filled with complex INCI (International Nomenclature of Cosmetic Ingredients) terms that are difficult for consumers with specific skin conditions to decipher.
+    <div class="space-y-8 text-sm text-slate-700 leading-relaxed font-normal">
+      <section>
+        <h2 class="font-serif text-2xl font-semibold text-slate-900 mb-3">Our Mission</h2>
+        <p>
+          Cosmetic marketing is filled with vague claims like &ldquo;clean,&rdquo; &ldquo;dermatologist-tested,&rdquo; and &ldquo;hypoallergenic&rdquo;&mdash;terms that lack standardized legal definitions in major jurisdictions. Consumers dealing with specific dermatological conditions (such as Malassezia folliculitis, contact dermatitis, pregnancy restrictions, or acne vulgaris) need objective facts, not slogans.
         </p>
-        <p class="text-slate-300 text-sm leading-relaxed">
-          Whether you suffer from Fungal Acne (Malassezia folliculitis), severe Rosacea, pore-clogging comedogenicity, or are navigating obstetric safety during pregnancy, Cosmetiqly provides instant, rule-based ingredient verification across **1,000,000+ safety checks** and **67,000+ cosmetic formulations**.
+        <p class="mt-3">
+          Cosmetiqly was founded to cut through the marketing noise by providing structured, deterministic INCI ingredient reviews backed by published medical research, peer-reviewed clinical studies, and institutional toxicological reports.
         </p>
-      </div>
+      </section>
 
-      <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl">
-        <h2 class="text-xl font-bold font-outfit text-white mb-4 flex items-center gap-2">
-          <span class="text-2xl">📚</span> Authoritative Scientific & Data Sources
-        </h2>
-        <p class="text-slate-300 text-sm leading-relaxed mb-4">
-          Cosmetiqly's rule engine evaluates product formulations against verified peer-reviewed dermatological studies and official regulatory databases, including:
+      <section>
+        <h2 class="font-serif text-2xl font-semibold text-slate-900 mb-3">Our Data Integrity Standard</h2>
+        <p>
+          Unlike legacy directories that generate synthetic product names or recycle stock ingredient pools, every single product analyzed on Cosmetiqly is sourced from authentic physical packaging scans via the Open Beauty Facts repository under the Open Database Licence (ODbL).
         </p>
-        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
-          <li class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2">
-            <span class="text-emerald-400 font-bold">✓</span> Open Beauty Facts (INCI Database)
-          </li>
-          <li class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2">
-            <span class="text-emerald-400 font-bold">✓</span> US FDA Voluntary Cosmetic Registration
-          </li>
-          <li class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2">
-            <span class="text-emerald-400 font-bold">✓</span> PubMed & National Institutes of Health (NIH)
-          </li>
-          <li class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2">
-            <span class="text-emerald-400 font-bold">✓</span> CIR (Cosmetic Ingredient Review) Panels
-          </li>
-          <li class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2">
-            <span class="text-emerald-400 font-bold">✓</span> EWG Skin Deep Database Benchmarks
-          </li>
-          <li class="p-3 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2">
-            <span class="text-emerald-400 font-bold">✓</span> European SCCS Safety Committees
-          </li>
+        <p class="mt-3">
+          We believe trust is earned through complete transparency:
+        </p>
+        <ul class="list-disc pl-5 mt-2 space-y-1.5 text-xs text-slate-600">
+          <li><strong>No Fake Review Badges:</strong> We do not display fictitious user ratings, invented review counters, or commercial certifications.</li>
+          <li><strong>Real Barcodes:</strong> Every product record preserves its official European Article Number (EAN) or Universal Product Code (UPC) barcode, enabling instant external verification.</li>
+          <li><strong>Exact INCI Lists:</strong> We publish the complete, unaltered ingredient breakdown alongside our rule evaluations.</li>
         </ul>
-      </div>
+      </section>
 
-      <div class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-xl">
-        <h2 class="text-xl font-bold font-outfit text-white mb-4 flex items-center gap-2">
-          <span class="text-2xl">⚖️</span> Medical Disclaimer & Editorial Integrity
-        </h2>
-        <p class="text-slate-300 text-sm leading-relaxed mb-3">
-          Cosmetiqly operates as an educational and research database tool. Our automated INCI parsing engine uses strict mathematical pattern matching to flag blacklisted ingredients based on published scientific literature.
+      <section class="p-6 rounded-lg border border-slate-200 bg-[#fbfbf9]">
+        <h2 class="font-serif text-xl font-semibold text-slate-900 mb-2">Editorial Supervision</h2>
+        <p class="text-xs text-slate-600 mb-3 leading-relaxed">
+          The algorithmic rule definitions, literature citations, and data normalization pipelines at Cosmetiqly are maintained and supervised by:
         </p>
-        <p class="text-slate-400 text-xs leading-relaxed italic">
-          Disclaimer: Information provided on Cosmetiqly does not constitute medical advice or a formal physician diagnosis. Consumers with severe skin disorders, allergies, or obstetric concerns should always consult a board-certified dermatologist or healthcare provider before introducing new products into their routine.
+        <div class="border-t border-slate-200 pt-3">
+          <span class="font-semibold text-sm text-slate-900 block">[OWNER TO FILL]</span>
+          <span class="text-xs text-slate-500 block">Lead Data Analyst &amp; Editorial Supervisor</span>
+          <p class="text-xs text-slate-600 mt-2">
+            Specializing in health informatics, computational taxonomy, and chemical compliance data structures. Responsible for maintaining the accuracy of our 15 cited rule blacklists and continuous Open Beauty Facts synchronization.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-2xl font-semibold text-slate-900 mb-3">Correction Mechanism &amp; Community Feedback</h2>
+        <p>
+          Cosmetic formulations evolve. Brands frequently update formulations, replace preservatives, or alter fragrance components without modifying external product names. When packaging discrepancies arise, we provide a public correction path:
         </p>
-      </div>
+        <p class="mt-2 text-xs text-slate-600">
+          If you discover an out-of-date or inaccurate INCI list, visit our <a href="/contact" class="text-emerald-800 underline">Contact &amp; Corrections page</a> and submit a photograph of the physical packaging ingredient panel. Our team verifies and updates records within 72 hours.
+        </p>
+      </section>
     </div>
-  </div>
+  </article>
 </Layout>

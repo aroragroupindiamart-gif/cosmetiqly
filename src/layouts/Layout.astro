@@ -2,79 +2,61 @@
 interface Props {
   title: string;
   description?: string;
-  canonicalUrl?: string;
+  canonicalPath?: string;
   jsonLd?: Record<string, any>;
   noindex?: boolean;
 }
 
 const {
   title,
-  description = "Cosmetiqly is the leading skincare and cosmetic ingredient safety database. Instant INCI ingredient analysis for fungal acne, pregnancy, non-comedogenic, silicone-free, and 15+ medical filters.",
-  canonicalUrl,
+  description = "Cosmetiqly is an independent cosmetic ingredient safety database. Clinical INCI analysis scored and cited across 15 sensitive skin and safety standards.",
+  canonicalPath,
   jsonLd,
   noindex = false
 } = Astro.props;
 
-// Enforce production domain canonical URL
-const SITE_DOMAIN = 'https://cosmetiqly.com';
+// Read site domain dynamically from env var (Hard Rule §0: NEVER hardcode domain)
+const SITE_DOMAIN = import.meta.env.SITE_DOMAIN || 'https://cosmetiqlyy.com';
 const currentPath = Astro.url.pathname;
 
-// RFC 3986 & Google Canonical Standards:
-// 1. Root domain MUST have trailing slash: https://cosmetiqly.com/
-// 2. Subpaths MUST NOT have trailing slash: https://cosmetiqly.com/check/slug
 let cleanCanonical: string;
-if (canonicalUrl) {
-  cleanCanonical = canonicalUrl.replace(/^https?:\/\/[^\/]+/, SITE_DOMAIN);
+if (canonicalPath) {
+  cleanCanonical = `${SITE_DOMAIN}${canonicalPath.startsWith('/') ? '' : '/'}${canonicalPath}`;
 } else if (currentPath === '/' || currentPath === '') {
   cleanCanonical = `${SITE_DOMAIN}/`;
 } else {
   cleanCanonical = `${SITE_DOMAIN}${currentPath.replace(/\/+$/, '')}`;
 }
 
-// Canonical edge case check: if bare domain without slash, ensure trailing slash
-if (cleanCanonical === SITE_DOMAIN) {
-  cleanCanonical = `${SITE_DOMAIN}/`;
-}
-
-// Global Organization Schema for Google E-E-A-T
 const globalOrgSchema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://cosmetiqly.com/#organization",
+      "@id": `${SITE_DOMAIN}/#organization`,
       "name": "Cosmetiqly",
-      "url": "https://cosmetiqly.com/",
-      "logo": "https://cosmetiqly.com/favicon.svg",
-      "sameAs": [],
-      "knowsAbout": ["Dermatology", "INCI Ingredients", "Cosmetic Safety", "Fungal Acne", "Comedogenicity"]
+      "url": `${SITE_DOMAIN}/`,
+      "logo": `${SITE_DOMAIN}/favicon.svg`,
+      "knowsAbout": ["INCI Ingredients", "Cosmetic Safety", "Dermatology", "Comedogenicity", "Formulation Analysis"]
     },
     {
       "@type": "WebSite",
-      "@id": "https://cosmetiqly.com/#website",
-      "url": "https://cosmetiqly.com/",
+      "@id": `${SITE_DOMAIN}/#website`,
+      "url": `${SITE_DOMAIN}/`,
       "name": "Cosmetiqly",
-      "publisher": { "@id": "https://cosmetiqly.com/#organization" }
+      "publisher": { "@id": `${SITE_DOMAIN}/#organization` }
     }
   ]
 };
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-slate-950 text-slate-100 antialiased selection:bg-rose-500 selection:text-white">
+<html lang="en" class="h-full bg-white text-slate-800 antialiased selection:bg-emerald-100 selection:text-emerald-900">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="oDgEzYkTlxyzQD-qZYuQFSA7AhuQvaq3NekVFX2e4Qk" />
-
-    <!-- Google Analytics (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XH4EEXJLN5"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XH4EEXJLN5');
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <meta name="google-site-verification" content="hsYC4nUYa1HaDc6zfdgTXtEba48b3pW2bUJt9ljIQlM" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Cosmetiqly</title>
@@ -89,100 +71,100 @@ const globalOrgSchema = {
       </>
     )}
 
-    <!-- Open Graph Meta -->
+    <!-- Open Graph -->
     <meta property="og:title" content={`${title} | Cosmetiqly`} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={cleanCanonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Cosmetiqly" />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Newsreader (Editorial Serif) & Inter (UI/Body Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap" rel="stylesheet" />
 
-    <!-- Global E-E-A-T Organization Schema -->
     <script type="application/ld+json" set:html={JSON.stringify(globalOrgSchema)} />
-
     {jsonLd && (
       <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     )}
   </head>
-  <body class="flex flex-col min-h-screen bg-slate-950 font-sans text-slate-200">
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/85 backdrop-blur-md">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+  <body class="flex flex-col min-h-screen bg-white font-sans text-slate-700 antialiased">
+    <!-- Editorial Masthead Header -->
+    <header class="border-b border-slate-200 bg-white/95 backdrop-blur-sm sticky top-0 z-40">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         <a href="/" class="flex items-center gap-2 group">
-          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-500 via-pink-500 to-purple-600 flex items-center justify-center shadow-lg shadow-rose-500/25 group-hover:scale-105 transition-transform">
-            <span class="text-white text-xl font-extrabold font-outfit">C</span>
-          </div>
-          <div>
-            <span class="font-outfit text-xl font-bold tracking-tight text-white group-hover:text-rose-400 transition-colors">Cosmetiqly</span>
-            <span class="hidden sm:inline-block ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20">Verified INCI</span>
-          </div>
+          <span class="font-serif text-2xl font-semibold tracking-tight text-slate-900 group-hover:text-emerald-800 transition-colors">
+            Cosmetiqly
+          </span>
+          <span class="text-[11px] font-sans font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200">
+            Ingredient Safety
+          </span>
         </a>
 
-        <div class="flex items-center gap-4">
-          <a href="/#search" class="hidden sm:flex items-center gap-2 text-xs font-medium text-slate-300 hover:text-white bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg hover:border-slate-700 transition-all">
-            <svg class="w-4 h-4 text-rose-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            Search 67k Products...
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+          <a href="/directory" class="hover:text-slate-900 transition-colors">Brand Directory</a>
+          <a href="/rules" class="hover:text-slate-900 transition-colors">Safety Rules</a>
+          <a href="/methodology" class="hover:text-slate-900 transition-colors">Methodology</a>
+          <a href="/about" class="hover:text-slate-900 transition-colors">About</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="/#search" class="text-xs font-semibold px-3 py-1.5 rounded-md border border-slate-300 text-slate-700 hover:border-emerald-700 hover:text-emerald-800 transition-colors">
+            Search INCI
           </a>
-          <a href="/directory" class="text-xs font-medium text-slate-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-slate-900 transition-colors">Brand Directory</a>
-          <a href="/about" class="text-xs font-medium text-slate-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-slate-900 transition-colors">About Us</a>
-          <a href="/#rules" class="text-xs font-medium text-slate-300 hover:text-white px-3 py-1.5 rounded-lg hover:bg-slate-900 transition-colors">Safety Rules</a>
         </div>
       </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Content Area -->
     <main class="flex-grow">
       <slot />
     </main>
 
-    <!-- Footer with E-E-A-T Links & HTML Directory Links -->
-    <footer class="border-t border-slate-800/80 bg-slate-950 py-12 mt-20 text-slate-400 text-xs">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div>
-          <div class="flex items-center gap-2 mb-3">
-            <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-rose-500 to-purple-600 flex items-center justify-center text-white font-bold font-outfit text-sm">C</div>
-            <span class="font-outfit font-bold text-white text-base">Cosmetiqly</span>
+    <!-- Editorial Footer with E-E-A-T Links & Disclaimer -->
+    <footer class="border-t border-slate-200 bg-[#fbfbf9] mt-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div class="md:col-span-2">
+            <span class="font-serif text-xl font-semibold text-slate-900">Cosmetiqly</span>
+            <p class="text-xs text-slate-500 mt-2 max-w-md leading-relaxed">
+              Transparent, citation-backed INCI cosmetic safety reviews. We screen real formulation data against published toxicology, comedogenicity, and dermatological guidelines.
+            </p>
+            <p class="text-xs text-slate-400 mt-3">
+              Data sourced under Open Database Licence (ODbL) from Open Beauty Facts.
+            </p>
           </div>
-          <p class="text-slate-400 leading-relaxed">The leading cosmetic and skincare ingredient safety database. Analyzing 1,000,000+ safety checks across 67,000+ formulations.</p>
+
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Database</h4>
+            <ul class="space-y-2 text-xs text-slate-600">
+              <li><a href="/directory" class="hover:text-emerald-800">Brand Directory A-Z</a></li>
+              <li><a href="/rules" class="hover:text-emerald-800">15 Safety Rules</a></li>
+              <li><a href="/methodology" class="hover:text-emerald-800">Scoring Methodology</a></li>
+              <li><a href="/contact" class="hover:text-emerald-800">Report Wrong Formulation</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Editorial & Legal</h4>
+            <ul class="space-y-2 text-xs text-slate-600">
+              <li><a href="/about" class="hover:text-emerald-800">About & Reviewer Standards</a></li>
+              <li><a href="/privacy" class="hover:text-emerald-800">Privacy Policy</a></li>
+              <li><a href="/terms" class="hover:text-emerald-800">Terms of Service</a></li>
+              <li><a href="/contact" class="hover:text-emerald-800">Editorial Contact</a></li>
+            </ul>
+          </div>
         </div>
 
-        <div>
-          <h4 class="font-semibold text-slate-200 mb-3 text-sm">Popular Sensitive Filters</h4>
-          <ul class="space-y-2">
-            <li><a href="/#rules" class="hover:text-rose-400 transition-colors">Fungal Acne (Malassezia) Safe</a></li>
-            <li><a href="/#rules" class="hover:text-rose-400 transition-colors">Pregnancy & Lactation Safe</a></li>
-            <li><a href="/#rules" class="hover:text-rose-400 transition-colors">Non-Comedogenic Filter</a></li>
-            <li><a href="/#rules" class="hover:text-rose-400 transition-colors">Silicone-Free Check</a></li>
-          </ul>
+        <!-- Prominent Medical Disclaimer (§5) -->
+        <div class="pt-8 border-t border-slate-200 text-xs text-slate-500 leading-relaxed">
+          <p class="mb-2">
+            <strong>Medical Disclaimer:</strong> Cosmetiqly provides educational ingredient analysis based on published scientific literature (CIR, SCCS, clinical dermatology studies). It does not constitute medical, diagnostic, or dermatological advice. Individual skin tolerances and allergic thresholds vary; patch-testing is advised prior to adopting new cosmetic formulations.
+          </p>
+          <p class="text-slate-400">
+            &copy; {new Date().getFullYear()} Cosmetiqly. Editorial review supervised by [OWNER TO FILL], Data Analyst.
+          </p>
         </div>
-
-        <div>
-          <h4 class="font-semibold text-slate-200 mb-3 text-sm">Trust & Editorial E-E-A-T</h4>
-          <ul class="space-y-2">
-            <li><a href="/about" class="hover:text-rose-400 transition-colors">About Us & Methodology</a></li>
-            <li><a href="/directory" class="hover:text-rose-400 transition-colors">Brand Directory A-Z</a></li>
-            <li><a href="/privacy" class="hover:text-rose-400 transition-colors">Privacy Policy</a></li>
-            <li><a href="/terms" class="hover:text-rose-400 transition-colors">Terms of Service</a></li>
-            <li><a href="/contact" class="hover:text-rose-400 transition-colors">Contact Us</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-semibold text-slate-200 mb-3 text-sm">Clinical Metrics</h4>
-          <ul class="space-y-2 text-slate-400">
-            <li>Safety Checks Evaluated: <span class="text-emerald-400 font-mono">1,000,000+</span></li>
-            <li>Verified Formulations: <span class="text-purple-400 font-mono">67,000+</span></li>
-            <li>Dermatological Rules: <span class="text-rose-400 font-mono">15 Medical Filters</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 pt-6 border-t border-slate-800/60 text-center text-slate-500">
-        <p>© {new Date().getFullYear()} Cosmetiqly Ingredient Database (cosmetiqly.com). All rights reserved. Medical disclaimer: Information is for educational purposes only.</p>
       </div>
     </footer>
   </body>

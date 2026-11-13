@@ -2,46 +2,62 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout 
-  title="Contact Us - Cosmetiqly" 
-  description="Get in touch with the Cosmetiqly editorial and technical support team for product requests, INCI updates, or publisher inquiries."
-  canonicalUrl="https://cosmetiqly.com/contact"
+<Layout
+  title="Editorial Contact &amp; Corrections — Cosmetiqly"
+  description="Contact the Cosmetiqly editorial team. Submit an INCI ingredient formulation correction or report a data discrepancy with 72-hour turnaround."
+  canonicalPath="/contact"
 >
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-    <h1 class="text-3xl font-extrabold font-outfit text-white mb-3">Contact Cosmetiqly Team</h1>
-    <p class="text-slate-400 text-sm mb-8">Have a question about an INCI ingredient check, brand addition request, or partnership inquiry? Reach out to our technical team.</p>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6">
+      <a href="/" class="hover:text-slate-900">Home</a>
+      <span>/</span>
+      <span class="text-slate-700 font-medium">Contact</span>
+    </nav>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-      <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
-        <div class="text-rose-400 font-bold text-lg mb-1">📧 Editorial & Support</div>
-        <p class="text-xs text-slate-400 mb-3">For general inquiries, ingredient database updates, or product requests:</p>
-        <a href="mailto:support@cosmetiqly.com" class="text-sm font-semibold text-rose-400 hover:underline">support@cosmetiqly.com</a>
+    <header class="mb-10 pb-6 border-b border-slate-200">
+      <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 block mb-1">
+        Editorial Office
+      </span>
+      <h1 class="font-serif text-3xl sm:text-4xl text-slate-900 font-semibold tracking-tight">
+        Contact &amp; Formulation Corrections
+      </h1>
+      <p class="text-sm text-slate-600 mt-2">
+        Have a question about a citation, or found a product that was recently reformulated?
+      </p>
+    </header>
+
+    <div class="space-y-6 text-sm text-slate-700">
+      <div class="p-6 rounded-lg border border-slate-200 bg-[#fbfbf9]">
+        <h2 class="font-serif text-lg font-semibold text-slate-900 mb-2">
+          Report an Inaccurate INCI List
+        </h2>
+        <p class="text-xs text-slate-600 leading-relaxed mb-3">
+          To maintain data integrity, we review packaging submissions for formulation updates. Please include:
+        </p>
+        <ul class="list-disc pl-5 space-y-1 text-xs text-slate-600 mb-4">
+          <li>Product brand, exact product name, and barcode (EAN/UPC).</li>
+          <li>A clear photograph or official brand link showing the current ingredient panel.</li>
+          <li>Details on which ingredients have changed.</li>
+        </ul>
+        <div class="p-3 bg-white rounded border border-slate-200 text-xs font-mono text-slate-800">
+          corrections@cosmetiqlyy.com
+        </div>
+        <p class="text-[11px] text-slate-500 mt-2">
+          Correction SLA: Verified packaging updates are reviewed and processed within 72 business hours.
+        </p>
       </div>
 
-      <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800">
-        <div class="text-purple-400 font-bold text-lg mb-1">💼 Business & Publishers</div>
-        <p class="text-xs text-slate-400 mb-3">For advertising partnerships, affiliate inquiries, or data licensing:</p>
-        <a href="mailto:contact@cosmetiqly.com" class="text-sm font-semibold text-purple-400 hover:underline">contact@cosmetiqly.com</a>
+      <div class="p-6 rounded-lg border border-slate-200 bg-white">
+        <h2 class="font-serif text-lg font-semibold text-slate-900 mb-2">
+          Scientific Citations &amp; Inquiries
+        </h2>
+        <p class="text-xs text-slate-600 leading-relaxed mb-3">
+          For clinical researchers, toxicologists, and data partners with questions regarding our Rule Engine v2 blacklists or study citations:
+        </p>
+        <div class="p-3 bg-[#fbfbf9] rounded border border-slate-200 text-xs font-mono text-slate-800">
+          editorial@cosmetiqlyy.com
+        </div>
       </div>
     </div>
-
-    <!-- Contact Form Interface -->
-    <form class="p-6 sm:p-8 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-4" onsubmit="event.preventDefault(); alert('Thank you for contacting Cosmetiqly! Our support team will respond shortly.');">
-      <div>
-        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Name</label>
-        <input type="text" required placeholder="Jane Doe" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-rose-500" />
-      </div>
-      <div>
-        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Email Address</label>
-        <input type="email" required placeholder="jane@example.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-rose-500" />
-      </div>
-      <div>
-        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Message</label>
-        <textarea rows="4" required placeholder="Tell us how we can help..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-rose-500"></textarea>
-      </div>
-      <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-rose-500 to-purple-600 font-bold text-white text-sm hover:shadow-lg hover:shadow-rose-500/25 transition-all">
-        Send Message to Cosmetiqly &rarr;
-      </button>
-    </form>
   </div>
 </Layout>

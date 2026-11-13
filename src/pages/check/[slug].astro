@@ -1,304 +1,280 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getPageData, getRelatedChecks, getSafeAlternative, getBrandChecks } from '../../lib/db.js';
-import { synthesizeBreakdown, generateFAQ } from '../../lib/template_synthesizer.js';
+import { getCheckPageData, getEvaluatedAlternatives, getOtherProductChecks } from '../../lib/db_v2.js';
 
 const { slug = '' } = Astro.params;
-const runtimeEnv = Astro.locals?.runtime?.env;
+const checkData = await getCheckPageData(slug);
 
-const page = await getPageData(slug, runtimeEnv);
-
-// True RFC 404 response (No 302/301 redirects)
-if (!page) {
+if (!checkData) {
   Astro.response.status = 404;
 }
 
-const {
-  product_id = '',
-  brand = 'Cosmetic Formulation',
-  product_name = 'Product Review',
-  category = 'Skincare',
-  ingredients_raw = '',
-  rule_id = 'rule-fungal-acne',
-  rule_name = 'Fungal Acne (Malassezia)',
-  rule_slug = 'fungal-acne',
-  status = 'PASS',
-  conflict_list: conflictListRaw = '[]',
-  safety_score = 100
-} = page || {};
+const { product, rule, evaluation } = checkData || {};
+const isFound = !!checkData;
 
-const isPass = status === 'PASS';
-let conflictList: string[] = [];
-try {
-  conflictList = conflictListRaw ? JSON.parse(conflictListRaw) : [];
-} catch (e) {
-  conflictList = [];
-}
+const alternatives = isFound ? await getEvaluatedAlternatives(product.barcode, rule, product.category, 3) : [];
+const otherChecks = isFound ? await getOtherProductChecks(product, rule.slug) : [];
 
-let parsedIngredients: string[] = [];
-try {
-  parsedIngredients = JSON.parse(page?.ingredients_list || '[]');
-} catch (e) {
-  parsedIngredients = (ingredients_raw || '').split(',').map((s: string) => s.trim()).filter(Boolean);
-}
+const metaTitle = isFound
+  ? `Is ${product.brand} ${product.name} ${rule.name} Safe? INCI Review`
+  : 'Safety Check Not Found — Cosmetiqly';
 
-// Internal link queries
-const relatedChecks = page ? await getRelatedChecks(product_id, rule_id, runtimeEnv) : [];
-const brandChecks = page ? await getBrandChecks(brand, product_id, runtimeEnv) : [];
-const safeAlternative = (!isPass && page) ? await getSafeAlternative(rule_id, category, product_id, runtimeEnv) : null;
+const metaDesc = isFound
+  ? `INCI review of ${product.brand} ${product.name} for ${rule.name}. ${evaluation.displayString}. Cited against published dermatological research.`
+  : 'The requested product formulation safety evaluation was not found.';
 
-// Dynamic text & FAQs
-const breakdown = page ? synthesizeBreakdown({
-  brand,
-  productName: product_name,
-  category: category || 'Cosmetic Formulation',
-  ruleName: rule_name,
-  ruleSlug: rule_slug,
-  status,
-  conflicts: conflictList,
-  totalIngredients: parsedIngredients.length,
-  safetyScore: safety_score
-}) : null;
-
-const faqs = page ? generateFAQ({
-  brand,
-  productName: product_name,
-  ruleName: rule_name,
-  status,
-  conflicts: conflictList,
-  safetyScore: safety_score
-}) : [];
-
-const metaTitle = page ? `Is ${brand} ${product_name} ${rule_name} Safe? INCI Analysis` : 'Page Not Found - Cosmetic Safety Check';
-const metaDescription = page
-  ? `Full INCI ingredient review for ${brand} ${product_name}. ${isPass ? 'Zero flagged triggers' : `Contains ${conflictList.length} Flagged Trigger(s)`} for ${rule_name}.`
-  : 'The requested ingredient safety review was not found.';
-const canonicalUrl = page ? `https://cosmetiqly.com/check/${slug}` : undefined;
+// Schema.org FAQPage & Product structured data
+const jsonLd = isFound ? {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "name": `${product.brand} ${product.name}`,
+      "brand": { "@type": "Brand", "name": product.brand },
+      "category": product.category,
+      "sku": product.barcode
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": `Is ${product.brand} ${product.name} ${rule.name} safe?`,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": `${product.brand} ${product.name} received a verdict of "${evaluation.verdictText}" with a score of ${evaluation.score.toFixed(1)}/10. ${evaluation.displayString}.`
+          }
+        },
+        {
+          "@type": "Question",
+          "name": `Which ingredients were flagged in ${product.name} for ${rule.name}?`,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": evaluation.flaggedCount > 0
+              ? `The following ingredients were flagged: ${evaluation.flagged.map((f: any) => `${f.ingredient} (${f.severity} concern: ${f.note})`).join('; ')}.`
+              : `Zero ingredients were flagged for ${rule.name}.`
+          }
+        }
+      ]
+    }
+  ]
+} : undefined;
 ---
 
-<Layout title={metaTitle} description={metaDescription} canonicalUrl={canonicalUrl} noindex={!page}>
-  {!page ? (
-    <div class="max-w-4xl mx-auto px-4 py-20 text-center">
-      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-rose-400 text-2xl font-bold mb-6">
-        404
-      </div>
-      <h1 class="text-3xl sm:text-4xl font-extrabold font-outfit text-white mb-4">
+<Layout
+  title={metaTitle}
+  description={metaDesc}
+  canonicalPath={isFound ? `/check/${slug}` : undefined}
+  noindex={!isFound}
+  jsonLd={jsonLd}
+>
+  {!isFound ? (
+    <div class="max-w-3xl mx-auto px-4 py-20 text-center">
+      <span class="text-xs font-mono font-bold px-2 py-1 bg-slate-100 text-slate-600 rounded border border-slate-200">
+        404 NOT FOUND
+      </span>
+      <h1 class="font-serif text-3xl font-semibold text-slate-900 mt-4 mb-3">
         Formulation Check Not Found
       </h1>
-      <p class="text-slate-400 max-w-md mx-auto text-sm mb-8">
-        The requested ingredient safety review does not exist in our database or the URL slug is invalid.
+      <p class="text-sm text-slate-600 max-w-md mx-auto mb-8">
+        This check does not exist in our verified database or is not dermatologically relevant for this product category.
       </p>
-      <div class="flex items-center justify-center gap-4">
-        <a href="/" class="px-5 py-2.5 rounded-xl bg-rose-500 text-white text-xs font-semibold hover:bg-rose-600 transition-colors">
-          Return to Homepage
-        </a>
-        <a href="/directory" class="px-5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 text-xs font-semibold hover:border-slate-700 transition-colors">
-          Browse Brand Directory
-        </a>
-      </div>
+      <a href="/directory" class="text-xs font-semibold px-4 py-2 bg-emerald-800 text-white rounded hover:bg-emerald-900 transition-colors">
+        Browse Brand Directory
+      </a>
     </div>
   ) : (
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-      <!-- Breadcrumbs Link Silo -->
-      <nav class="flex items-center gap-2 text-xs text-slate-400 mb-6 overflow-x-auto whitespace-nowrap">
-        <a href="/" class="hover:text-rose-400 transition-colors">Home</a>
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 py-10">
+      <!-- 1. Breadcrumbs (§5) -->
+      <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6 flex-wrap">
+        <a href="/" class="hover:text-slate-900">Home</a>
         <span>/</span>
-        <a href={`/brand/${brand.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`} class="hover:text-rose-400 transition-colors">{brand}</a>
+        <a href={`/brand/${product.brand_slug}`} class="hover:text-slate-900">{product.brand}</a>
         <span>/</span>
-        <span class="text-slate-300">{product_name}</span>
+        <span class="text-slate-700 truncate max-w-[200px]">{product.name}</span>
         <span>/</span>
-        <span class="text-rose-400 font-semibold">{rule_name}</span>
+        <span class="text-emerald-800 font-medium">{rule.name}</span>
       </nav>
 
-      <!-- Dynamic H1 Heading -->
-      <div class="mb-8">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-rose-400 mb-3">
-          <span class={`w-2 h-2 rounded-full ${isPass ? 'bg-emerald-500' : 'bg-rose-500'} animate-pulse`}></span>
-          INCI Medical Safety Check
-        </div>
-        <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold font-outfit text-white tracking-tight leading-tight">
-          Is <span class="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-pink-400 to-purple-400">{brand} {product_name}</span> {rule_name} Safe?
+      <!-- 2. H1 Title -->
+      <header class="mb-8">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 block mb-1">
+          {product.brand} &middot; {product.category}
+        </span>
+        <h1 class="font-serif text-3xl sm:text-4xl text-slate-900 font-semibold tracking-tight">
+          Is {product.brand} {product.name} {rule.name} Safe?
         </h1>
-        <p class="text-slate-400 mt-2 text-sm sm:text-base">Comprehensive ingredient safety verdict & trigger breakdown across {parsedIngredients.length} INCI components.</p>
-      </div>
+      </header>
 
-      <!-- Visual Safety Badge Hero Banner -->
-      <div class={`relative overflow-hidden rounded-2xl p-6 md:p-8 border shadow-2xl mb-10 transition-all ${
-        isPass
-          ? 'bg-gradient-to-br from-emerald-950/80 via-slate-900 to-slate-950 border-emerald-500/40 shadow-emerald-950/40'
-          : 'bg-gradient-to-br from-rose-950/80 via-slate-900 to-slate-950 border-rose-500/40 shadow-rose-950/40'
-      }`}>
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
-          <div class="flex items-start gap-4">
-            <div class={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center text-3xl sm:text-4xl shadow-xl shrink-0 ${
-              isPass ? 'bg-emerald-500 text-white shadow-emerald-500/30' : 'bg-rose-500 text-white shadow-rose-500/30'
-            }`}>
-              {isPass ? '✓' : '✕'}
-            </div>
-            <div>
-              <div class="flex items-center gap-3">
-                <span class={`px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider ${
-                  isPass ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' : 'bg-rose-500/20 text-rose-400 border border-rose-500/30'
-                }`}>
-                  {isPass ? 'VERIFIED SAFE' : 'NOT RECOMMENDED'}
-                </span>
-                <span class="text-xs text-slate-400 font-medium">Rule: {rule_name}</span>
-              </div>
-              <h2 class="text-xl sm:text-2xl font-bold font-outfit text-white mt-1">
-                {isPass ? `Safe for ${rule_name}` : `Fails ${rule_name} Safety Standards`}
-              </h2>
-              <p class="text-slate-300 text-sm mt-1 max-w-xl leading-relaxed">
-                {breakdown?.openingParagraph}
-              </p>
-            </div>
-          </div>
-
-          <div class="flex md:flex-col items-center justify-between md:justify-center p-4 rounded-xl bg-slate-900/80 border border-slate-800 shrink-0 min-w-[140px] text-center">
-            <div class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Safety Score</div>
-            <div class={`text-3xl sm:text-4xl font-extrabold font-outfit ${isPass ? 'text-emerald-400' : 'text-rose-400'}`}>
-              {safety_score}%
-            </div>
-            <div class="text-[11px] text-slate-500">{isPass ? 'Clean Formulation' : `${conflictList.length} Triggers Detected`}</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Flagged Ingredients Warning (If Failed) -->
-      {!isPass && conflictList.length > 0 && (
-        <div class="mb-10 p-6 rounded-2xl bg-rose-950/40 border border-rose-500/30">
-          <h3 class="text-lg font-bold font-outfit text-rose-300 mb-2 flex items-center gap-2">
-            <span>⚠️</span> Flagged Ingredient Triggers ({conflictList.length})
-          </h3>
-          <p class="text-xs text-slate-300 mb-4">
-            The following ingredients in this formulation violate strict dermatological standards for {rule_name}:
-          </p>
-          <div class="flex flex-wrap gap-2">
-            {conflictList.map((item) => (
-              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-500/20 border border-rose-500/40 text-rose-200 text-xs font-semibold">
-                <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <!-- Safe Alternative Recommendation Widget -->
-      {safeAlternative && (
-        <div class="mb-10 p-6 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-slate-900 to-slate-900 border border-emerald-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <!-- 3. Score Tile + Plain Verdict -->
+      <div class="p-6 rounded-lg border border-slate-200 bg-[#fbfbf9] mb-8">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-              Recommended Safe Alternative
-            </span>
-            <h4 class="text-base font-bold text-white mt-1">
-              Looking for a {rule_name}-safe {safeAlternative.category || 'product'}?
-            </h4>
-            <p class="text-xs text-slate-400 mt-0.5">
-              Switch to <strong class="text-slate-200">{safeAlternative.brand} {safeAlternative.product_name}</strong> ({safeAlternative.safety_score}% Safety Score).
+            <div class="flex items-center gap-2 mb-2">
+              <span class={`text-xs font-bold px-2.5 py-0.5 rounded border ${
+                evaluation.score >= 9.5
+                  ? 'bg-emerald-50 text-emerald-800 border-emerald-200'
+                  : evaluation.score >= 7.0
+                    ? 'bg-amber-50 text-amber-800 border-amber-200'
+                    : 'bg-rose-50 text-rose-800 border-rose-200'
+              }`}>
+                {evaluation.tierLabel}
+              </span>
+              <span class="text-xs text-slate-500">Standard: {rule.name}</span>
+            </div>
+            <h2 class="font-serif text-2xl font-semibold text-slate-900">
+              {evaluation.verdictText}
+            </h2>
+            <p class="text-xs text-slate-600 mt-1 font-mono">
+              {evaluation.displayString}
             </p>
           </div>
-          <a
-            href={`/check/${safeAlternative.slug}`}
-            class="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shrink-0 transition-colors shadow-lg shadow-emerald-500/20 text-center"
-          >
-            View Safe Alternative &rarr;
-          </a>
-        </div>
-      )}
 
-      <!-- Complete INCI Ingredient Breakdown -->
-      <div class="mb-12 p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-        <div class="flex items-center justify-between mb-4">
-          <h3 class="text-lg font-bold font-outfit text-white flex items-center gap-2">
-            <span>🧪</span> Full INCI Ingredients List ({parsedIngredients.length})
+          <div class="text-left sm:text-right border-t sm:border-t-0 sm:border-l border-slate-200 pt-3 sm:pt-0 sm:pl-6 shrink-0">
+            <span class="text-[10px] uppercase font-bold tracking-wider text-slate-500 block">Cosmetiqly Score</span>
+            <span class="font-serif text-4xl font-semibold text-slate-900">
+              {evaluation.score.toFixed(1)}<span class="text-base text-slate-400 font-normal">/10</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Cited Explanations for Each Flagged Ingredient (§5 requirement) -->
+      {evaluation.flaggedCount > 0 ? (
+        <section class="mb-10">
+          <h3 class="font-serif text-xl font-semibold text-slate-900 mb-3">
+            Flagged ingredients & clinical citations ({evaluation.flaggedCount})
           </h3>
-        </div>
-        <p class="text-xs text-slate-400 mb-6">
-          Every ingredient analyzed by Cosmetiqly against international cosmetic safety datasets.
-        </p>
+          <p class="text-xs text-slate-600 mb-4">
+            The following ingredients in this formulation conflict with {rule.name} standards:
+          </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
-          {parsedIngredients.map((ingredient) => {
-            const isTrigger = conflictList.some(c => c.toLowerCase() === ingredient.toLowerCase());
-            return (
-              <div class={`p-3 rounded-xl border text-xs flex items-center justify-between transition-colors ${
-                isTrigger
-                  ? 'bg-rose-950/30 border-rose-500/40 text-rose-300 font-semibold'
-                  : 'bg-slate-950/60 border-slate-800/80 text-slate-300'
-              }`}>
-                <span class="truncate mr-2">{ingredient}</span>
-                {isTrigger ? (
-                  <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-rose-500/20 text-rose-400 border border-rose-500/30 shrink-0">
-                    FLAGGED
+          <div class="space-y-3">
+            {evaluation.flagged.map((f: any) => (
+              <div class="p-4 rounded-lg border border-slate-200 bg-white">
+                <div class="flex items-center justify-between gap-2 mb-1">
+                  <span class="font-mono text-sm font-semibold text-slate-900">{f.ingredient}</span>
+                  <span class={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase ${
+                    f.severity === 'HIGH' ? 'bg-rose-50 text-rose-800 border-rose-200' : 'bg-amber-50 text-amber-800 border-amber-200'
+                  }`}>
+                    {f.severity} Concern
                   </span>
-                ) : (
-                  <span class="text-[10px] text-slate-500 font-mono shrink-0">SAFE</span>
-                )}
+                </div>
+                <p class="text-xs text-slate-600 mb-2 leading-relaxed">{f.note}</p>
+                <div class="text-[11px] text-slate-500 border-t border-slate-100 pt-1.5">
+                  <strong>Citation:</strong> {f.citation}
+                </div>
               </div>
-            );
-          })}
-        </div>
-      </div>
-
-      <!-- Product Silo (Other Checks for This Same Product) -->
-      {relatedChecks.length > 0 && (
-        <div class="mb-12">
-          <h3 class="text-lg font-bold font-outfit text-white mb-4 flex items-center gap-2">
-            <span>🔍</span> Other Safety Checks for {product_name}
-          </h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-            {relatedChecks.map((rc: any) => (
-              <a
-                href={`/check/${rc.slug}`}
-                class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-rose-500/50 hover:bg-slate-900 transition-all flex flex-col justify-between group text-center"
-              >
-                <div class="text-xs font-semibold text-white group-hover:text-rose-400 transition-colors line-clamp-1">{rc.rule_name}</div>
-                <div class={`text-[11px] font-bold mt-2 px-2 py-0.5 rounded-full ${
-                  rc.status === 'PASS' ? 'bg-emerald-500/10 text-emerald-400' : 'bg-rose-500/10 text-rose-400'
-                }`}>
-                  {rc.status === 'PASS' ? 'SAFE' : 'NOT SAFE'}
-                </div>
-              </a>
             ))}
           </div>
+        </section>
+      ) : (
+        <div class="mb-10 p-5 rounded-lg border border-emerald-200 bg-emerald-50/50 text-xs text-emerald-900">
+          <strong>Clean Record:</strong> None of the {evaluation.totalIngredients} analyzed ingredients match known {rule.name} triggers.
         </div>
       )}
 
-      <!-- Brand Silo (Other Products by This Brand) -->
-      {brandChecks.length > 0 && (
-        <div class="mb-12">
-          <h3 class="text-lg font-bold font-outfit text-white mb-4 flex items-center gap-2">
-            <span>🏷️</span> More Formulations by {brand}
+      <!-- 5. Full INCI Ingredient Table (§5 requirement) -->
+      <section class="mb-10">
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="font-serif text-xl font-semibold text-slate-900">
+            Complete INCI formulation ({evaluation.totalIngredients} ingredients)
           </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {brandChecks.map((bc: any) => (
+          <span class="text-xs text-slate-500 font-mono">Deduplicated</span>
+        </div>
+
+        <div class="border border-slate-200 rounded-lg overflow-hidden">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="bg-[#fbfbf9] border-b border-slate-200 font-semibold text-slate-700">
+                <th class="py-2.5 px-3">#</th>
+                <th class="py-2.5 px-3">Ingredient</th>
+                <th class="py-2.5 px-3">Status for {rule.name}</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              {product.ingredients_list.map((ing: string, i: number) => {
+                const flag = evaluation.flagged.find((f: any) => f.ingredient.toLowerCase() === ing.toLowerCase());
+                return (
+                  <tr class={flag ? 'bg-amber-50/40' : 'bg-white'}>
+                    <td class="py-2 px-3 text-slate-400 font-mono">{i + 1}</td>
+                    <td class="py-2 px-3 font-medium text-slate-900">{ing}</td>
+                    <td class="py-2 px-3">
+                      {flag ? (
+                        <span class="font-bold text-rose-700 uppercase text-[10px]">
+                          Flagged ({flag.severity})
+                        </span>
+                      ) : (
+                        <span class="text-slate-400">Pass</span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- 6. Evaluated-Only Safe Alternatives (§3 & §5) -->
+      {alternatives.length > 0 && (
+        <section class="mb-10 p-5 rounded-lg border border-slate-200 bg-[#fbfbf9]">
+          <h3 class="font-serif text-lg font-semibold text-slate-900 mb-1">
+            Evaluated alternative {product.category} options (10/10 Score)
+          </h3>
+          <p class="text-xs text-slate-600 mb-4">
+            The following formulations in this category have been individually evaluated and contain zero {rule.name} flags:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {alternatives.map((alt: any) => (
               <a
-                href={`/check/${bc.slug}`}
-                class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 hover:border-purple-500/50 transition-all group flex flex-col justify-between"
+                href={`/check/is-${alt.brand_slug}-${alt.product_slug}-${rule.slug}-safe`}
+                class="p-3 bg-white rounded border border-slate-200 hover:border-emerald-700 transition-colors block text-xs"
               >
-                <div class="text-xs font-bold text-white group-hover:text-purple-300 transition-colors line-clamp-2">{bc.product_name}</div>
-                <div class="mt-3 flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-800">
-                  <span>{bc.rule_name}</span>
-                  <span class={bc.status === 'PASS' ? 'text-emerald-400 font-bold' : 'text-rose-400 font-bold'}>{bc.status}</span>
-                </div>
+                <span class="font-semibold text-slate-900 block truncate">{alt.brand}</span>
+                <span class="text-slate-600 block truncate">{alt.name}</span>
+                <span class="text-[10px] text-emerald-800 font-bold block mt-1">Score: 10/10 &middot; 0 Flags</span>
               </a>
             ))}
           </div>
-        </div>
+        </section>
       )}
 
-      <!-- Frequently Asked Questions -->
-      <div class="p-6 md:p-8 rounded-2xl bg-slate-900/50 border border-slate-800 mb-12">
-        <h3 class="text-xl font-bold font-outfit text-white mb-6">Frequently Asked Questions</h3>
-        <div class="space-y-6">
-          {faqs.map((faq) => (
-            <div class="border-b border-slate-800/80 pb-4 last:border-0 last:pb-0">
-              <h4 class="font-bold text-sm text-slate-200 mb-1.5">{faq.question}</h4>
-              <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">{faq.answer}</p>
-            </div>
-          ))}
-        </div>
+      <!-- 7. Other Checks for this Same Product -->
+      {otherChecks.length > 0 && (
+        <section class="mb-10">
+          <h3 class="font-serif text-lg font-semibold text-slate-900 mb-3">
+            Other safety checks for {product.name}
+          </h3>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            {otherChecks.map((oc: any) => (
+              <a
+                href={`/check/${oc.slug}`}
+                class="p-2.5 rounded border border-slate-200 hover:border-slate-400 text-xs block bg-white transition-colors"
+              >
+                <span class="font-medium text-slate-800 block truncate">{oc.rule.name}</span>
+                <span class="text-[11px] text-slate-500 font-mono mt-0.5 block">{oc.evaluation.score.toFixed(1)}/10</span>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- 8. Provenance & Methodology Box (§5) -->
+      <section class="p-5 rounded-lg border border-slate-200 bg-white text-xs text-slate-600 leading-relaxed mb-10">
+        <h4 class="font-serif text-sm font-semibold text-slate-900 mb-2">Data Provenance & Reviewer Information</h4>
+        <ul class="space-y-1 text-xs">
+          <li><strong>Data Source:</strong> {product.source} &middot; Barcode: <code>{product.barcode}</code> (<a href={product.source_url} target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline">Verify on Source</a>)</li>
+          <li><strong>Last Data Verification:</strong> {product.verified_date}</li>
+          <li><strong>Editorial Supervisor:</strong> [OWNER TO FILL], Data Analyst</li>
+          <li><strong>Report an Error:</strong> If an ingredient list is inaccurate, <a href="/contact" class="text-emerald-800 underline">submit a correction</a> with product packaging proof (72-hour SLA).</li>
+        </ul>
+      </section>
+
+      <!-- 9. Prominent On-Page Medical Disclaimer (§5) -->
+      <div class="p-4 rounded-lg border border-amber-200 bg-amber-50/50 text-xs text-amber-900 leading-relaxed">
+        <strong>Important Disclaimer:</strong> This review is an automated toxicological and dermatological screening for educational purposes. It is not medical or dermatological advice. Chemical safety depends on user skin condition and exact concentration. Always patch-test new products.
       </div>
-    </div>
+    </article>
   )}
 </Layout>

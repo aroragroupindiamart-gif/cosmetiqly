@@ -1,0 +1,227 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Methodology & Scoring System — Cosmetiqly"
+  description="How Cosmetiqly screens cosmetic ingredients: our exact-matching rule engine v2, 1-10 scoring mathematical formula, scientific citations, and clinical limitations."
+  canonicalPath="/methodology"
+>
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-12">
+    <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6">
+      <a href="/" class="hover:text-slate-900">Home</a>
+      <span>/</span>
+      <span class="text-slate-700 font-medium">Methodology</span>
+    </nav>
+
+    <header class="mb-10 pb-6 border-b border-slate-200">
+      <span class="text-xs font-bold uppercase tracking-wider text-emerald-800 block mb-1">
+        Clinical & Computational Transparency
+      </span>
+      <h1 class="font-serif text-3xl sm:text-5xl text-slate-900 font-semibold tracking-tight">
+        Evaluation Methodology &amp; Scoring System
+      </h1>
+      <p class="text-sm text-slate-600 mt-3 leading-relaxed">
+        Published: November 2026 &middot; Technical Review by [OWNER TO FILL], Data Analyst &middot; Version 2.0.
+      </p>
+    </header>
+
+    <div class="space-y-10 text-sm text-slate-700 leading-relaxed font-normal">
+      <!-- Section 1 -->
+      <section>
+        <h2 class="font-serif text-2xl font-semibold text-slate-900 mb-3">1. Executive Summary &amp; Guiding Principles</h2>
+        <p class="mb-3">
+          Cosmetiqly operates as an independent, computational cosmetic safety and dermatological compliance database. In modern retail cosmetics, consumers are routinely exposed to subjective marketing buzzwords such as &ldquo;clean,&rdquo; &ldquo;pure,&rdquo; &ldquo;hypoallergenic,&rdquo; and &ldquo;dermatologist-approved.&rdquo; In the vast majority of international jurisdictions, including the United States Food and Drug Administration (FDA) and the European Commission, several of these terms lack statutory legal definitions. As a direct consequence, consumers managing acute dermatological conditions—such as Malassezia folliculitis (fungal acne), contact allergic dermatitis, barrier impairment, rosacea, or gestation-specific chemical exclusions—are left without a deterministic, objective standard for evaluating physical formulations.
+        </p>
+        <p class="mb-3">
+          Cosmetiqly was engineered to resolve this informational asymmetry by replacing marketing conjecture with computational taxonomy. Our platform adheres strictly to four core technical tenets:
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-xs text-slate-600">
+          <li><strong>Authentic Formulation Data Only:</strong> We never generate, extrapolate, or estimate product ingredient lists. Every single product record in our repository is derived from verified physical packaging barcodes cataloged within open, verifiable databases (Open Beauty Facts under the Open Database Licence). If verified packaging data does not exist for a product, that page does not exist on our site.</li>
+          <li><strong>Deterministic Exact Token Matching:</strong> We strictly prohibit loose substring matching algorithms. Substring matching is the primary technical flaw responsible for high false-positive rates across legacy cosmetic rating portals.</li>
+          <li><strong>Universal Mathematical Scoring:</strong> Every numeric score from 1.0 to 10.0 is calculated via a single, transparent, published mathematical formula. No commercial entity or cosmetic manufacturer can purchase score adjustments, sponsor placement, or alter verdict determinations.</li>
+          <li><strong>Peer-Reviewed Literature Citations:</strong> Every flagged substance is explicitly linked to published monographs from institutional safety bodies—such as the Cosmetic Ingredient Review (CIR), the European Commission Scientific Committee on Consumer Safety (SCCS), the FDA, and indexed dermatological journals.</li>
+        </ul>
+      </section>
+
+      <!-- Section 2 -->
+      <section>
+        <h2 class="font-serif text-2xl font-semibold text-slate-900 mb-3">2. Rule Engine v2 &amp; Exact Token Normalization</h2>
+        <p class="mb-3">
+          The primary diagnostic engine driving Cosmetiqly is Rule Engine v2. When a cosmetic formulation is ingested into our processing pipeline, its International Nomenclature of Cosmetic Ingredients (INCI) text undergoes comprehensive lexical and structural normalization prior to evaluation.
+        </p>
+        <h3 class="font-serif text-lg font-semibold text-slate-900 mb-2">Lexical Parsing Architecture</h3>
+        <p class="mb-3">
+          Cosmetic packaging presents unique typographical challenges, featuring multilingual translations, botanical binomial nomenclature, trade names, and varying punctuation formats. To ensure uniform matching against toxicological reference databases, our normalization pipeline executes the following deterministic phases:
+        </p>
+        <ol class="list-decimal pl-5 space-y-2 text-xs text-slate-600">
+          <li><strong>Parenthetical and Bracketing Extraction:</strong> Cosmetic manufacturers frequently nest commercial marketing names or translations inside parentheses (e.g., <code>Water (Aqua/Eau)</code>, <code>Glycerin (Vegetable Derived)</code>, or <code>Tocopherol [Vitamin E]</code>). Our tokenizer strips non-standard modifiers while preserving the core standardized chemical designation (<code>water</code>, <code>glycerin</code>, <code>tocopherol</code>).</li>
+          <li><strong>Standardized Delimiter Splitting:</strong> In compliance with global labelling directives, ingredients are delimited by commas, semicolons, bullets, or periods. The parser splits raw string sequences into discrete atomic token entities.</li>
+          <li><strong>Punctuation and Numeric Sanitization:</strong> Incidental punctuation, asterisk references denoting organic certification (e.g., <code>*Certified Organic</code>), and trailing percentage signs are systematically removed.</li>
+          <li><strong>Case Invariance and Whitespace Collapse:</strong> All tokens are converted to lower-case UTF-8 and collapsed to single-space word boundaries to eliminate whitespace variance across international packaging variations.</li>
+        </ol>
+
+        <h3 class="font-serif text-lg font-semibold text-slate-900 mt-4 mb-2">Elimination of the Substring Fallacy</h3>
+        <p class="mb-3">
+          A pervasive structural bug in first-generation cosmetic directories was the reliance on substring inclusion methods (e.g. JavaScript's <code>string.includes()</code>). Under a substring-based paradigm, searching for the trigger <code>alcohol</code> inadvertently matches <code>cetearyl alcohol</code>, <code>stearyl alcohol</code>, and <code>behenyl alcohol</code>. In reality, while simple denatured alcohol (<code>alcohol denat.</code>) is a volatile solvent known to disrupt stratum corneum lipid bilayers, cetearyl alcohol is a benign, emollient fatty alcohol that actively supports skin hydration.
+        </p>
+        <p>
+          Rule Engine v2 completely eliminates this bug by mandating strict token equality: an ingredient is flagged if and only if its fully normalized INCI token matches the exact chemical trigger token in our verified blacklist.
+        </p>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="p-6 rounded-lg border border-slate-200 bg-[#fbfbf9]">
+        <h2 class="font-serif text-2xl font-semibold text-slate-900 mb-3">3. The 1&ndash;10 Scoring Formula &amp; Mathematical Derivation</h2>
+        <p class="mb-3">
+          To provide consumers with an intuitive yet scientifically rigorous rating, Cosmetiqly translates complex toxicological flags into a standardized 1.0 to 10.0 score. Rather than relying on proprietary black-box algorithms or arbitrary percentage deductions, our score is generated by an open mathematical equation:
+        </p>
+        <div class="p-5 rounded-lg bg-white border border-slate-200 text-center font-mono text-base font-bold text-slate-900 mb-4 shadow-sm">
+          Score = max(1, 10 - 3H - 1.5M)
+        </div>
+        <p class="text-xs text-slate-600 mb-3">
+          Where the variables are explicitly defined as:
+        </p>
+        <ul class="list-disc pl-5 space-y-1.5 text-xs text-slate-600 mb-4">
+          <li><strong>H (High-Risk Triggers):</strong> Count of detected ingredients designated as High Concern within that specific rule framework. Each high-risk trigger imparts a 3.0 point penalty. Examples include known teratogenic retinoids under the Pregnancy rule, high-potency fatty esters (C11-C24) under the Fungal Acne rule, or confirmed endocrine-disrupting phthalates.</li>
+          <li><strong>M (Moderate / Watchlist Triggers):</strong> Count of detected ingredients classified as Moderate Concern. Each moderate trigger imparts a 1.5 point penalty. Examples include secondary fatty alcohol cofactors, mild chemical exfoliants requiring barrier monitoring, or low-potency preservatives.</li>
+          <li><strong>Lower Bound:</strong> The mathematical function <code>max(1, ...)</code> ensures that the numeric score cannot drop below 1.0, preserving a clean 1.0 to 10.0 scale.</li>
+        </ul>
+
+        <div class="border-t border-slate-200 pt-4">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-800 mb-2">Score Tiers &amp; Semantic Labels</h4>
+          <p class="text-xs text-slate-600 mb-3">
+            In strict compliance with our editorial standards, no flagged formulation is ever described as &ldquo;Clean.&rdquo; The tiers are categorized with plain-language, neutral descriptors:
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded bg-white border border-slate-200 flex items-center justify-between">
+              <div>
+                <strong class="text-emerald-800">10.0 / 10 &mdash; No concerns flagged (Green)</strong>
+                <p class="text-slate-500 mt-0.5">Zero high-risk or moderate triggers detected on the rule blacklist.</p>
+              </div>
+              <span class="font-mono font-bold text-slate-400">0 Flags</span>
+            </div>
+            <div class="p-3 rounded bg-white border border-slate-200 flex items-center justify-between">
+              <div>
+                <strong class="text-amber-800">7.0 &ndash; 8.5 / 10 &mdash; Review the flags (Amber)</strong>
+                <p class="text-slate-500 mt-0.5">Zero high-risk triggers; 1 to 2 moderate watchlist cofactors present.</p>
+              </div>
+              <span class="font-mono font-bold text-slate-400">Watchlist</span>
+            </div>
+            <div class="p-3 rounded bg-white border border-slate-200 flex items-center justify-between">
+              <div>
+                <strong class="text-rose-800">1.0 &ndash; 5.5 / 10 &mdash; High concern (Red)</strong>
+                <p class="text-slate-500 mt-0.5">One or more confirmed high-risk blacklist substances detected.</p>
+              </div>
+              <span class="font-mono font-bold text-slate-400">Flagged</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section>
+        <h2 class="font-serif text-2xl font-semibold text-slate-900 mb-3">4. Binary Verdict Framework: Free-From vs. Risk-Based Rules</h2>
+        <p class="mb-3">
+          Cosmetiqly organizes its 15 safety criteria into two fundamental functional paradigms:
+        </p>
+        <h3 class="font-serif text-lg font-semibold text-slate-900 mb-2">Category A: &ldquo;Free-From&rdquo; Binary Exclusion Rules</h3>
+        <p class="mb-3">
+          Rules such as <em>Silicone-Free, Fragrance-Free, Paraben-Free, Sulfate-Free, Vegan &amp; Cruelty-Free, Reef-Safe, Gluten-Free,</em> and <em>Phthalate-Free</em> represent definitive compositional boundaries. In these categories, the presence of even a single trigger represents a definitive failure of the standard:
+        </p>
+        <ul class="list-disc pl-5 space-y-1 text-xs text-slate-600 mb-3">
+          <li><strong>Trigger Count = 0:</strong> Verdict = <code>PASS</code> (&ldquo;Free of flagged ingredients&rdquo;).</li>
+          <li><strong>Trigger Count &ge; 1:</strong> Verdict = <code>FAIL</code> (&ldquo;Fails standards&rdquo;).</li>
+        </ul>
+        <p class="mb-4">
+          For example, a product containing <code>parfum</code> or <code>linalool</code> fails the Fragrance-Free rule unconditionally, regardless of its score on other criteria.
+        </p>
+
+        <h3 class="font-serif text-lg font-semibold text-slate-900 mb-2">Category B: &ldquo;Risk-Based&rdquo; Clinical Rules</h3>
+        <p class="mb-3">
+          Standards such as <em>Fungal Acne (Malassezia), Pregnancy &amp; Lactation, Non-Comedogenic,</em> and <em>Rosacea &amp; Eczema</em> evaluate multifactorial biological thresholds where ingredient severity varies:
+        </p>
+        <ul class="list-disc pl-5 space-y-1 text-xs text-slate-600">
+          <li><strong>High-Risk Triggers &ge; 1:</strong> Verdict = <code>FAIL</code> (&ldquo;Fails safety standards&rdquo;). The formulation contains active substrates or irritants directly documented to induce pathology.</li>
+          <li><strong>Moderate Triggers &ge; 1 and High-Risk = 0:</strong> Verdict = <code>PASS WITH CAUTION</code> (&ldquo;Review the flags&rdquo;). The formulation lacks direct primary triggers but includes potential cofactors or concentration-dependent agents.</li>
+          <li><strong>All Triggers = 0:</strong> Verdict = <code>PASS</code> (&ldquo;Pass&rdquo;).</li>
+        </ul>
+      </section>
+
+      <!-- Section 5 -->
+      <section>
+        <h2 class="font-serif text-2xl font-semibold text-slate-900 mb-3">5. Category Relevance Matrix</h2>
+        <p class="mb-3">
+          A common failure of low-quality programmatic SEO directories is cross-multiplying every product by every rule, generating absurd queries such as &ldquo;Is this lipstick reef-safe?&rdquo; or &ldquo;Is this hair conditioner pregnancy-safe?&rdquo;
+        </p>
+        <p class="mb-3">
+          Cosmetiqly implements a strict Category Relevance Matrix that restricts rule evaluation to biologically and physically meaningful domains:
+        </p>
+        <div class="border border-slate-200 rounded-lg overflow-hidden text-xs">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-[#fbfbf9] border-b border-slate-200 font-semibold text-slate-800">
+                <th class="py-2.5 px-3">Rule Identifier</th>
+                <th class="py-2.5 px-3">Applicable Physical Categories</th>
+                <th class="py-2.5 px-3">Clinical Justification</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="py-2 px-3 font-semibold text-slate-900">Reef-Safe Sunscreen</td>
+                <td class="py-2 px-3 text-slate-600">Sunscreens, SPF Lotions, Solar Sprays</td>
+                <td class="py-2 px-3 text-slate-500">Only rinse-off solar filters deposited in marine ecosystems pose ecotoxicological coral bleaching risks (Hawaii Act 104).</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-semibold text-slate-900">Pregnancy &amp; Lactation</td>
+                <td class="py-2 px-3 text-slate-600">Leave-on Skincare, Serums, Creams, Oils</td>
+                <td class="py-2 px-3 text-slate-500">Transdermal systemic absorption is clinically meaningful for leave-on formulations, whereas rinse-off surfactants have negligible gestational absorption.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-semibold text-slate-900">Fungal Acne</td>
+                <td class="py-2 px-3 text-slate-600">Facial Skincare, Cleansers, Moisturizers</td>
+                <td class="py-2 px-3 text-slate-500">Malassezia yeast density is highest on the face, neck, and upper chest; focuses on sebaceous lipid pathways.</td>
+              </tr>
+              <tr>
+                <td class="py-2 px-3 font-semibold text-slate-900">Nut-Allergy Safe</td>
+                <td class="py-2 px-3 text-slate-600">Skincare, Body Oils, Lip Balms, Hair Care</td>
+                <td class="py-2 px-3 text-slate-500">Evaluates products utilizing botanical seed and tree nut oils (almond, walnut, macadamia) susceptible to cross-reactive proteins.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-3 text-xs text-slate-500">
+          If a product category is not dermatologically relevant to a rule, the combination is rejected at the routing layer and returns a true RFC 404 response.
+        </p>
+      </section>
+
+      <!-- Section 6 -->
+      <section>
+        <h2 class="font-serif text-2xl font-semibold text-slate-900 mb-3">6. Scientific Literature Hierarchy &amp; Citation Standards</h2>
+        <p class="mb-3">
+          Every trigger in our database must possess an authoritative, traceable peer-reviewed or regulatory reference. We structure our evidence hierarchy into four institutional tiers:
+        </p>
+        <ol class="list-decimal pl-5 space-y-2 text-xs text-slate-600">
+          <li><strong>Tier 1 — Regulatory Statutes &amp; Legal Directives:</strong> European Commission Cosmetics Regulation (EC) No 1223/2009 Annexes II, III, and IV; Hawaii Senate Bill 2571 / Act 104; US FDA Monograph Regulations.</li>
+          <li><strong>Tier 2 — Institutional Safety Opinions:</strong> Cosmetic Ingredient Review (CIR) Expert Panel Assessments; EU Scientific Committee on Consumer Safety (SCCS) Final Opinions.</li>
+          <li><strong>Tier 3 — Clinical Dermatology Literature:</strong> Peer-reviewed prospective and retrospective studies published in leading indexed journals, including the <em>Journal of the American Academy of Dermatology (JAAD)</em>, <em>British Journal of Dermatology (BJD)</em>, and <em>Contact Dermatitis</em>.</li>
+          <li><strong>Tier 4 — Specialist Medical Societies:</strong> American Academy of Dermatology (AAD), American College of Obstetricians and Gynecologists (ACOG), National Rosacea Society (NRS), and American Contact Dermatitis Society (ACDS).</li>
+        </ol>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="p-6 rounded-lg border border-slate-200 bg-white">
+        <h2 class="font-serif text-2xl font-semibold text-slate-900 mb-3">7. Clinical Limitations &amp; Operational Boundaries</h2>
+        <p class="mb-3 text-xs text-slate-600 leading-relaxed">
+          In order to maintain absolute scientific integrity, we explicitly detail the unavoidable technological and biological boundaries of automated cosmetic evaluation:
+        </p>
+        <ul class="list-disc pl-5 space-y-2.5 text-xs text-slate-600">
+          <li><strong>Concentration Ambiguity:</strong> Under FDA 21 CFR 701.3 and EU Cosmetics Regulation Article 19, manufacturers are required to list ingredients in descending order of weight only down to 1%. Ingredients present at concentrations below 1% may be listed in any arbitrary order. Exact concentration percentages represent proprietary intellectual property. Consequently, Cosmetiqly screens for the qualitative <em>presence</em> of chemical entities rather than exact quantitative molarities.</li>
+          <li><strong>Matrix &amp; Delivery Vehicle Effects:</strong> An ingredient's biological activity is governed partly by formulation pH, vehicle emulsification, and delivery technology (e.g., liposomal encapsulation). An ingredient that demonstrates irritancy in raw aqueous patch testing may behave mildly within a slow-release lipid barrier suspension.</li>
+          <li><strong>Dynamic Manufacturer Reformulation:</strong> Cosmetic brands routinely adjust preservative systems, substitute emollients, or remove allergens without changing product naming or marketing packaging. While our synchronization pipeline tracks packaging revisions, consumers should always cross-reference physical carton panels before purchasing.</li>
+          <li><strong>Individual Biological Variability:</strong> Cutaneous immunology differs across individuals due to genetic polymorphisms, filaggrin skin barrier integrity, geographic humidity, and concurrent topical medications. Our assessments represent population-level toxicological screenings and do not replace personalized consultation with a licensed dermatologist.</li>
+        </ul>
+      </section>
+    </div>
+  </article>
+</Layout>

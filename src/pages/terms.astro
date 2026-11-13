@@ -2,25 +2,44 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout 
-  title="Terms of Service - Cosmetiqly" 
-  description="Cosmetiqly Terms of Service and Medical Disclaimer regarding cosmetic INCI safety checks."
-  canonicalUrl="https://cosmetiqly.com/terms"
+<Layout
+  title="Terms of Service &amp; Disclaimer — Cosmetiqly"
+  description="Terms of service, medical disclaimer, and acceptable use policies for Cosmetiqly ingredient evaluations."
+  canonicalPath="/terms"
 >
-  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-    <h1 class="text-3xl font-extrabold font-outfit text-white mb-6">Terms of Service</h1>
-    <div class="prose prose-invert max-w-none text-slate-300 text-sm leading-relaxed space-y-4">
-      <p>Last updated: August 2, 2026</p>
-      <p>Welcome to <strong>Cosmetiqly.com</strong>. By accessing or using our website, you agree to be bound by these Terms of Service.</p>
-      
-      <h2 class="text-lg font-bold text-white mt-6">1. Educational & Informational Use Only</h2>
-      <p>The content, safety scores, ingredient parsing algorithms, and safety verdicts on Cosmetiqly.com are provided strictly for educational and informational purposes. Cosmetiqly does not provide medical diagnoses, treatment plans, or professional medical advice.</p>
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 py-12 text-sm text-slate-700 leading-relaxed">
+    <nav class="flex items-center gap-2 text-xs text-slate-500 mb-6">
+      <a href="/" class="hover:text-slate-900">Home</a>
+      <span>/</span>
+      <span class="text-slate-700 font-medium">Terms</span>
+    </nav>
 
-      <h2 class="text-lg font-bold text-white mt-6">2. Limitation of Liability</h2>
-      <p>Cosmetiqly and its owners shall not be held liable for any skin reactions, adverse side effects, or decisions made based on the information provided on this website. Users must always patch test products and consult a licensed physician or dermatologist.</p>
+    <header class="mb-8 pb-4 border-b border-slate-200">
+      <h1 class="font-serif text-3xl font-semibold text-slate-900">Terms of Service</h1>
+      <p class="text-xs text-slate-500 mt-1">Effective Date: November 13, 2026</p>
+    </header>
 
-      <h2 class="text-lg font-bold text-white mt-6">3. Intellectual Property</h2>
-      <p>All database algorithms, design elements, UI templates, and synthesized evaluations on Cosmetiqly.com are protected by applicable intellectual property laws.</p>
+    <div class="space-y-6">
+      <section>
+        <h2 class="font-serif text-xl font-semibold text-slate-900 mb-2">1. Educational Nature of Service</h2>
+        <p>
+          Cosmetiqly is an automated informational service that matches publicly declared cosmetic ingredient lists against published dermatological and toxicological reference lists. Use of this website is for educational and research purposes only.
+        </p>
+      </section>
+
+      <section class="p-4 rounded-lg border border-amber-200 bg-amber-50/40">
+        <h2 class="font-serif text-lg font-semibold text-amber-900 mb-1">2. Medical &amp; Clinical Disclaimer</h2>
+        <p class="text-xs text-amber-900 leading-relaxed">
+          The content on this website does not substitute for clinical medical evaluation, professional allergy testing, or dermatological prescription. Chemical tolerances vary widely between individuals. Always consult a qualified medical professional for skin disorders.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-serif text-xl font-semibold text-slate-900 mb-2">3. Open Database Licence (ODbL) Attribution</h2>
+        <p>
+          Product ingredient lists are derived from the Open Beauty Facts database, made available under the Open Database Licence (ODbL). Any database derivatives published by Cosmetiqly are provided in accordance with ODbL share-alike provisions.
+        </p>
+      </section>
     </div>
-  </div>
+  </article>
 </Layout>
