@@ -2,11 +2,12 @@
 import Layout from '../../layouts/Layout.astro';
 import { getBrandsByLetter } from '../../lib/db_v2.js';
 
+const db = Astro.locals?.runtime?.env?.DB;
 const { letter = 'a' } = Astro.params;
 const cleanLetter = (letter || 'a').toUpperCase();
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-const brands = await getBrandsByLetter(cleanLetter);
+const brands = await getBrandsByLetter(cleanLetter, db);
 ---
 
 <Layout

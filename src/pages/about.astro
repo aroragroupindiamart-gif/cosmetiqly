@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { SITE_CONFIG } from '../lib/site_config.js';
 ---
 
 <Layout
@@ -58,8 +59,8 @@ import Layout from '../layouts/Layout.astro';
           The algorithmic rule definitions, literature citations, and data normalization pipelines at Cosmetiqly are maintained and supervised by:
         </p>
         <div class="border-t border-slate-200 pt-3">
-          <span class="font-semibold text-sm text-slate-900 block">[OWNER TO FILL]</span>
-          <span class="text-xs text-slate-500 block">Lead Data Analyst &amp; Editorial Supervisor</span>
+          <span class="font-semibold text-sm text-slate-900 block">{SITE_CONFIG.reviewerName}</span>
+          <span class="text-xs text-slate-500 block">{SITE_CONFIG.reviewerTitle}</span>
           <p class="text-xs text-slate-600 mt-2">
             Specializing in health informatics, computational taxonomy, and chemical compliance data structures. Responsible for maintaining the accuracy of our 15 cited rule blacklists and continuous Open Beauty Facts synchronization.
           </p>

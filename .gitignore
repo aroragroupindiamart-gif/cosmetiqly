@@ -2,8 +2,14 @@ node_modules/
 dist/
 .astro/
 .env
-.ds_store
-thumbs.db
+.DS_Store
+Thumbs.db
 beauty_pseo.db
-*.sql
+data/*.db*
+data/products_clean.json
+.wrangler/
 public/sitemaps/
+
+# Keep launch seed SQL
+*.sql
+!data/seed_d1_launch.sql

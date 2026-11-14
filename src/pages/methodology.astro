@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { SITE_CONFIG } from '../lib/site_config.js';
 ---
 
 <Layout
@@ -22,7 +23,7 @@ import Layout from '../layouts/Layout.astro';
         Evaluation Methodology &amp; Scoring System
       </h1>
       <p class="text-sm text-slate-600 mt-3 leading-relaxed">
-        Published: November 2026 &middot; Technical Review by [OWNER TO FILL], Data Analyst &middot; Version 2.0.
+        Published: November 2026 &middot; Technical Review by {SITE_CONFIG.reviewerName}, {SITE_CONFIG.reviewerTitle} &middot; Version 2.0.
       </p>
     </header>
 

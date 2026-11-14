@@ -1,9 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCheckPageData, getEvaluatedAlternatives, getOtherProductChecks } from '../../lib/db_v2.js';
+import { SITE_CONFIG } from '../../lib/site_config.js';
 
+const db = Astro.locals?.runtime?.env?.DB;
 const { slug = '' } = Astro.params;
-const checkData = await getCheckPageData(slug);
+const checkData = await getCheckPageData(slug, db);
 
 if (!checkData) {
   Astro.response.status = 404;
@@ -12,7 +14,7 @@ if (!checkData) {
 const { product, rule, evaluation } = checkData || {};
 const isFound = !!checkData;
 
-const alternatives = isFound ? await getEvaluatedAlternatives(product.barcode, rule, product.category, 3) : [];
+const alternatives = isFound ? await getEvaluatedAlternatives(product.barcode, rule, product.category, 3, db) : [];
 const otherChecks = isFound ? await getOtherProductChecks(product, rule.slug) : [];
 
 const metaTitle = isFound
@@ -266,7 +268,7 @@ const jsonLd = isFound ? {
         <ul class="space-y-1 text-xs">
           <li><strong>Data Source:</strong> {product.source} &middot; Barcode: <code>{product.barcode}</code> (<a href={product.source_url} target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline">Verify on Source</a>)</li>
           <li><strong>Last Data Verification:</strong> {product.verified_date}</li>
-          <li><strong>Editorial Supervisor:</strong> [OWNER TO FILL], Data Analyst</li>
+          <li><strong>Editorial Supervisor:</strong> {SITE_CONFIG.reviewerName}, {SITE_CONFIG.reviewerTitle}</li>
           <li><strong>Report an Error:</strong> If an ingredient list is inaccurate, <a href="/contact" class="text-emerald-800 underline">submit a correction</a> with product packaging proof (72-hour SLA).</li>
         </ul>
       </section>

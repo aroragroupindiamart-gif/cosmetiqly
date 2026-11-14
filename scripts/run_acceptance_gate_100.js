@@ -7,6 +7,9 @@ const __dirname = path.dirname(__filename);
 
 const allProducts = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/products_clean.json'), 'utf8'));
 
+// Non-English regex to double-check
+const nonEnglishRegex = /\b(água|óleo|glicerina|conservante|ácido|fragrância|estearato|palmitato|extrato|álcool|manteiga|acqua|olio|acrilati|acido|profumo|estratto|huile|extrait|soin|visage|cheveux|ingredientes|composicion)\b/i;
+
 // Tier A Target Brands with proven international search demand
 const targetBrandList = [
   'CeraVe', 'The Ordinary', 'La Roche Posay', 'Neutrogena', 'Bioderma',
@@ -24,7 +27,6 @@ for (const targetBrand of targetBrandList) {
     !sampledBarcodes.has(p.barcode)
   );
 
-  // Take up to 6-8 per brand to get a diverse, robust cross-section of 100 products
   const toTake = matches.slice(0, 7);
   for (const item of toTake) {
     if (sampled.length < 100) {
@@ -34,7 +36,6 @@ for (const targetBrand of targetBrandList) {
   }
 }
 
-// Fill remaining to exactly 100 if needed from other verified real products
 if (sampled.length < 100) {
   for (const item of allProducts) {
     if (!sampledBarcodes.has(item.barcode)) {
@@ -47,13 +48,17 @@ if (sampled.length < 100) {
 
 console.log(`✅ Sampled ${sampled.length} real products for Acceptance Gate §2.`);
 
-// Verify zero fake products, zero incomplete INCI
+// Verify zero fake products, zero non-English, zero incomplete INCI
 let fakeProductCount = 0;
+let nonEnglishCount = 0;
 let incompleteInciCount = 0;
 
 for (const p of sampled) {
   if (/\bvol\.?\s*\d+/i.test(p.name) || p.name.length < 3 || p.brand.length < 2) {
     fakeProductCount++;
+  }
+  if (nonEnglishRegex.test(p.ingredients_raw)) {
+    nonEnglishCount++;
   }
   if (!p.ingredients_list || p.ingredients_list.length < 5) {
     incompleteInciCount++;
@@ -62,16 +67,17 @@ for (const p of sampled) {
 
 console.log(`Gate Verification Results:`);
 console.log(`- Fake products count: ${fakeProductCount}`);
+console.log(`- Non-English INCI count: ${nonEnglishCount}`);
 console.log(`- Incomplete INCI count: ${incompleteInciCount}`);
 
 // Generate markdown acceptance gate table report
 let markdown = `# Acceptance Gate: 100 Sampled Real Products (Open Beauty Facts Verified)\n\n`;
-markdown += `| # | Barcode | Brand | Product Name | Ingredients Count | Sample INCI Tokens | Source URL |\n`;
-markdown += `|---|---|---|---|---|---|---|\n`;
+markdown += `| # | Barcode | Brand | Product Name | Category | Ingredients Count | Sample INCI Tokens | Source URL |\n`;
+markdown += `|---|---|---|---|---|---|---|---|\n`;
 
 sampled.forEach((p, idx) => {
   const sampleInci = p.ingredients_list.slice(0, 3).join(', ') + '...';
-  markdown += `| ${idx + 1} | \`${p.barcode}\` | **${p.brand}** | ${p.name.replace(/\|/g, '-')} | ${p.ingredient_count} | ${sampleInci.replace(/\|/g, '-')} | [View on OBF](${p.source_url}) |\n`;
+  markdown += `| ${idx + 1} | \`${p.barcode}\` | **${p.brand}** | ${p.name.replace(/\|/g, '-')} | *${p.category}* | ${p.ingredient_count} | ${sampleInci.replace(/\|/g, '-')} | [View on OBF](${p.source_url}) |\n`;
 });
 
 fs.writeFileSync(path.join(__dirname, '../data/acceptance_gate_100_sample.md'), markdown);

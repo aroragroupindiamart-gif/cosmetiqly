@@ -1,4 +1,6 @@
 ---
+import { SITE_CONFIG } from '../lib/site_config.js';
+
 interface Props {
   title: string;
   description?: string;
@@ -15,8 +17,12 @@ const {
   noindex = false
 } = Astro.props;
 
-// Read site domain dynamically from env var (Hard Rule §0: NEVER hardcode domain)
-const SITE_DOMAIN = import.meta.env.SITE_DOMAIN || 'https://cosmetiqlyy.com';
+// Drip gate enforcement: if middleware marked isDripped === false, page is strictly noindexed
+const isDripped = Astro.locals?.isDripped !== false;
+const shouldNoindex = noindex || !isDripped;
+
+// Read site domain dynamically from env var or SITE_CONFIG (Hard Rule §0: NEVER hardcode domain)
+const SITE_DOMAIN = import.meta.env.SITE_DOMAIN || SITE_CONFIG.siteDomain;
 const currentPath = Astro.url.pathname;
 
 let cleanCanonical: string;
@@ -62,7 +68,7 @@ const globalOrgSchema = {
     <title>{title} | Cosmetiqly</title>
     <meta name="description" content={description} />
 
-    {noindex ? (
+    {shouldNoindex ? (
       <meta name="robots" content="noindex, follow" />
     ) : (
       <>
@@ -162,7 +168,7 @@ const globalOrgSchema = {
             <strong>Medical Disclaimer:</strong> Cosmetiqly provides educational ingredient analysis based on published scientific literature (CIR, SCCS, clinical dermatology studies). It does not constitute medical, diagnostic, or dermatological advice. Individual skin tolerances and allergic thresholds vary; patch-testing is advised prior to adopting new cosmetic formulations.
           </p>
           <p class="text-slate-400">
-            &copy; {new Date().getFullYear()} Cosmetiqly. Editorial review supervised by [OWNER TO FILL], Data Analyst.
+            &copy; {new Date().getFullYear()} Cosmetiqly. Editorial review supervised by {SITE_CONFIG.reviewerName}, {SITE_CONFIG.reviewerTitle}.
           </p>
         </div>
       </div>

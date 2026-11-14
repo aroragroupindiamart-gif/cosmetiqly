@@ -3,7 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import { SAFETY_RULES } from '../lib/safety_rules_v2.js';
 import { getTopBrands } from '../lib/db_v2.js';
 
-const topBrands = await getTopBrands(18);
+const db = Astro.locals?.runtime?.env?.DB;
+const topBrands = await getTopBrands(18, db);
 
 // Curated sample checks for the homepage grid (real products, real evaluations)
 const featuredChecks = [

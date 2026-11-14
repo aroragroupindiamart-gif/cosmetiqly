@@ -28,8 +28,11 @@ export function isRuleRelevant(rule, productCategory) {
     return true;
   }
   if (!productCategory) return true;
-  const cat = productCategory.toLowerCase();
-  return rule.relevantCategories.some(rc => cat.includes(rc));
+  const cat = productCategory.toLowerCase().trim();
+  return rule.relevantCategories.some(rc => {
+    const rcl = rc.toLowerCase().trim();
+    return cat.includes(rcl) || rcl.includes(cat);
+  });
 }
 
 /**

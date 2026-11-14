@@ -1,29 +1,7 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import activeUrls from '../data/drip_active_urls.json';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// In-memory Set of dripped paths loaded at startup
-let drippedPathsSet = null;
-
-function getDrippedPaths() {
-  if (!drippedPathsSet) {
-    try {
-      const manifestPath = path.join(__dirname, '../data/drip_manifest.json');
-      if (fs.existsSync(manifestPath)) {
-        const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
-        drippedPathsSet = new Set(manifest.map(m => m.url));
-      } else {
-        drippedPathsSet = new Set();
-      }
-    } catch (e) {
-      drippedPathsSet = new Set();
-    }
-  }
-  return drippedPathsSet;
-}
+// In-memory Set of active dripped paths bundled at build time (Zero Node fs dependency)
+const activePathsSet = new Set(activeUrls);
 
 export async function onRequest(context, next) {
   const url = new URL(context.request.url);
@@ -44,16 +22,23 @@ export async function onRequest(context, next) {
   }
 
   // 3. Drip Enforcement (§6):
-  // Check if requested path is in the dripped manifest.
-  // If not dripped, inject header to instruct Layout to serve `noindex, follow` (HTTP 200).
-  const dripped = getDrippedPaths();
-  const isDripped = dripped.has(pathname) || pathname === '/' || pathname.startsWith('/_') || pathname.startsWith('/api/');
+  // Check if requested path is in the active dripped batch.
+  // Static assets, api routes, and root are always active.
+  const isDripped = activePathsSet.has(pathname) || 
+                    pathname === '/' || 
+                    pathname.startsWith('/_') || 
+                    pathname.startsWith('/favicon') ||
+                    pathname.startsWith('/robots.txt') ||
+                    pathname.startsWith('/sitemap');
 
+  // Wire drip flag directly into Astro context locals for templates
   context.locals.isDripped = isDripped;
 
+  // Execute request
   const response = await next();
 
-  if (!isDripped && response.status === 200) {
+  // If the path is NOT in the active drip manifest, enforce X-Robots-Tag header
+  if (!isDripped) {
     response.headers.set('X-Robots-Tag', 'noindex, follow');
   }
 

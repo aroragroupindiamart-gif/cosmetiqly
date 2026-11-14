@@ -2,8 +2,9 @@
 import Layout from '../../layouts/Layout.astro';
 import { getBrandProducts } from '../../lib/db_v2.js';
 
+const db = Astro.locals?.runtime?.env?.DB;
 const { brand = '' } = Astro.params;
-const products = await getBrandProducts(brand);
+const products = await getBrandProducts(brand, db);
 
 if (!products || products.length === 0) {
   Astro.response.status = 404;
