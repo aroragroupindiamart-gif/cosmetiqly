@@ -66,9 +66,21 @@ for (const p of sampled) {
 }
 
 console.log(`Gate Verification Results:`);
+console.log(`- Sampled count: ${sampled.length} (Target: 100)`);
 console.log(`- Fake products count: ${fakeProductCount}`);
 console.log(`- Non-English INCI count: ${nonEnglishCount}`);
 console.log(`- Incomplete INCI count: ${incompleteInciCount}`);
+
+if (sampled.length !== 100 || fakeProductCount > 0 || nonEnglishCount > 0 || incompleteInciCount > 0) {
+  console.error(`\n❌ Acceptance Gate FAILED!`);
+  if (sampled.length !== 100) console.error(`  - Expected 100 sampled products, got ${sampled.length}`);
+  if (fakeProductCount > 0) console.error(`  - Found ${fakeProductCount} fake products`);
+  if (nonEnglishCount > 0) console.error(`  - Found ${nonEnglishCount} non-English INCI lists`);
+  if (incompleteInciCount > 0) console.error(`  - Found ${incompleteInciCount} incomplete INCI lists`);
+  process.exit(1);
+}
+
+console.log(`\n✅ Acceptance Gate PASSED: exactly 100 real products, 0 fake, 0 non-English, 0 incomplete INCI.`);
 
 // Generate markdown acceptance gate table report
 let markdown = `# Acceptance Gate: 100 Sampled Real Products (Open Beauty Facts Verified)\n\n`;

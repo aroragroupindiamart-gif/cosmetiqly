@@ -1,7 +1,39 @@
-import activeUrls from '../data/drip_active_urls.json';
+import dripManifest from '../data/drip_manifest.json';
 
-// In-memory Set of active dripped paths bundled at build time (Zero Node fs dependency)
-const activePathsSet = new Set(activeUrls);
+// In-memory Map of URL path -> drip_day bundled at build time (Zero Node fs dependency)
+const urlDripDayMap = new Map();
+for (const entry of dripManifest) {
+  urlDripDayMap.set(entry.url, entry.drip_day);
+}
+
+/**
+ * Calculates current drip day dynamically based on LAUNCH_DATE env var.
+ * If LAUNCH_DATE is unset or in the future, defaults to Day 1 (100 URLs launch gate).
+ * Format expected: YYYY-MM-DD or ISO 8601 string.
+ */
+export function getCurrentDripDay(runtimeEnv) {
+  const launchDateStr = runtimeEnv?.LAUNCH_DATE || 
+                        (typeof import.meta !== 'undefined' && import.meta.env?.LAUNCH_DATE) || 
+                        (typeof process !== 'undefined' ? process.env?.LAUNCH_DATE : undefined);
+
+  if (!launchDateStr) {
+    return 1;
+  }
+
+  const launchTime = new Date(launchDateStr).getTime();
+  if (isNaN(launchTime)) {
+    return 1;
+  }
+
+  const now = Date.now();
+  if (now < launchTime) {
+    return 1;
+  }
+
+  // 1-based drip day: Day 1 on launch date, Day 2 at launch + 24h, etc.
+  const daysElapsed = Math.floor((now - launchTime) / (1000 * 60 * 60 * 24)) + 1;
+  return Math.max(1, daysElapsed);
+}
 
 export async function onRequest(context, next) {
   const url = new URL(context.request.url);
@@ -21,15 +53,27 @@ export async function onRequest(context, next) {
     return Response.redirect(url.toString(), 301);
   }
 
-  // 3. Drip Enforcement (§6):
-  // Check if requested path is in the active dripped batch.
+  // 3. Dynamic Drip Enforcement (§6):
+  // Check if requested path is in the active dripped batch based on LAUNCH_DATE.
   // Static assets, api routes, and root are always active.
-  const isDripped = activePathsSet.has(pathname) || 
-                    pathname === '/' || 
-                    pathname.startsWith('/_') || 
-                    pathname.startsWith('/favicon') ||
-                    pathname.startsWith('/robots.txt') ||
-                    pathname.startsWith('/sitemap');
+  const isSystemPath = pathname === '/' || 
+                       pathname.startsWith('/_') || 
+                       pathname.startsWith('/favicon') ||
+                       pathname.startsWith('/robots.txt') ||
+                       pathname.startsWith('/sitemap') ||
+                       pathname.startsWith('/api/');
+
+  let isDripped = isSystemPath;
+
+  if (!isDripped) {
+    const dripDay = urlDripDayMap.get(pathname);
+    if (dripDay !== undefined) {
+      const currentDay = getCurrentDripDay(context.locals?.runtime?.env);
+      isDripped = dripDay <= currentDay;
+    } else {
+      isDripped = false;
+    }
+  }
 
   // Wire drip flag directly into Astro context locals for templates
   context.locals.isDripped = isDripped;

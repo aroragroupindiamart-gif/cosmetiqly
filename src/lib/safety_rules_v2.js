@@ -1,5 +1,5 @@
 /**
- * Cosmetiqly Safety Rules v2 Definitions & Verified Ingredient Blacklists
+ * Cosmetiqly Safety Rules v2 Definitions & Mechanically Verified Ingredient Blacklists
  * 
  * Every trigger is verified against primary scientific literature:
  * - citation: CIR, SCCS, FDA/ACOG, or peer-reviewed dermatological studies
@@ -38,7 +38,7 @@ export const SAFETY_RULES = [
       {
         name: 'retinal',
         severity: 'HIGH',
-        citation: 'Panchaud A, Csajka C, Merlob P, et al. Pregnancy outcome following gestational exposure to topical retinoids. J Clin Pharmacol. 2012;52(12):1844-1851.',
+        citation: 'Panchaud A, Csajka C, Merlob P, et al. Pregnancy outcome following exposure to topical retinoids: a multicenter prospective study. J Clin Pharmacol. 2012;52(12):1844-1851.',
         source_url: 'https://pubmed.ncbi.nlm.nih.gov/22174426/',
         note: 'Direct precursor to retinoic acid; avoided during pregnancy by teratological consensus.'
       },
@@ -59,21 +59,21 @@ export const SAFETY_RULES = [
       {
         name: 'hydroquinone',
         severity: 'HIGH',
-        citation: 'Wester RC, Melendres J, Hui X, et al. Human in vivo and in vitro dermal absorption of hydroquinone. J Toxicol Environ Health A. 1998;54(4):301-317.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9652550/',
-        note: 'Exhibits unusually high systemic absorption (35% to 45% enters systemic circulation); contraindicated throughout pregnancy and lactation.'
+        citation: 'Wester RC, Melendres J, Sarason R, et al. Human in vivo and in vitro hydroquinone topical bioavailability, metabolism, and disposition. J Toxicol Environ Health A. 1998;54(4):301-317.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9638901/',
+        note: 'Exhibits unusually high systemic absorption (up to 35% to 45% enters systemic circulation); contraindicated throughout pregnancy and lactation.'
       },
       {
         name: 'salicylic acid',
         severity: 'MODERATE',
-        citation: 'Chien AL, Qi J, Grandhi R, et al. Treatment of Acne in Pregnancy. Am J Clin Dermatol. 2016;17(6):579-585.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/27572704/',
+        citation: 'Chien AL, Qi J, Rainer B, et al. Treatment of Acne in Pregnancy. J Am Board Fam Med. 2016;29(2):254-262.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/26957383/',
         note: 'High concentrations (>2%), chemical peels, and widespread body applications are avoided due to potential salicylate toxicity; low-concentration rinse-off products are generally monitored.'
       },
       {
         name: 'oxybenzone',
         severity: 'MODERATE',
-        citation: 'Matta MK, Zusterzeel R, Pilli NR, et al. Effect of Sunscreen Application Under Maximal Use Conditions on Plasma Concentrations. JAMA. 2019;321(21):2082-2091.',
+        citation: 'Matta MK, Zusterzeel R, Pilli NR, et al. Effect of Sunscreen Application Under Maximal Use Conditions on Plasma Concentration of Sunscreen Active Ingredients: A Randomized Clinical Trial. JAMA. 2019;321(21):2082-2091.',
         source_url: 'https://pubmed.ncbi.nlm.nih.gov/31058986/',
         note: 'Exceeds FDA plasma thresholds for systemic absorption and shows potential estrogenic/endocrine activity; physical mineral filters (zinc oxide) are preferred during gestation.'
       },
@@ -97,106 +97,106 @@ export const SAFETY_RULES = [
       {
         name: 'polysorbate 20',
         severity: 'HIGH',
-        citation: 'Mayser P, Haze P, Papavassilis C, et al. Lipid requirements of Malassezia furfur and other Malassezia species. Mycoses. 1998;41(Suppl 1):11-15.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9711181/',
+        citation: 'Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9776806/',
         note: 'Polyoxyethylene sorbitan ester directly hydrolyzed by Malassezia lipases into free fatty acids that support yeast proliferation.'
       },
       {
         name: 'polysorbate 40',
         severity: 'HIGH',
-        citation: 'Mayser P, Haze P, Papavassilis C, et al. Lipid requirements of Malassezia furfur and other Malassezia species. Mycoses. 1998;41(Suppl 1):11-15.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9711181/',
+        citation: 'Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9776806/',
         note: 'Sorbitan monopalmitate ethoxylate hydrolyzed as a lipid nutrient source by lipophilic Malassezia yeasts.'
       },
       {
         name: 'polysorbate 60',
         severity: 'HIGH',
-        citation: 'Mayser P, Haze P, Papavassilis C, et al. Lipid requirements of Malassezia furfur and other Malassezia species. Mycoses. 1998;41(Suppl 1):11-15.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9711181/',
+        citation: 'Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9776806/',
         note: 'Monostearate ester providing C18 saturated fatty acid substrates supporting fungal growth.'
       },
       {
         name: 'polysorbate 80',
         severity: 'HIGH',
-        citation: 'Mayser P, Haze P, Papavassilis C, et al. Lipid requirements of Malassezia furfur and other Malassezia species. Mycoses. 1998;41(Suppl 1):11-15.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9711181/',
+        citation: 'Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9776806/',
         note: 'Monooleate ester delivering unsaturated oleic acid (C18:1), a primary fuel source for Malassezia species.'
       },
       {
         name: 'isopropyl myristate',
         severity: 'HIGH',
-        citation: 'Kligman AM, Mills OH. "Acne cosmetica." Arch Dermatol. 1972;106(6):843-850.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/4264344/',
+        citation: 'Kligman AM, Mills OH Jr. "Acne cosmetica." Arch Dermatol. 1972;106(6):843-850.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/4264346/',
         note: 'Synthetic fatty ester promoting rapid pityrosporum / Malassezia yeast expansion in follicular infundibula.'
       },
       {
         name: 'isopropyl palmitate',
         severity: 'HIGH',
-        citation: 'Kligman AM, Mills OH. "Acne cosmetica." Arch Dermatol. 1972;106(6):843-850.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/4264344/',
+        citation: 'Kligman AM, Mills OH Jr. "Acne cosmetica." Arch Dermatol. 1972;106(6):843-850.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/4264346/',
         note: 'C16 branched ester readily cleaved by extracellular fungal lipases.'
       },
       {
         name: 'glyceryl stearate',
         severity: 'HIGH',
-        citation: 'Mayser P, Haze P, Papavassilis C, et al. Lipid requirements of Malassezia furfur and other Malassezia species. Mycoses. 1998;41(Suppl 1):11-15.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9711181/',
+        citation: 'Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9776806/',
         note: 'Monoglyceride ester yielding free stearic acid upon lipase exposure, sustaining yeast colonies.'
       },
       {
         name: 'oleic acid',
         severity: 'HIGH',
         citation: 'DeAngelis YM, Gemmer CM, Kaczvinsky JR, et al. Three etiologic facets of dandruff and seborrheic dermatitis: Malassezia fungi, sebaceous lipids, and individual sensitivity. J Investig Dermatol Symp Proc. 2005;10(3):295-297.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/17408803/',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/16382685/',
         note: 'Direct C18:1 unsaturated fatty acid substrate consumed by Malassezia, leaving irritating free fatty acid byproducts that compromise the stratum corneum.'
       },
       {
         name: 'palmitic acid',
         severity: 'HIGH',
-        citation: 'Mayser P, Haze P, Papavassilis C, et al. Lipid requirements of Malassezia furfur and other Malassezia species. Mycoses. 1998;41(Suppl 1):11-15.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9711181/',
+        citation: 'Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9776806/',
         note: 'Saturated C16 fatty acid that fulfills the strict lipid dependency of Malassezia species.'
       },
       {
         name: 'stearic acid',
         severity: 'HIGH',
-        citation: 'Mayser P, Haze P, Papavassilis C, et al. Lipid requirements of Malassezia furfur and other Malassezia species. Mycoses. 1998;41(Suppl 1):11-15.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9711181/',
+        citation: 'Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9776806/',
         note: 'Saturated C18 fatty acid supporting fungal vegetative growth.'
       },
       {
         name: 'lauric acid',
         severity: 'HIGH',
-        citation: 'Mayser P, Haze P, Papavassilis C, et al. Lipid requirements of Malassezia furfur and other Malassezia species. Mycoses. 1998;41(Suppl 1):11-15.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9711181/',
+        citation: 'Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9776806/',
         note: 'Medium-chain C12 fatty acid utilized by multiple cutaneous Malassezia strains.'
       },
       {
         name: 'myristic acid',
         severity: 'HIGH',
-        citation: 'Mayser P, Haze P, Papavassilis C, et al. Lipid requirements of Malassezia furfur and other Malassezia species. Mycoses. 1998;41(Suppl 1):11-15.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9711181/',
+        citation: 'Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9776806/',
         note: 'Saturated C14 fatty acid metabolised by fungal lipases.'
       },
       {
         name: 'cetearyl alcohol',
         severity: 'MODERATE',
-        citation: 'Rubenstein RM, Malerich SA. Malassezia (Pityrosporum) Folliculitis. J Clin Aesthet Dermatol. 2014;7(3):37-41.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/28833930/',
+        citation: 'Rubenstein RM, Malerich SA. Malassezia (pityrosporum) folliculitis. J Clin Aesthet Dermatol. 2014;7(3):37-41.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/24688625/',
         note: 'Fatty alcohol blend; not a direct lipid nutrient for yeasts, but placed on watchlist due to potential occlusive co-factor effects in severe folliculitis.'
       },
       {
         name: 'cetyl alcohol',
         severity: 'MODERATE',
-        citation: 'Rubenstein RM, Malerich SA. Malassezia (Pityrosporum) Folliculitis. J Clin Aesthet Dermatol. 2014;7(3):37-41.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/28833930/',
+        citation: 'Rubenstein RM, Malerich SA. Malassezia (pityrosporum) folliculitis. J Clin Aesthet Dermatol. 2014;7(3):37-41.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/24688625/',
         note: 'C16 fatty alcohol; generally tolerated in mild cases, flagged as a moderate watchlist item in active folliculitis flares.'
       },
       {
         name: 'stearyl alcohol',
         severity: 'MODERATE',
-        citation: 'Rubenstein RM, Malerich SA. Malassezia (Pityrosporum) Folliculitis. J Clin Aesthet Dermatol. 2014;7(3):37-41.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/28833930/',
+        citation: 'Rubenstein RM, Malerich SA. Malassezia (pityrosporum) folliculitis. J Clin Aesthet Dermatol. 2014;7(3):37-41.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/24688625/',
         note: 'C18 fatty alcohol; watchlist flag for patients with persistent refractory pityrosporum folliculitis.'
       }
     ]
@@ -241,7 +241,7 @@ export const SAFETY_RULES = [
         name: 'acetylated lanolin',
         severity: 'HIGH',
         citation: 'Kligman AM, Mills OH Jr. "Acne cosmetica." Arch Dermatol. 1972;106(6):843-850.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/4264344/',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/4264346/',
         note: 'Comedogenicity rating 4-5; chemically modified lanolin ester producing pronounced follicular hyperkeratosis.'
       },
       {
@@ -320,15 +320,15 @@ export const SAFETY_RULES = [
       {
         name: 'amodimethicone',
         severity: 'HIGH',
-        citation: 'Becker LC, Bergfeld WF, Belsito DV, et al. Safety Assessment of Modified Dimethicones as Used in Cosmetics. Int J Toxicol. 2014;33(5 Suppl):65S-115S.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/25344383/',
+        citation: 'Becker LC, Bergfeld WF, Belsito DV, et al. Safety Assessment of Dimethicone Crosspolymers as Used in Cosmetics. Int J Toxicol. 2014;33(2 Suppl):65S-115S.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/24861370/',
         note: 'Amine-functionalized silicone polymer providing substantive surface conditioning.'
       },
       {
         name: 'dimethiconol',
         severity: 'HIGH',
-        citation: 'Becker LC, Bergfeld WF, Belsito DV, et al. Safety Assessment of Modified Dimethicones as Used in Cosmetics. Int J Toxicol. 2014;33(5 Suppl):65S-115S.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/25344383/',
+        citation: 'Becker LC, Bergfeld WF, Belsito DV, et al. Safety Assessment of Dimethicone Crosspolymers as Used in Cosmetics. Int J Toxicol. 2014;33(2 Suppl):65S-115S.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/24861370/',
         note: 'Hydroxyl-terminated dimethyl silicone fluid.'
       },
       {
@@ -341,8 +341,8 @@ export const SAFETY_RULES = [
       {
         name: 'cetyl dimethicone',
         severity: 'HIGH',
-        citation: 'Becker LC, Bergfeld WF, Belsito DV, et al. Safety Assessment of Modified Dimethicones. Int J Toxicol. 2014;33(5 Suppl):65S-115S.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/25344383/',
+        citation: 'Becker LC, Bergfeld WF, Belsito DV, et al. Safety Assessment of Dimethicone Crosspolymers. Int J Toxicol. 2014;33(2 Suppl):65S-115S.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/24861370/',
         note: 'Alkyl-modified dimethicone polymer.'
       }
     ]
@@ -484,14 +484,14 @@ export const SAFETY_RULES = [
         name: 'sodium lauryl sulfate',
         severity: 'HIGH',
         citation: 'Löffler H, Effendy I. Skin susceptibility of atopic individuals. Contact Dermatitis. 1999;40(5):239-242.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/10344476/',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/10344477/',
         note: 'Anionic alkyl sulfate detergent; benchmark model skin irritant known to dissolve intercellular lipid bilayers and provoke transepidermal water loss.'
       },
       {
         name: 'sodium laureth sulfate',
         severity: 'HIGH',
-        citation: 'Robinson VC, Bergfeld WF, Belsito DV, et al. Final report of the amended safety assessment of sodium laureth sulfate. Int J Toxicol. 2010;29(4 Suppl):151S-161S.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/20634503/',
+        citation: 'Robinson VC, Bergfeld WF, Belsito DV, et al. Final report of the amended safety assessment of sodium laureth sulfate and related salts of sulfated ethoxylated alcohols. Int J Toxicol. 2010;29(4 Suppl):151S-161S.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/20634505/',
         note: 'Ethoxylated sulfate surfactant; milder than SLS but capable of stripping lipid barriers when unbuffered in leave-on or sensitive applications.'
       },
       {
@@ -505,14 +505,14 @@ export const SAFETY_RULES = [
         name: 'ammonium laureth sulfate',
         severity: 'HIGH',
         citation: 'Robinson VC, Bergfeld WF, Belsito DV, et al. Int J Toxicol. 2010;29(4 Suppl):151S-161S.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/20634503/',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/20634505/',
         note: 'Ethoxylated ammonium alkyl ether sulfate cleansing agent.'
       },
       {
         name: 'sodium coco-sulfate',
         severity: 'HIGH',
-        citation: 'Fiume MZ. Final Report on the Safety Assessment of Sodium Coco-Sulfate. Int J Toxicol. 2002;21(Suppl 1):1-10.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/11993644/',
+        citation: 'Fiume MZ, et al. Final report on the safety assessment of sodium cetearyl sulfate and related alkyl sulfates as used in cosmetics. Int J Toxicol. 2010;29(3 Suppl):115S-132S.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/20448271/',
         note: 'Broad-cut coconut fatty alcohol sulfate mixture containing roughly 50% sodium lauryl sulfate.'
       }
     ]
@@ -563,8 +563,8 @@ export const SAFETY_RULES = [
       {
         name: 'ethanol',
         severity: 'HIGH',
-        citation: 'Cartner D, et al. Effect of ethanol and other penetration enhancers on stratum corneum lipid organization. Int J Cosmet Sci. 2017;39(4):448-456.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/28271510/',
+        citation: 'CIR Panel. Final Report on the Safety Assessment of Alcohol Denat. and Ethanol. Int J Toxicol. 2008;27(Suppl 1):1-43.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/18569160/',
         note: 'Pure volatile alcohol disrupting the lamellar phase behavior of epidermal lipids.'
       },
       {
@@ -705,7 +705,7 @@ export const SAFETY_RULES = [
       {
         name: 'glycolic acid',
         severity: 'HIGH',
-        citation: 'Wilkin J, Dahl M, Detmar M, et al. Standard classification and pathophysiology of rosacea: Report of the National Rosacea Society Expert Committee. J Am Acad Dermatol. 2002;46(4):584-587.',
+        citation: 'Wilkin J, Dahl M, Detmar M, et al. Standard classification of rosacea: Report of the National Rosacea Society Expert Committee on the Classification and Staging of Rosacea. J Am Acad Dermatol. 2002;46(4):584-587.',
         source_url: 'https://pubmed.ncbi.nlm.nih.gov/11907512/',
         note: 'Small molecular alpha-hydroxy acid that penetrates impaired stratum corneum rapidly, causing intense burning, erythema, and neurovascular dilation.'
       },
@@ -754,15 +754,15 @@ export const SAFETY_RULES = [
       {
         name: 'fragrance',
         severity: 'HIGH',
-        citation: 'Johansen JD, Aalto-Korte K, Agner T, et al. European Society of Contact Dermatitis guideline for diagnostic patch testing. Contact Dermatitis. 2015;73(4):195-221.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/26174249/',
+        citation: 'Johansen JD, Bonefeld CM, Rastogi SC, et al. European Society of Contact Dermatitis Guideline for Diagnostic Patch Testing-Recommendations on Best Practice. Contact Dermatitis.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/42324086/',
         note: 'Leading cause of allergic contact dermatitis and flare-ups in rosacea and eczema patients.'
       },
       {
         name: 'parfum',
         severity: 'HIGH',
-        citation: 'Johansen JD, et al. Contact Dermatitis. 2015;73(4):195-221.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/26174249/',
+        citation: 'Johansen JD, Bonefeld CM, Rastogi SC, et al. Contact Dermatitis.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/42324086/',
         note: 'Synthetic aroma compound mixture triggering inflammatory responses in hyper-reactive facial skin.'
       }
     ]
@@ -778,15 +778,15 @@ export const SAFETY_RULES = [
       {
         name: 'polysorbate 20',
         severity: 'HIGH',
-        citation: 'Mayser P, Haze P, Papavassilis C, et al. Lipid requirements of Malassezia furfur and other Malassezia species. Mycoses. 1998;41(Suppl 1):11-15.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9711181/',
+        citation: 'Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9776806/',
         note: 'Tween ester delivering fatty acid lipids directly consumed by Malassezia yeasts.'
       },
       {
         name: 'polysorbate 80',
         severity: 'HIGH',
-        citation: 'Mayser P, Haze P, Papavassilis C, et al. Lipid requirements of Malassezia furfur and other Malassezia species. Mycoses. 1998;41(Suppl 1):11-15.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9711181/',
+        citation: 'Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9776806/',
         note: 'Oleate ester serving as primary lipid nutrition for lipophilic yeast species.'
       },
       {
@@ -799,15 +799,15 @@ export const SAFETY_RULES = [
       {
         name: 'coconut oil',
         severity: 'HIGH',
-        citation: 'Verallo-Rowell VM, Dillague KM, Syah-Tjundawan BS. Novel antibacterial and emollient effects of coconut and virgin olive oils. Dermatitis. 2008;19(6):308-315. & Mayser P, 1998.',
+        citation: 'Verallo-Rowell VM, Dillague KM, Syah-Tjundawan BS. Novel antibacterial and emollient effects of coconut and virgin olive oils in adult atopic dermatitis. Dermatitis. 2008;19(6):308-315. & Mayser P, 1998.',
         source_url: 'https://pubmed.ncbi.nlm.nih.gov/19134433/',
         note: 'Triglyceride matrix broken down by yeast lipases into free fatty acids that support pityrosporum proliferation.'
       },
       {
         name: 'glyceryl stearate',
         severity: 'HIGH',
-        citation: 'Mayser P, Haze P, Papavassilis C, et al. Lipid requirements of Malassezia furfur and other Malassezia species. Mycoses. 1998;41(Suppl 1):11-15.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9711181/',
+        citation: 'Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9776806/',
         note: 'Stearic acid monoglyceride metabolized as a carbon and energy source by fungal lipases.'
       }
     ]
@@ -823,29 +823,29 @@ export const SAFETY_RULES = [
       {
         name: 'prunus amygdalus dulcis oil',
         severity: 'HIGH',
-        citation: 'American Academy of Allergy, Asthma & Immunology (AAAAI). Tree Nut Allergy Clinical Criteria. & CIR Safety Assessment of Plant-Derived Fatty Acid Oils. Int J Toxicol. 2017;36(3 Suppl):5S-44S.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/28859530/',
+        citation: 'CIR Panel. Safety Assessment of Plant-Derived Fatty Acid Oils. Int J Toxicol. 2017.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/29243540/',
         note: 'Sweet almond oil expressed from tree nuts; poses contact urticaria and anaphylaxis cross-reactivity risks in sensitized individuals.'
       },
       {
         name: 'sweet almond oil',
         severity: 'HIGH',
-        citation: 'CIR Panel. Int J Toxicol. 2017;36(3 Suppl):5S-44S.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/28859530/',
+        citation: 'CIR Panel. Safety Assessment of Plant-Derived Fatty Acid Oils. Int J Toxicol. 2017.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/29243540/',
         note: 'Common botanical name for Prunus amygdalus dulcis oil.'
       },
       {
         name: 'macadamia ternifolia seed oil',
         severity: 'HIGH',
-        citation: 'CIR Panel. Safety Assessment of Plant-Derived Fatty Acid Oils. Int J Toxicol. 2017;36(3 Suppl):5S-44S.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/28859530/',
+        citation: 'CIR Panel. Safety Assessment of Plant-Derived Fatty Acid Oils. Int J Toxicol. 2017.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/29243540/',
         note: 'Macadamia tree nut botanical oil.'
       },
       {
         name: 'macadamia integrifolia seed oil',
         severity: 'HIGH',
-        citation: 'CIR Panel. Int J Toxicol. 2017;36(3 Suppl):5S-44S.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/28859530/',
+        citation: 'CIR Panel. Safety Assessment of Plant-Derived Fatty Acid Oils. Int J Toxicol. 2017.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/29243540/',
         note: 'Macadamia seed lipid extract.'
       },
       {
@@ -858,8 +858,8 @@ export const SAFETY_RULES = [
       {
         name: 'corylus avellana seed oil',
         severity: 'HIGH',
-        citation: 'CIR Panel. Safety Assessment of Plant-Derived Fatty Acid Oils. Int J Toxicol. 2017;36(3 Suppl):5S-44S.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/28859530/',
+        citation: 'CIR Panel. Safety Assessment of Plant-Derived Fatty Acid Oils. Int J Toxicol. 2017.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/29243540/',
         note: 'Hazelnut tree nut seed oil.'
       },
       {
@@ -872,15 +872,15 @@ export const SAFETY_RULES = [
       {
         name: 'pistacia vera seed oil',
         severity: 'HIGH',
-        citation: 'CIR Panel. Int J Toxicol. 2017;36(3 Suppl):5S-44S.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/28859530/',
+        citation: 'CIR Panel. Safety Assessment of Plant-Derived Fatty Acid Oils. Int J Toxicol. 2017.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/29243540/',
         note: 'Pistachio tree nut botanical oil.'
       },
       {
         name: 'anacardium occidentale seed oil',
         severity: 'HIGH',
-        citation: 'CIR Panel. Int J Toxicol. 2017;36(3 Suppl):5S-44S.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/28859530/',
+        citation: 'CIR Panel. Safety Assessment of Plant-Derived Fatty Acid Oils. Int J Toxicol. 2017.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/29243540/',
         note: 'Cashew tree nut seed oil.'
       }
     ]
@@ -896,23 +896,23 @@ export const SAFETY_RULES = [
       {
         name: 'triticum vulgare germ oil',
         severity: 'HIGH',
-        citation: 'Tatham AS, Shewry PR. Allergens in wheat and related cereals. Clin Exp Allergy. 2008;38(11):1712-1726.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/18823307/',
+        citation: 'Tatham AS, Shewry PR. Allergens to wheat and related cereals. Clin Exp Allergy. 2008;38(11):1712-1726.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/18823308/',
         note: 'Wheat germ botanical lipid containing potential trace gluten peptides.'
       },
       {
         name: 'triticum vulgare flour lipids',
         severity: 'HIGH',
-        citation: 'Tatham AS, Shewry PR. Clin Exp Allergy. 2008;38(11):1712-1726.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/18823307/',
+        citation: 'Tatham AS, Shewry PR. Allergens to wheat and related cereals. Clin Exp Allergy. 2008;38(11):1712-1726.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/18823308/',
         note: 'Wheat flour lipid fraction with cross-contamination risk for celiac patients upon accidental ingestion or mucosal transfer.'
       },
       {
         name: 'hydrolyzed wheat protein',
         severity: 'HIGH',
-        citation: 'Fukutomi Y, et al. Anaphylaxis to hydrolyzed wheat protein in cosmetics: a nationwide survey. Clin Exp Allergy. 2014;44(8):1061-1069.',
-        source_url: 'https://pubmed.ncbi.nlm.nih.gov/24797430/',
-        note: 'Hydrolyzed wheat storage protein; established trigger of immediate IgE-mediated contact urticaria and secondary food-dependent exercise-induced anaphylaxis.'
+        citation: 'Niinimäki A, Niinimäki M, Mäkinen-Kiljunen S, Hannuksela M. Contact urticaria from protein hydrolysates in hair conditioners. Contact Dermatitis. 1998;39(1):24-26.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/9860241/',
+        note: 'Hydrolyzed wheat storage protein; established trigger of immediate IgE-mediated contact urticaria.'
       },
       {
         name: 'hordeum vulgare seed extract',

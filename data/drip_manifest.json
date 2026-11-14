@@ -207,42 +207,42 @@
     "type": "brand_hub",
     "priority": 0.8,
     "changefreq": "weekly",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/brand/aroma-zone",
     "type": "brand_hub",
     "priority": 0.8,
     "changefreq": "weekly",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/brand/nu-skin",
     "type": "brand_hub",
     "priority": 0.8,
     "changefreq": "weekly",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/brand/embryolisse",
     "type": "brand_hub",
     "priority": 0.8,
     "changefreq": "weekly",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/brand/eco-dent",
     "type": "brand_hub",
     "priority": 0.8,
     "changefreq": "weekly",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/brand/ozenke",
     "type": "brand_hub",
     "priority": 0.8,
     "changefreq": "weekly",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/check/is-cerave-cerave-foaming-facial-cleanser-fungal-acne-safe",
@@ -1628,7 +1628,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/check/is-the-ordinary-the-ordinary-glycolic-acid-7-toning-solution-soluo-tonificante-de-cido-gliclico-7-fragrance-free-safe",
@@ -1639,7 +1639,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/check/is-the-ordinary-the-ordinary-glycolic-acid-7-toning-solution-soluo-tonificante-de-cido-gliclico-7-paraben-free-safe",
@@ -1650,7 +1650,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/check/is-the-ordinary-the-ordinary-glycolic-acid-7-toning-solution-soluo-tonificante-de-cido-gliclico-7-alcohol-free-safe",
@@ -1661,7 +1661,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/check/is-the-ordinary-the-ordinary-glycolic-acid-7-toning-solution-soluo-tonificante-de-cido-gliclico-7-vegan-cruelty-free-safe",
@@ -1672,7 +1672,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/check/is-the-ordinary-the-ordinary-glycolic-acid-7-toning-solution-soluo-tonificante-de-cido-gliclico-7-rosacea-eczema-safe",
@@ -1683,7 +1683,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/check/is-the-ordinary-the-ordinary-glycolic-acid-7-toning-solution-soluo-tonificante-de-cido-gliclico-7-malassezia-free-safe",
@@ -1694,7 +1694,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 2
+    "drip_day": 3
   },
   {
     "url": "/check/is-the-ordinary-the-ordinary-glycolic-acid-7-toning-solution-soluo-tonificante-de-cido-gliclico-7-nut-allergy-safe-safe",
@@ -2156,7 +2156,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-nutritic-lvres-soin-transformation-lvres-dessches-gluten-free-safe",
@@ -2167,7 +2167,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-nutritic-lvres-soin-transformation-lvres-dessches-phthalate-free-safe",
@@ -2178,7 +2178,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-cicaplast-baume-lvres-fungal-acne-safe",
@@ -2189,7 +2189,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-cicaplast-baume-lvres-vegan-cruelty-free-safe",
@@ -2200,7 +2200,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-cicaplast-baume-lvres-nut-allergy-safe-safe",
@@ -2211,7 +2211,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-cicaplast-baume-lvres-gluten-free-safe",
@@ -2222,7 +2222,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-anthelios-pocket-dermo-pediatrics-pregnancy-safe",
@@ -2233,7 +2233,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-anthelios-pocket-dermo-pediatrics-fungal-acne-safe",
@@ -2244,7 +2244,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-anthelios-pocket-dermo-pediatrics-non-comedogenic-safe",
@@ -2255,7 +2255,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-anthelios-pocket-dermo-pediatrics-silicone-free-safe",
@@ -2266,7 +2266,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-anthelios-pocket-dermo-pediatrics-fragrance-free-safe",
@@ -2277,7 +2277,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-anthelios-pocket-dermo-pediatrics-paraben-free-safe",
@@ -2288,7 +2288,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-anthelios-pocket-dermo-pediatrics-alcohol-free-safe",
@@ -2299,7 +2299,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 3
+    "drip_day": 4
   },
   {
     "url": "/check/is-la-roche-posay-anthelios-pocket-dermo-pediatrics-vegan-cruelty-free-safe",
@@ -2750,7 +2750,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-neutrogena-oil-free-acne-face-scrub-125ml-malassezia-free-safe",
@@ -2761,7 +2761,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-neutrogena-oil-free-acne-face-scrub-125ml-nut-allergy-safe-safe",
@@ -2772,7 +2772,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-pregnancy-safe",
@@ -2783,7 +2783,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-fungal-acne-safe",
@@ -2794,7 +2794,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-non-comedogenic-safe",
@@ -2805,7 +2805,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-silicone-free-safe",
@@ -2816,7 +2816,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-fragrance-free-safe",
@@ -2827,7 +2827,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-paraben-free-safe",
@@ -2838,7 +2838,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-alcohol-free-safe",
@@ -2849,7 +2849,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-vegan-cruelty-free-safe",
@@ -2860,7 +2860,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-rosacea-eczema-safe",
@@ -2871,7 +2871,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-malassezia-free-safe",
@@ -2882,7 +2882,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-nut-allergy-safe-safe",
@@ -2893,7 +2893,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-skin-balancing-clay-cleanser-fungal-acne-safe",
@@ -2904,7 +2904,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 5
   },
   {
     "url": "/check/is-neutrogena-skin-balancing-clay-cleanser-non-comedogenic-safe",
@@ -3344,7 +3344,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-fungal-acne-safe",
@@ -3355,7 +3355,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-non-comedogenic-safe",
@@ -3366,7 +3366,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-silicone-free-safe",
@@ -3377,7 +3377,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-fragrance-free-safe",
@@ -3388,7 +3388,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-paraben-free-safe",
@@ -3399,7 +3399,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-alcohol-free-safe",
@@ -3410,7 +3410,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-vegan-cruelty-free-safe",
@@ -3421,7 +3421,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-rosacea-eczema-safe",
@@ -3432,7 +3432,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-malassezia-free-safe",
@@ -3443,7 +3443,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-nut-allergy-safe-safe",
@@ -3454,7 +3454,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-gluten-free-safe",
@@ -3465,7 +3465,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-phthalate-free-safe",
@@ -3476,7 +3476,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-protector-solar-pregnancy-safe",
@@ -3487,7 +3487,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-protector-solar-fungal-acne-safe",
@@ -3498,7 +3498,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-protector-solar-fragrance-free-safe",
@@ -3509,7 +3509,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-protector-solar-paraben-free-safe",
@@ -3938,7 +3938,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-bioderma-bioderma-sbium-global-fragrance-free-safe",
@@ -3949,7 +3949,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-bioderma-bioderma-sbium-global-paraben-free-safe",
@@ -3960,7 +3960,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-bioderma-bioderma-sbium-global-alcohol-free-safe",
@@ -3971,7 +3971,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-bioderma-bioderma-sbium-global-vegan-cruelty-free-safe",
@@ -3982,7 +3982,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-bioderma-bioderma-sbium-global-rosacea-eczema-safe",
@@ -3993,7 +3993,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-bioderma-bioderma-sbium-global-malassezia-free-safe",
@@ -4004,7 +4004,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-bioderma-bioderma-sbium-global-nut-allergy-safe-safe",
@@ -4015,7 +4015,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-bioderma-bioderma-sbium-global-gluten-free-safe",
@@ -4026,7 +4026,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-bioderma-bioderma-sbium-global-phthalate-free-safe",
@@ -4037,7 +4037,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-cetaphil-cetaphil-daily-facial-cleanser-fungal-acne-safe",
@@ -4048,7 +4048,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-cetaphil-cetaphil-daily-facial-cleanser-non-comedogenic-safe",
@@ -4059,7 +4059,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-cetaphil-cetaphil-daily-facial-cleanser-silicone-free-safe",
@@ -4070,7 +4070,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-cetaphil-cetaphil-daily-facial-cleanser-fragrance-free-safe",
@@ -4081,7 +4081,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-cetaphil-cetaphil-daily-facial-cleanser-paraben-free-safe",
@@ -4092,7 +4092,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-cetaphil-cetaphil-daily-facial-cleanser-sulfate-free-safe",
@@ -4103,7 +4103,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-cetaphil-cetaphil-daily-facial-cleanser-rosacea-eczema-safe",
@@ -4114,7 +4114,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 7
   },
   {
     "url": "/check/is-cetaphil-cetaphil-daily-facial-cleanser-malassezia-free-safe",
@@ -4532,7 +4532,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-cetaphil-moisturizing-cream-non-comedogenic-safe",
@@ -4543,7 +4543,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-cetaphil-moisturizing-cream-silicone-free-safe",
@@ -4554,7 +4554,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-cetaphil-moisturizing-cream-fragrance-free-safe",
@@ -4565,7 +4565,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-cetaphil-moisturizing-cream-paraben-free-safe",
@@ -4576,7 +4576,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-cetaphil-moisturizing-cream-alcohol-free-safe",
@@ -4587,7 +4587,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-cetaphil-moisturizing-cream-vegan-cruelty-free-safe",
@@ -4598,7 +4598,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-cetaphil-moisturizing-cream-rosacea-eczema-safe",
@@ -4609,7 +4609,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-cetaphil-moisturizing-cream-malassezia-free-safe",
@@ -4620,7 +4620,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-cetaphil-moisturizing-cream-nut-allergy-safe-safe",
@@ -4631,7 +4631,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-travel-size-gentle-skin-cleanser-fungal-acne-safe",
@@ -4642,7 +4642,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-travel-size-gentle-skin-cleanser-non-comedogenic-safe",
@@ -4653,7 +4653,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-travel-size-gentle-skin-cleanser-silicone-free-safe",
@@ -4664,7 +4664,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-travel-size-gentle-skin-cleanser-fragrance-free-safe",
@@ -4675,7 +4675,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-travel-size-gentle-skin-cleanser-paraben-free-safe",
@@ -4686,7 +4686,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-travel-size-gentle-skin-cleanser-sulfate-free-safe",
@@ -4697,7 +4697,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-travel-size-gentle-skin-cleanser-rosacea-eczema-safe",
@@ -4708,7 +4708,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-cetaphil-travel-size-gentle-skin-cleanser-malassezia-free-safe",
@@ -4719,7 +4719,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 8
   },
   {
     "url": "/check/is-avene-ysthal-intense-concentr-antirides-rnovateur-de-peau-pregnancy-safe",
@@ -5126,7 +5126,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-eau-thermale-crme-hydratante-avne-pdiatril-sterile-cosmetics-fragrance-free-safe",
@@ -5137,7 +5137,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-eau-thermale-crme-hydratante-avne-pdiatril-sterile-cosmetics-paraben-free-safe",
@@ -5148,7 +5148,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-eau-thermale-crme-hydratante-avne-pdiatril-sterile-cosmetics-alcohol-free-safe",
@@ -5159,7 +5159,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-eau-thermale-crme-hydratante-avne-pdiatril-sterile-cosmetics-vegan-cruelty-free-safe",
@@ -5170,7 +5170,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-eau-thermale-crme-hydratante-avne-pdiatril-sterile-cosmetics-rosacea-eczema-safe",
@@ -5181,7 +5181,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-eau-thermale-crme-hydratante-avne-pdiatril-sterile-cosmetics-malassezia-free-safe",
@@ -5192,7 +5192,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-eau-thermale-crme-hydratante-avne-pdiatril-sterile-cosmetics-nut-allergy-safe-safe",
@@ -5203,7 +5203,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-avene-cleanance-gel-nettoyant-fungal-acne-safe",
@@ -5214,7 +5214,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-avene-cleanance-gel-nettoyant-non-comedogenic-safe",
@@ -5225,7 +5225,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-avene-cleanance-gel-nettoyant-silicone-free-safe",
@@ -5236,7 +5236,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-avene-cleanance-gel-nettoyant-fragrance-free-safe",
@@ -5247,7 +5247,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-avene-cleanance-gel-nettoyant-paraben-free-safe",
@@ -5258,7 +5258,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-avene-cleanance-gel-nettoyant-sulfate-free-safe",
@@ -5269,7 +5269,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-avene-cleanance-gel-nettoyant-rosacea-eczema-safe",
@@ -5280,7 +5280,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-avene-cleanance-gel-nettoyant-malassezia-free-safe",
@@ -5291,7 +5291,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-trixera-pregnancy-safe",
@@ -5302,7 +5302,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-trixera-fungal-acne-safe",
@@ -5313,7 +5313,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-trixera-non-comedogenic-safe",
@@ -5324,7 +5324,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 9
   },
   {
     "url": "/check/is-avene-trixera-silicone-free-safe",
@@ -5720,7 +5720,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-eucerin-aquaphor-cleanser-wash-shampoo-malassezia-free-safe",
@@ -5731,7 +5731,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-pregnancy-safe",
@@ -5742,7 +5742,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-fungal-acne-safe",
@@ -5753,7 +5753,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-non-comedogenic-safe",
@@ -5764,7 +5764,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-silicone-free-safe",
@@ -5775,7 +5775,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-fragrance-free-safe",
@@ -5786,7 +5786,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-paraben-free-safe",
@@ -5797,7 +5797,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-alcohol-free-safe",
@@ -5808,7 +5808,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-vegan-cruelty-free-safe",
@@ -5819,7 +5819,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-rosacea-eczema-safe",
@@ -5830,7 +5830,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-malassezia-free-safe",
@@ -5841,7 +5841,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-nut-allergy-safe-safe",
@@ -5852,7 +5852,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-daily-hydration-lotion-pregnancy-safe",
@@ -5863,7 +5863,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-daily-hydration-lotion-fungal-acne-safe",
@@ -5874,7 +5874,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-daily-hydration-lotion-non-comedogenic-safe",
@@ -5885,7 +5885,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-daily-hydration-lotion-silicone-free-safe",
@@ -5896,7 +5896,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-daily-hydration-lotion-fragrance-free-safe",
@@ -5907,7 +5907,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-daily-hydration-lotion-paraben-free-safe",
@@ -5918,7 +5918,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-daily-hydration-lotion-alcohol-free-safe",
@@ -5929,7 +5929,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 10
   },
   {
     "url": "/check/is-eucerin-daily-hydration-lotion-vegan-cruelty-free-safe",
@@ -6314,7 +6314,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-2-bha-body-smoothing-spot-exfoliant-alcohol-free-safe",
@@ -6325,7 +6325,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-2-bha-body-smoothing-spot-exfoliant-vegan-cruelty-free-safe",
@@ -6336,7 +6336,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-2-bha-body-smoothing-spot-exfoliant-rosacea-eczema-safe",
@@ -6347,7 +6347,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-2-bha-body-smoothing-spot-exfoliant-malassezia-free-safe",
@@ -6358,7 +6358,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-2-bha-body-smoothing-spot-exfoliant-nut-allergy-safe-safe",
@@ -6369,7 +6369,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-2-bha-body-smoothing-spot-exfoliant-gluten-free-safe",
@@ -6380,7 +6380,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-2-bha-body-smoothing-spot-exfoliant-phthalate-free-safe",
@@ -6391,7 +6391,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-paulas-choice-skin-balancing-pore-reducing-toner-alcohol-free-safe",
@@ -6402,7 +6402,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-pregnancy-safe",
@@ -6413,7 +6413,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-fungal-acne-safe",
@@ -6424,7 +6424,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-non-comedogenic-safe",
@@ -6435,7 +6435,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-silicone-free-safe",
@@ -6446,7 +6446,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-fragrance-free-safe",
@@ -6457,7 +6457,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-paraben-free-safe",
@@ -6468,7 +6468,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-alcohol-free-safe",
@@ -6479,7 +6479,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-vegan-cruelty-free-safe",
@@ -6490,7 +6490,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-rosacea-eczema-safe",
@@ -6501,7 +6501,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-malassezia-free-safe",
@@ -6512,7 +6512,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-nut-allergy-safe-safe",
@@ -6523,7 +6523,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-vanicream-vanicream-shampoo-silicone-free-safe",
@@ -6534,7 +6534,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 11
   },
   {
     "url": "/check/is-vanicream-vanicream-shampoo-fragrance-free-safe",
@@ -6908,7 +6908,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-first-aid-beauty-ultra-repair-cream-pregnancy-safe",
@@ -6919,7 +6919,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-first-aid-beauty-ultra-repair-cream-fungal-acne-safe",
@@ -6930,7 +6930,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-first-aid-beauty-ultra-repair-cream-non-comedogenic-safe",
@@ -6941,7 +6941,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-first-aid-beauty-ultra-repair-cream-silicone-free-safe",
@@ -6952,7 +6952,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-first-aid-beauty-ultra-repair-cream-fragrance-free-safe",
@@ -6963,7 +6963,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-first-aid-beauty-ultra-repair-cream-paraben-free-safe",
@@ -6974,7 +6974,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-first-aid-beauty-ultra-repair-cream-alcohol-free-safe",
@@ -6985,7 +6985,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-first-aid-beauty-ultra-repair-cream-vegan-cruelty-free-safe",
@@ -6996,7 +6996,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-first-aid-beauty-ultra-repair-cream-rosacea-eczema-safe",
@@ -7007,7 +7007,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-first-aid-beauty-ultra-repair-cream-malassezia-free-safe",
@@ -7018,7 +7018,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-first-aid-beauty-ultra-repair-cream-nut-allergy-safe-safe",
@@ -7029,7 +7029,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-innisfree-innisfree-green-tea-balancing-skin-toner-alcohol-free-safe",
@@ -7040,7 +7040,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-cosrx-low-ph-good-morning-gel-cleanser-fungal-acne-safe",
@@ -7051,7 +7051,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-cosrx-low-ph-good-morning-gel-cleanser-non-comedogenic-safe",
@@ -7062,7 +7062,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-cosrx-low-ph-good-morning-gel-cleanser-silicone-free-safe",
@@ -7073,7 +7073,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-cosrx-low-ph-good-morning-gel-cleanser-fragrance-free-safe",
@@ -7084,7 +7084,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-cosrx-low-ph-good-morning-gel-cleanser-paraben-free-safe",
@@ -7095,7 +7095,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-cosrx-low-ph-good-morning-gel-cleanser-sulfate-free-safe",
@@ -7106,7 +7106,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-cosrx-low-ph-good-morning-gel-cleanser-rosacea-eczema-safe",
@@ -7117,7 +7117,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-cosrx-low-ph-good-morning-gel-cleanser-malassezia-free-safe",
@@ -7128,7 +7128,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-cosrx-two-in-one-poreless-power-liquid-pregnancy-safe",
@@ -7139,7 +7139,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 12
   },
   {
     "url": "/check/is-cosrx-two-in-one-poreless-power-liquid-fungal-acne-safe",
@@ -7502,7 +7502,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-midnight-recovery-botanical-cleansing-oil-non-comedogenic-safe",
@@ -7513,7 +7513,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-midnight-recovery-botanical-cleansing-oil-silicone-free-safe",
@@ -7524,7 +7524,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-midnight-recovery-botanical-cleansing-oil-fragrance-free-safe",
@@ -7535,7 +7535,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-midnight-recovery-botanical-cleansing-oil-paraben-free-safe",
@@ -7546,7 +7546,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-midnight-recovery-botanical-cleansing-oil-sulfate-free-safe",
@@ -7557,7 +7557,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-midnight-recovery-botanical-cleansing-oil-rosacea-eczema-safe",
@@ -7568,7 +7568,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-midnight-recovery-botanical-cleansing-oil-malassezia-free-safe",
@@ -7579,7 +7579,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-age-defender-dual-action-exfoliating-cleanser-fungal-acne-safe",
@@ -7590,7 +7590,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-age-defender-dual-action-exfoliating-cleanser-non-comedogenic-safe",
@@ -7601,7 +7601,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-age-defender-dual-action-exfoliating-cleanser-silicone-free-safe",
@@ -7612,7 +7612,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-age-defender-dual-action-exfoliating-cleanser-fragrance-free-safe",
@@ -7623,7 +7623,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-age-defender-dual-action-exfoliating-cleanser-paraben-free-safe",
@@ -7634,7 +7634,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-age-defender-dual-action-exfoliating-cleanser-sulfate-free-safe",
@@ -7645,7 +7645,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-age-defender-dual-action-exfoliating-cleanser-rosacea-eczema-safe",
@@ -7656,7 +7656,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-age-defender-dual-action-exfoliating-cleanser-malassezia-free-safe",
@@ -7667,7 +7667,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-cucumber-herbal-conditioning-cleanser-fungal-acne-safe",
@@ -7678,7 +7678,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-cucumber-herbal-conditioning-cleanser-non-comedogenic-safe",
@@ -7689,7 +7689,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-cucumber-herbal-conditioning-cleanser-silicone-free-safe",
@@ -7700,7 +7700,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-cucumber-herbal-conditioning-cleanser-fragrance-free-safe",
@@ -7711,7 +7711,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-cucumber-herbal-conditioning-cleanser-paraben-free-safe",
@@ -7722,7 +7722,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-cucumber-herbal-conditioning-cleanser-sulfate-free-safe",
@@ -7733,7 +7733,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-cucumber-herbal-conditioning-cleanser-rosacea-eczema-safe",
@@ -7744,7 +7744,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 13
   },
   {
     "url": "/check/is-kiehl-s-since-1851-cucumber-herbal-conditioning-cleanser-malassezia-free-safe",
@@ -8096,7 +8096,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-hand-nagel-balsam-kamille-vegan-cruelty-free-safe",
@@ -8107,7 +8107,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-hand-nagel-balsam-kamille-rosacea-eczema-safe",
@@ -8118,7 +8118,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-hand-nagel-balsam-kamille-malassezia-free-safe",
@@ -8129,7 +8129,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-hand-nagel-balsam-kamille-nut-allergy-safe-safe",
@@ -8140,7 +8140,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-hand-nagel-balsam-kamille-gluten-free-safe",
@@ -8151,7 +8151,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-hand-nagel-balsam-kamille-phthalate-free-safe",
@@ -8162,7 +8162,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-pregnancy-safe",
@@ -8173,7 +8173,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-fungal-acne-safe",
@@ -8184,7 +8184,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-non-comedogenic-safe",
@@ -8195,7 +8195,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-silicone-free-safe",
@@ -8206,7 +8206,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-fragrance-free-safe",
@@ -8217,7 +8217,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-paraben-free-safe",
@@ -8228,7 +8228,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-alcohol-free-safe",
@@ -8239,7 +8239,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-vegan-cruelty-free-safe",
@@ -8250,7 +8250,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-rosacea-eczema-safe",
@@ -8261,7 +8261,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-malassezia-free-safe",
@@ -8272,7 +8272,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-nut-allergy-safe-safe",
@@ -8283,7 +8283,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-gluten-free-safe",
@@ -8294,7 +8294,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-deo-bodyspray-black-secret-phthalate-free-safe",
@@ -8305,7 +8305,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-volumen-shampoo-patchouli-jasmin-silicone-free-safe",
@@ -8316,7 +8316,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-volumen-shampoo-patchouli-jasmin-fragrance-free-safe",
@@ -8327,7 +8327,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-volumen-shampoo-patchouli-jasmin-paraben-free-safe",
@@ -8338,7 +8338,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-volumen-shampoo-patchouli-jasmin-sulfate-free-safe",
@@ -8349,7 +8349,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-volumen-shampoo-patchouli-jasmin-vegan-cruelty-free-safe",
@@ -8690,7 +8690,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-men-arctic-fresh-duschgel-fragrance-free-safe",
@@ -8701,7 +8701,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-men-arctic-fresh-duschgel-paraben-free-safe",
@@ -8712,7 +8712,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-men-arctic-fresh-duschgel-alcohol-free-safe",
@@ -8723,7 +8723,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-men-arctic-fresh-duschgel-vegan-cruelty-free-safe",
@@ -8734,7 +8734,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-men-arctic-fresh-duschgel-rosacea-eczema-safe",
@@ -8745,7 +8745,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-men-arctic-fresh-duschgel-malassezia-free-safe",
@@ -8756,7 +8756,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-men-arctic-fresh-duschgel-nut-allergy-safe-safe",
@@ -8767,7 +8767,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-men-arctic-fresh-duschgel-gluten-free-safe",
@@ -8778,7 +8778,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-men-arctic-fresh-duschgel-phthalate-free-safe",
@@ -8789,7 +8789,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-med-5-urea-dusche-shampoo-silicone-free-safe",
@@ -8800,7 +8800,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-med-5-urea-dusche-shampoo-fragrance-free-safe",
@@ -8811,7 +8811,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-med-5-urea-dusche-shampoo-paraben-free-safe",
@@ -8822,7 +8822,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-med-5-urea-dusche-shampoo-sulfate-free-safe",
@@ -8833,7 +8833,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-med-5-urea-dusche-shampoo-vegan-cruelty-free-safe",
@@ -8844,7 +8844,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-med-5-urea-dusche-shampoo-malassezia-free-safe",
@@ -8855,7 +8855,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-med-5-urea-dusche-shampoo-nut-allergy-safe-safe",
@@ -8866,7 +8866,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-med-5-urea-dusche-shampoo-gluten-free-safe",
@@ -8877,7 +8877,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-balea-med-5-urea-dusche-shampoo-phthalate-free-safe",
@@ -8888,7 +8888,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-nivea-nivea-men-black-white-invisible-ultimate-impact-long-lasting-protection-pregnancy-safe",
@@ -8899,7 +8899,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-nivea-nivea-men-black-white-invisible-ultimate-impact-long-lasting-protection-fungal-acne-safe",
@@ -8910,7 +8910,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-nivea-nivea-men-black-white-invisible-ultimate-impact-long-lasting-protection-non-comedogenic-safe",
@@ -8921,7 +8921,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-nivea-nivea-men-black-white-invisible-ultimate-impact-long-lasting-protection-silicone-free-safe",
@@ -8932,7 +8932,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-nivea-nivea-men-black-white-invisible-ultimate-impact-long-lasting-protection-fragrance-free-safe",
@@ -8943,7 +8943,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-nivea-nivea-men-black-white-invisible-ultimate-impact-long-lasting-protection-paraben-free-safe",
@@ -8954,7 +8954,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 15
   },
   {
     "url": "/check/is-nivea-nivea-men-black-white-invisible-ultimate-impact-long-lasting-protection-alcohol-free-safe",
@@ -9284,7 +9284,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-nivea-nut-allergy-safe-safe",
@@ -9295,7 +9295,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-nivea-gluten-free-safe",
@@ -9306,7 +9306,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-nivea-phthalate-free-safe",
@@ -9317,7 +9317,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-creme-pregnancy-safe",
@@ -9328,7 +9328,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-creme-fungal-acne-safe",
@@ -9339,7 +9339,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-creme-non-comedogenic-safe",
@@ -9350,7 +9350,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-creme-silicone-free-safe",
@@ -9361,7 +9361,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-creme-fragrance-free-safe",
@@ -9372,7 +9372,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-creme-paraben-free-safe",
@@ -9383,7 +9383,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-creme-alcohol-free-safe",
@@ -9394,7 +9394,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-creme-vegan-cruelty-free-safe",
@@ -9405,7 +9405,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-creme-rosacea-eczema-safe",
@@ -9416,7 +9416,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-creme-malassezia-free-safe",
@@ -9427,7 +9427,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-creme-nut-allergy-safe-safe",
@@ -9438,7 +9438,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-men-sensitive-3in1-body-wash-fragrance-free-safe",
@@ -9449,7 +9449,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-men-sensitive-3in1-body-wash-paraben-free-safe",
@@ -9460,7 +9460,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-men-sensitive-3in1-body-wash-sulfate-free-safe",
@@ -9471,7 +9471,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-men-sensitive-3in1-body-wash-vegan-cruelty-free-safe",
@@ -9482,7 +9482,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-men-sensitive-3in1-body-wash-nut-allergy-safe-safe",
@@ -9493,7 +9493,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-men-sensitive-3in1-body-wash-gluten-free-safe",
@@ -9504,7 +9504,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-men-sensitive-3in1-body-wash-phthalate-free-safe",
@@ -9515,7 +9515,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-moisturizing-post-shave-balm-pregnancy-safe",
@@ -9526,7 +9526,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-moisturizing-post-shave-balm-fungal-acne-safe",
@@ -9537,7 +9537,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-moisturizing-post-shave-balm-non-comedogenic-safe",
@@ -9548,7 +9548,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-moisturizing-post-shave-balm-silicone-free-safe",
@@ -9559,7 +9559,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 16
   },
   {
     "url": "/check/is-nivea-moisturizing-post-shave-balm-fragrance-free-safe",
@@ -9878,7 +9878,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-base-lavante-malassezia-free-safe",
@@ -9889,7 +9889,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-base-lavante-nut-allergy-safe-safe",
@@ -9900,7 +9900,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-base-lavante-gluten-free-safe",
@@ -9911,7 +9911,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-base-lavante-phthalate-free-safe",
@@ -9922,7 +9922,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-pregnancy-safe",
@@ -9933,7 +9933,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-fungal-acne-safe",
@@ -9944,7 +9944,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-non-comedogenic-safe",
@@ -9955,7 +9955,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-silicone-free-safe",
@@ -9966,7 +9966,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-fragrance-free-safe",
@@ -9977,7 +9977,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-paraben-free-safe",
@@ -9988,7 +9988,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-alcohol-free-safe",
@@ -9999,7 +9999,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-vegan-cruelty-free-safe",
@@ -10010,7 +10010,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-rosacea-eczema-safe",
@@ -10021,7 +10021,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-malassezia-free-safe",
@@ -10032,7 +10032,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-nut-allergy-safe-safe",
@@ -10043,7 +10043,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-gel-douche-sorbet-de-verveine-fragrance-free-safe",
@@ -10054,7 +10054,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-gel-douche-sorbet-de-verveine-paraben-free-safe",
@@ -10065,7 +10065,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-gel-douche-sorbet-de-verveine-sulfate-free-safe",
@@ -10076,7 +10076,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-gel-douche-sorbet-de-verveine-vegan-cruelty-free-safe",
@@ -10087,7 +10087,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-gel-douche-sorbet-de-verveine-nut-allergy-safe-safe",
@@ -10098,7 +10098,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-gel-douche-sorbet-de-verveine-gluten-free-safe",
@@ -10109,7 +10109,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-gel-douche-sorbet-de-verveine-phthalate-free-safe",
@@ -10120,7 +10120,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-base-micellaire-concentre-pregnancy-safe",
@@ -10131,7 +10131,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-base-micellaire-concentre-fungal-acne-safe",
@@ -10142,7 +10142,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-base-micellaire-concentre-non-comedogenic-safe",
@@ -10153,7 +10153,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-base-micellaire-concentre-silicone-free-safe",
@@ -10164,7 +10164,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-base-micellaire-concentre-fragrance-free-safe",
@@ -10472,7 +10472,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-aroma-zone-coloration-vgtale-henn-cuivr-nut-allergy-safe-safe",
@@ -10483,7 +10483,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-aroma-zone-coloration-vgtale-henn-cuivr-gluten-free-safe",
@@ -10494,7 +10494,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-aroma-zone-coloration-vgtale-henn-cuivr-phthalate-free-safe",
@@ -10505,7 +10505,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-silicone-free-safe",
@@ -10516,7 +10516,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-fragrance-free-safe",
@@ -10527,7 +10527,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-paraben-free-safe",
@@ -10538,7 +10538,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-sulfate-free-safe",
@@ -10549,7 +10549,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-vegan-cruelty-free-safe",
@@ -10560,7 +10560,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-malassezia-free-safe",
@@ -10571,7 +10571,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-nut-allergy-safe-safe",
@@ -10582,7 +10582,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-gluten-free-safe",
@@ -10593,7 +10593,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-phthalate-free-safe",
@@ -10604,7 +10604,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-pregnancy-safe",
@@ -10615,7 +10615,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-fungal-acne-safe",
@@ -10626,7 +10626,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-non-comedogenic-safe",
@@ -10637,7 +10637,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-silicone-free-safe",
@@ -10648,7 +10648,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-fragrance-free-safe",
@@ -10659,7 +10659,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-paraben-free-safe",
@@ -10670,7 +10670,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-alcohol-free-safe",
@@ -10681,7 +10681,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-vegan-cruelty-free-safe",
@@ -10692,7 +10692,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-rosacea-eczema-safe",
@@ -10703,7 +10703,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-malassezia-free-safe",
@@ -10714,7 +10714,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-nut-allergy-safe-safe",
@@ -10725,7 +10725,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-gluten-free-safe",
@@ -10736,7 +10736,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-phthalate-free-safe",
@@ -10747,7 +10747,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-ozenke-shampoing-texturisant-pregnancy-safe",
@@ -10758,7 +10758,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-ozenke-shampoing-texturisant-fungal-acne-safe",
@@ -10769,7 +10769,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 18
   },
   {
     "url": "/check/is-ozenke-shampoing-texturisant-non-comedogenic-safe",

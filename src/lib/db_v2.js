@@ -10,59 +10,22 @@
 import { SAFETY_RULES } from './safety_rules_v2.js';
 import { evaluateProductRule, isRuleRelevant } from './rule_engine_v2.js';
 
-let _localDb = null;
-
 /**
- * Lazy helper for Node.js local environments (scripts, testing).
- * Guarded to ensure better-sqlite3 is never statically bundled into Workers.
- */
-function getLocalFallbackDb() {
-  if (_localDb) return _localDb;
-  // Never load native modules inside Cloudflare Workers runtime
-  if (typeof navigator !== 'undefined' && navigator.userAgent === 'Cloudflare-Workers') {
-    return null;
-  }
-  try {
-    // Dynamic import to prevent bundler from tracing better-sqlite3 into the Worker output
-    const req = typeof module !== 'undefined' && module.require ? module.require : null;
-    if (req) {
-      const Database = req('better-sqlite3');
-      const path = req('path');
-      const dbPath = path.join(process.cwd(), 'data/cosmetiqly_real.db');
-      _localDb = new Database(dbPath, { readonly: true });
-    }
-  } catch (e) {
-    // Environment does not support native better-sqlite3; fallback to null
-  }
-  return _localDb;
-}
-
-/**
- * Executes a parameterized SQL query returning multiple rows.
- * Seamlessly abstracts Cloudflare D1 (async) and SQLite (sync).
+ * Executes a parameterized SQL query returning multiple rows against Cloudflare D1.
  */
 async function queryAll(db, sql, params = []) {
-  // 1. Cloudflare D1 Native Binding
   if (db && typeof db.prepare === 'function') {
     const stmt = db.prepare(sql).bind(...params);
     const res = await stmt.all();
     return res && Array.isArray(res.results) ? res.results : (Array.isArray(res) ? res : []);
   }
-
-  // 2. Node.js Local SQLite Fallback
-  const local = getLocalFallbackDb();
-  if (local) {
-    return local.prepare(sql).all(...params);
-  }
-
   return [];
 }
 
 /**
- * Executes a parameterized SQL query returning a single row.
+ * Executes a parameterized SQL query returning a single row against Cloudflare D1.
  */
 async function queryFirst(db, sql, params = []) {
-  // 1. Cloudflare D1 Native Binding
   if (db && typeof db.prepare === 'function') {
     const stmt = db.prepare(sql).bind(...params);
     if (typeof stmt.first === 'function') {
@@ -72,13 +35,6 @@ async function queryFirst(db, sql, params = []) {
     const rows = res && Array.isArray(res.results) ? res.results : (Array.isArray(res) ? res : []);
     return rows[0] || null;
   }
-
-  // 2. Node.js Local SQLite Fallback
-  const local = getLocalFallbackDb();
-  if (local) {
-    return local.prepare(sql).get(...params) || null;
-  }
-
   return null;
 }
 

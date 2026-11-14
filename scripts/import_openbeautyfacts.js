@@ -13,6 +13,23 @@ console.log('🔄 Streaming and applying strict clinical INCI parsing on Open Be
 
 const CSV_URL = 'https://static.openbeautyfacts.org/data/en.openbeautyfacts.org.products.csv.gz';
 
+const nonEnglishRegex = /\b(água|óleo|glicerina|conservante|ácido|fragrância|estearato|palmitato|extrato|álcool|manteiga|acqua|olio|acrilati|acido|profumo|estratto|huile|extrait|soin|visage|cheveux|ingredientes|composicion)\b/i;
+
+function normalizeCategory(rawCategory) {
+  if (!rawCategory) return 'Skincare';
+  const raw = rawCategory.toLowerCase();
+  if (/\b(sun|spf|solar|sunscreen|creme solaire)\b/i.test(raw)) return 'Sunscreen';
+  if (/\b(cleans|wash|nettoyant|gel douche|shower|savon|soap)\b/i.test(raw)) return 'Cleanser';
+  if (/\b(serum|essence|ampoule)\b/i.test(raw)) return 'Serum';
+  if (/\b(moistur|hydrat|cream|creme|lotion|balm|baume)\b/i.test(raw)) return 'Moisturizer';
+  if (/\b(toner|lotion tonique|tonic)\b/i.test(raw)) return 'Toner';
+  if (/\b(lip|levres|baume a levres)\b/i.test(raw)) return 'Lip Care';
+  if (/\b(mask|masque)\b/i.test(raw)) return 'Mask';
+  if (/\b(hair|cheveux|shampoo|conditioner|apres-shampooing)\b/i.test(raw)) return 'Hair';
+  if (/\b(body|corps|mains|hands|feet|pieds)\b/i.test(raw)) return 'Body';
+  return 'Skincare';
+}
+
 function slugify(text) {
   return text.toLowerCase().trim()
     .replace(/[^\w\s-]/g, '')
@@ -88,7 +105,7 @@ https.get(CSV_URL, res => {
     const barcode = cols[0]?.trim();
     const rawName = cols[10]?.trim();
     const rawBrand = (cols[18] || cols[17] || '')?.trim();
-    const category = (cols[20] || cols[19] || 'Skincare')?.split(',')[0]?.trim() || 'Skincare';
+    const category = normalizeCategory(cols[20] || cols[19] || '');
     const rawIngredients = cols[33]?.trim();
     const imageUrl = cols[130]?.trim() || cols[131]?.trim() || '';
 
@@ -99,6 +116,9 @@ https.get(CSV_URL, res => {
 
     // Must have at least 25 chars of ingredient text
     if (!rawIngredients || rawIngredients.length < 25) return;
+
+    // Discard non-English raw ingredient lists
+    if (nonEnglishRegex.test(rawIngredients)) return;
 
     const parsedIng = parseIngredientsList(rawIngredients);
     // Mandatory Gate: at least 5 clean parsed ingredients

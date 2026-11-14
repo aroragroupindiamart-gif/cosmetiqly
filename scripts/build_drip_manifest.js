@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 const launchProducts = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/launch_tier_a_100.json'), 'utf8'));
 
-console.log('🔄 Generating Launch Drip Manifest (Tier A Launch Set)...');
+console.log('🔄 Generating Launch Drip Manifest (Strict 50-60 URLs/day ceiling)...');
 
 const allEntries = [];
 
@@ -26,7 +26,7 @@ const coreHubs = [
 ];
 allEntries.push(...coreHubs);
 
-// 2. Brand Hubs
+// 2. Brand Hubs (Spread across days so daily batch ceiling is respected)
 const seenBrands = new Set();
 const brandEntries = [];
 for (const p of launchProducts) {
@@ -36,11 +36,20 @@ for (const p of launchProducts) {
       url: `/brand/${p.brand_slug}`,
       type: 'brand_hub',
       priority: 0.8,
-      changefreq: 'weekly',
-      drip_day: brandEntries.length < 15 ? 1 : 2 // Top 15 on Day 1, remainder on Day 2
+      changefreq: 'weekly'
     });
   }
 }
+
+// Brand distribution:
+// Day 1: Top 15 brands
+// Day 2: 6 brands
+// Day 3: Remaining 6 brands
+brandEntries.forEach((b, idx) => {
+  if (idx < 15) b.drip_day = 1;
+  else if (idx < 21) b.drip_day = 2;
+  else b.drip_day = 3;
+});
 allEntries.push(...brandEntries);
 
 // 3. Relevant Check Pages
@@ -63,57 +72,56 @@ for (const p of launchProducts) {
   }
 }
 
-// Assign Drip Days:
-// Target Launch Gate: Day 1 = ~100 URLs total
-// (8 core + 15 brands + 77 top checks = exactly 100 URLs on Day 1)
-// Subsequent batches drip at 50-60 checks per day
-const day1CheckQuota = 100 - (8 + Math.min(15, brandEntries.length));
+// Day 1: 8 core + 15 brands + 77 checks = Exactly 100 URLs
+// Day 2: 6 brands + 48 checks = Exactly 54 URLs (strictly within 50-60 ceiling)
+// Day 3: 6 brands + 48 checks = Exactly 54 URLs
+// Day 4+: 54 checks per day until all 968 checks are scheduled
+let checkIndex = 0;
 
-let currentDay = 1;
-let currentDayCount = 0;
+// Day 1 checks: exactly 77
+for (let i = 0; i < 77 && checkIndex < checkEntries.length; i++) {
+  checkEntries[checkIndex++].drip_day = 1;
+}
 
-for (let i = 0; i < checkEntries.length; i++) {
-  if (currentDay === 1) {
-    checkEntries[i].drip_day = 1;
-    currentDayCount++;
-    if (currentDayCount >= day1CheckQuota) {
-      currentDay = 2;
-      currentDayCount = 0;
-    }
-  } else {
-    checkEntries[i].drip_day = currentDay;
-    currentDayCount++;
-    if (currentDayCount >= 55) { // 55 per day as specified in §6
-      currentDay++;
-      currentDayCount = 0;
-    }
+// Day 2 checks: exactly 48
+for (let i = 0; i < 48 && checkIndex < checkEntries.length; i++) {
+  checkEntries[checkIndex++].drip_day = 2;
+}
+
+// Day 3 checks: exactly 48
+for (let i = 0; i < 48 && checkIndex < checkEntries.length; i++) {
+  checkEntries[checkIndex++].drip_day = 3;
+}
+
+// Day 4+: batches of 54
+let day = 4;
+while (checkIndex < checkEntries.length) {
+  const batchSize = Math.min(54, checkEntries.length - checkIndex);
+  for (let i = 0; i < batchSize; i++) {
+    checkEntries[checkIndex++].drip_day = day;
   }
+  day++;
 }
 
 allEntries.push(...checkEntries);
 
-console.log(`Generated ${allEntries.length} verified launch entries:`);
-console.log(`- Core hubs & editorial: 8`);
-console.log(`- Verified Brand Hubs: ${seenBrands.size}`);
-console.log(`- Relevant Clinical Check Pages: ${checkEntries.length}`);
+// Validate daily counts
+const dayCounts = {};
+for (const entry of allEntries) {
+  dayCounts[entry.drip_day] = (dayCounts[entry.drip_day] || 0) + 1;
+}
 
-const day1Entries = allEntries.filter(e => e.drip_day === 1);
-console.log(`\n📅 Launch Gate (Day 1 Active Batch): ${day1Entries.length} URLs`);
-console.log(`- Core: ${day1Entries.filter(e => e.type === 'hub' || e.type === 'editorial' || e.type === 'legal').length}`);
-console.log(`- Brand Hubs: ${day1Entries.filter(e => e.type === 'brand_hub').length}`);
-console.log(`- Top Clinical Checks: ${day1Entries.filter(e => e.type === 'check').length}`);
-console.log(`Total Drip Schedule Span: ${currentDay} days at 50-60 URLs/day.`);
+console.log('Daily Drip Schedule Breakdown:');
+for (const [d, count] of Object.entries(dayCounts)) {
+  console.log(`- Day ${d}: ${count} URLs`);
+}
 
 // Save complete drip manifest
 const manifestPath = path.join(__dirname, '../data/drip_manifest.json');
 fs.writeFileSync(manifestPath, JSON.stringify(allEntries, null, 2));
 
-// Save Day 1 active URLs for build-time bundling into middleware
-const activeUrls = day1Entries.map(e => e.url);
-const activeUrlsPath = path.join(__dirname, '../data/drip_active_urls.json');
-fs.writeFileSync(activeUrlsPath, JSON.stringify(activeUrls, null, 2));
-
-// Generate sitemap.xml strictly for active dripped URLs
+// Generate matching Day 1 static sitemap.xml
+const day1Entries = allEntries.filter(e => e.drip_day === 1);
 const SITE_DOMAIN = process.env.SITE_DOMAIN || 'https://cosmetiqlyy.com';
 const today = new Date().toISOString().split('T')[0];
 
@@ -126,4 +134,4 @@ sitemapXml += `</urlset>`;
 
 const sitemapPublicPath = path.join(__dirname, '../public/sitemap.xml');
 fs.writeFileSync(sitemapPublicPath, sitemapXml);
-console.log(`🗺️ Saved active sitemap.xml to ${sitemapPublicPath} (${day1Entries.length} URLs).`);
+console.log(`\n🗺️ Saved active Day 1 sitemap.xml to ${sitemapPublicPath} (${day1Entries.length} URLs).`);
