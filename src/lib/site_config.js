@@ -4,10 +4,10 @@
  */
 
 export const SITE_CONFIG = {
-  // Reviewer provenance (clearly marked placeholder pending owner confirmation)
-  reviewerName: '[OWNER TO FILL]',
-  reviewerTitle: 'Data Analyst & INCI Auditor',
-  reviewerBio: 'Specializes in computational toxicology cross-referencing, cosmetic formulation safety analysis, and algorithmic INCI dataset verification.',
+  // Reviewer provenance
+  reviewerName: 'Cosmetiqly Research Team',
+  reviewerTitle: 'Editorial Team',
+  reviewerBio: 'The Cosmetiqly editorial team checks every ingredient rule against published research and real product data before it goes live.',
 
   // Contact & Editorial oversight
   contactEmail: 'contact@cosmetiqlyy.com',

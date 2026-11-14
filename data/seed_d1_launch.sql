@@ -3,7 +3,10 @@
 -- Total Records: 100
 -- Target: Cloudflare D1 (cosmetiqly-db)
 
-CREATE TABLE IF NOT EXISTS products (
+DROP TABLE IF EXISTS safety_rules;
+DROP TABLE IF EXISTS products;
+
+CREATE TABLE products (
   barcode TEXT PRIMARY KEY,
   brand TEXT NOT NULL,
   brand_slug TEXT NOT NULL,
