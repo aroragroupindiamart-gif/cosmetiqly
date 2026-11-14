@@ -1,9 +1,9 @@
 # Mechanical Citation Verification Report
 
-**Audit Timestamp:** 2026-11-14T07:53:53.453Z
+**Audit Timestamp:** 2026-11-14T08:21:44.693Z
 **Total Rules Audited:** 15
 **Total Ingredient Triggers Audited:** 116
-**Unique PubMed PMIDs Verified via NCBI E-utilities:** 28
+**Unique PubMed PMIDs Verified via NCBI E-utilities:** 29
 
 ## 1. PubMed Primary Verification Results
 
@@ -37,6 +37,7 @@
 | [`29243540`](https://pubmed.ncbi.nlm.nih.gov/29243540/) | Safety Assessment of Plant-Derived Fatty Acid Oils. | *Int J Toxicol* | prunus amygdalus dulcis oil (Nut-Allergy Safe), sweet almond oil (Nut-Allergy Safe), macadamia ternifolia seed oil (Nut-Allergy Safe), macadamia integrifolia seed oil (Nut-Allergy Safe), corylus avellana seed oil (Nut-Allergy Safe), pistacia vera seed oil (Nut-Allergy Safe), anacardium occidentale seed oil (Nut-Allergy Safe) |
 | [`18823308`](https://pubmed.ncbi.nlm.nih.gov/18823308/) | Allergens to wheat and related cereals. | *Clin Exp Allergy* | triticum vulgare germ oil (Gluten-Free), triticum vulgare flour lipids (Gluten-Free) |
 | [`9860241`](https://pubmed.ncbi.nlm.nih.gov/9860241/) | Contact urticaria from protein hydrolysates in hair conditioners. | *Allergy* | hydrolyzed wheat protein (Gluten-Free) |
+| [`22939435`](https://pubmed.ncbi.nlm.nih.gov/22939435/) | Gluten in cosmetics: is there a reason for concern? | *J Acad Nutr Diet* | hordeum vulgare seed extract (Gluten-Free), secale cereale seed extract (Gluten-Free), hydrolyzed wheat starch (Gluten-Free) |
 
 ## 2. Institutional, SCCS, CIR & Regulatory Sources
 
@@ -87,10 +88,7 @@
 | Rosacea & Eczema-Safe | `sodium lauryl sulfate` | National Eczema Association (NEA). Criteria for the Eczema Seal of Acceptance. | [Link](https://nationaleczema.org/eczema-products/) |
 | Nut-Allergy Safe | `juglans regia shell powder` | American Academy of Allergy, Asthma & Immunology (AAAAI). Tree Nut Allergen Guidance. | [Link](https://www.aaaai.org/conditions-treatments/allergies/food-allergy) |
 | Nut-Allergy Safe | `arachis hypogaea oil` | European Commission. SCCS Opinion on Peanut Oil (Sensitization in Cosmetics), SCCS/1526/14. | [Link](https://ec.europa.eu/health/scientific_committees/consumer_safety/docs/sccs_o_152.pdf) |
-| Gluten-Free | `hordeum vulgare seed extract` | Celiac Disease Foundation (CDF). Gluten in Cosmetics and Personal Care Products Guide. | [Link](https://celiac.org/gluten-free-living/gluten-in-cosmetics-and-personal-care-products/) |
-| Gluten-Free | `secale cereale seed extract` | Celiac Disease Foundation (CDF). Gluten in Cosmetics Guide. | [Link](https://celiac.org/gluten-free-living/gluten-in-cosmetics-and-personal-care-products/) |
-| Gluten-Free | `hydrolyzed wheat starch` | Celiac Disease Foundation (CDF). Gluten in Cosmetics Guide. | [Link](https://celiac.org/gluten-free-living/gluten-in-cosmetics-and-personal-care-products/) |
-| Phthalate-Free | `diethyl phthalate` | SCCS. Opinion on Phthalates (Diethyl phthalate), SCCS/1183/08 (2008). | [Link](https://ec.europa.eu/health/ph_risk/committees/04_sccs/docs/sccs_o_066.pdf) |
+| Phthalate-Free | `diethyl phthalate` | SCCS. Opinion on Phthalates (Diethyl phthalate), SCCS/1183/08 (2008). | [Link](https://ec.europa.eu/health/archive/ph_risk/committees/04_sccp/docs/sccp_o_138.pdf) |
 | Phthalate-Free | `dimethyl phthalate` | CIR Panel. Final Report on the Safety Assessment of Dibutyl Phthalate, Dimethyl Phthalate, and Diethyl Phthalate. J Am Coll Toxicol. 1985;4(3):267-303. | [Link](https://www.cir-safety.org/ingredients) |
 | Phthalate-Free | `dibutyl phthalate` | European Parliament and Council. Regulation (EC) No 1223/2009, Annex II (Substances prohibited in cosmetic products: Entry 675). | [Link](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009R1223) |
 | Phthalate-Free | `di-2-ethylhexyl phthalate` | European Parliament and Council. Regulation (EC) No 1223/2009, Annex II (Substances prohibited in cosmetic products: Entry 677). | [Link](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009R1223) |
@@ -189,8 +187,8 @@
 | 88 | Rosacea & Eczema-Safe | `camphor` | **HIGH** | Wilkin J, Dahl M, Detmar M, et al. Standard classification of rosacea: Report of the National Rosacea Society Expert Committee on the Classification and Staging of Rosacea. J Am Acad Dermatol. 2002;46(4):584-587. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/11907512/) |
 | 89 | Rosacea & Eczema-Safe | `eucalyptus globulus leaf oil` | **HIGH** | American Contact Dermatitis Society (ACDS). Botanical Core Series Evaluation. | [Primary URL](https://www.contactderm.org/) |
 | 90 | Rosacea & Eczema-Safe | `sodium lauryl sulfate` | **HIGH** | National Eczema Association (NEA). Criteria for the Eczema Seal of Acceptance. | [Primary URL](https://nationaleczema.org/eczema-products/) |
-| 91 | Rosacea & Eczema-Safe | `fragrance` | **HIGH** | Johansen JD, Bonefeld CM, Rastogi SC, et al. European Society of Contact Dermatitis Guideline for Diagnostic Patch Testing-Recommendations on Best Practice. Contact Dermatitis. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/42324086/) |
-| 92 | Rosacea & Eczema-Safe | `parfum` | **HIGH** | Johansen JD, Bonefeld CM, Rastogi SC, et al. Contact Dermatitis. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/42324086/) |
+| 91 | Rosacea & Eczema-Safe | `fragrance` | **HIGH** | Uter W, et al. European Society of Contact Dermatitis Guideline for Diagnostic Patch Testing-Recommendations on Best Practice. Contact Dermatitis. 2026. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/42324086/) |
+| 92 | Rosacea & Eczema-Safe | `parfum` | **HIGH** | Uter W, et al. European Society of Contact Dermatitis Guideline for Diagnostic Patch Testing-Recommendations on Best Practice. Contact Dermatitis. 2026. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/42324086/) |
 | 93 | Malassezia Yeast Free | `polysorbate 20` | **HIGH** | Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/9776806/) |
 | 94 | Malassezia Yeast Free | `polysorbate 80` | **HIGH** | Mayser P, Grimmig D, Krämer HJ. Different utilization of neutral lipids by Malassezia furfur and Malassezia sympodialis. Med Mycol. 1998;36(6):395-402. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/9776806/) |
 | 95 | Malassezia Yeast Free | `olive oil` | **HIGH** | Danby SG, AlEnezi T, Sultan A, et al. Effect of olive and sunflower seed oil on the adult skin barrier: implications for neonatal skin care. Pediatr Dermatol. 2013;30(1):42-50. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/22995032/) |
@@ -208,10 +206,10 @@
 | 107 | Gluten-Free | `triticum vulgare germ oil` | **HIGH** | Tatham AS, Shewry PR. Allergens to wheat and related cereals. Clin Exp Allergy. 2008;38(11):1712-1726. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/18823308/) |
 | 108 | Gluten-Free | `triticum vulgare flour lipids` | **HIGH** | Tatham AS, Shewry PR. Allergens to wheat and related cereals. Clin Exp Allergy. 2008;38(11):1712-1726. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/18823308/) |
 | 109 | Gluten-Free | `hydrolyzed wheat protein` | **HIGH** | Niinimäki A, Niinimäki M, Mäkinen-Kiljunen S, Hannuksela M. Contact urticaria from protein hydrolysates in hair conditioners. Contact Dermatitis. 1998;39(1):24-26. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/9860241/) |
-| 110 | Gluten-Free | `hordeum vulgare seed extract` | **HIGH** | Celiac Disease Foundation (CDF). Gluten in Cosmetics and Personal Care Products Guide. | [Primary URL](https://celiac.org/gluten-free-living/gluten-in-cosmetics-and-personal-care-products/) |
-| 111 | Gluten-Free | `secale cereale seed extract` | **HIGH** | Celiac Disease Foundation (CDF). Gluten in Cosmetics Guide. | [Primary URL](https://celiac.org/gluten-free-living/gluten-in-cosmetics-and-personal-care-products/) |
-| 112 | Gluten-Free | `hydrolyzed wheat starch` | **HIGH** | Celiac Disease Foundation (CDF). Gluten in Cosmetics Guide. | [Primary URL](https://celiac.org/gluten-free-living/gluten-in-cosmetics-and-personal-care-products/) |
-| 113 | Phthalate-Free | `diethyl phthalate` | **HIGH** | SCCS. Opinion on Phthalates (Diethyl phthalate), SCCS/1183/08 (2008). | [Primary URL](https://ec.europa.eu/health/ph_risk/committees/04_sccs/docs/sccs_o_066.pdf) |
+| 110 | Gluten-Free | `hordeum vulgare seed extract` | **HIGH** | Thompson T, Grace T. Gluten in cosmetics: is there a reason for concern? J Acad Nutr Diet. 2012;112(9):1316-1323. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/22939435/) |
+| 111 | Gluten-Free | `secale cereale seed extract` | **HIGH** | Thompson T, Grace T. Gluten in cosmetics: is there a reason for concern? J Acad Nutr Diet. 2012;112(9):1316-1323. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/22939435/) |
+| 112 | Gluten-Free | `hydrolyzed wheat starch` | **HIGH** | Thompson T, Grace T. Gluten in cosmetics: is there a reason for concern? J Acad Nutr Diet. 2012;112(9):1316-1323. | [Primary URL](https://pubmed.ncbi.nlm.nih.gov/22939435/) |
+| 113 | Phthalate-Free | `diethyl phthalate` | **HIGH** | SCCS. Opinion on Phthalates (Diethyl phthalate), SCCS/1183/08 (2008). | [Primary URL](https://ec.europa.eu/health/archive/ph_risk/committees/04_sccp/docs/sccp_o_138.pdf) |
 | 114 | Phthalate-Free | `dimethyl phthalate` | **HIGH** | CIR Panel. Final Report on the Safety Assessment of Dibutyl Phthalate, Dimethyl Phthalate, and Diethyl Phthalate. J Am Coll Toxicol. 1985;4(3):267-303. | [Primary URL](https://www.cir-safety.org/ingredients) |
 | 115 | Phthalate-Free | `dibutyl phthalate` | **HIGH** | European Parliament and Council. Regulation (EC) No 1223/2009, Annex II (Substances prohibited in cosmetic products: Entry 675). | [Primary URL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009R1223) |
 | 116 | Phthalate-Free | `di-2-ethylhexyl phthalate` | **HIGH** | European Parliament and Council. Regulation (EC) No 1223/2009, Annex II (Substances prohibited in cosmetic products: Entry 677). | [Primary URL](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32009R1223) |

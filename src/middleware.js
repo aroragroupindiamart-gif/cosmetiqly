@@ -86,5 +86,21 @@ export async function onRequest(context, next) {
     response.headers.set('X-Robots-Tag', 'noindex, follow');
   }
 
+  // 4. Edge Caching for HTML Responses (Target TTFB <500ms):
+  // Configure Cloudflare edge caching using s-maxage and stale-while-revalidate
+  if (context.request.method === 'GET' && response.status === 200) {
+    const contentType = response.headers.get('content-type') || '';
+    if (contentType.includes('text/html')) {
+      if (isDripped) {
+        response.headers.set(
+          'Cache-Control',
+          'public, max-age=0, s-maxage=86400, stale-while-revalidate=604800'
+        );
+      } else {
+        response.headers.set('Cache-Control', 'public, max-age=0, s-maxage=300');
+      }
+    }
+  }
+
   return response;
 }

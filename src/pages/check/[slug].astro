@@ -171,9 +171,26 @@ const jsonLd = isFound ? {
           </div>
         </section>
       ) : (
-        <div class="mb-10 p-5 rounded-lg border border-emerald-200 bg-emerald-50/50 text-xs text-emerald-900">
-          <strong>Clean Record:</strong> None of the {evaluation.totalIngredients} analyzed ingredients match known {rule.name} triggers.
-        </div>
+        <section class="mb-10 p-5 rounded-lg border border-emerald-200 bg-emerald-50/50">
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-emerald-100 border border-emerald-300 flex items-center justify-center shrink-0 mt-0.5">
+              <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-serif text-base font-semibold text-emerald-950 mb-1">
+                Formulation Analysis: Why This Product Passes
+              </h3>
+              <p class="text-xs text-emerald-900 leading-relaxed mb-2">
+                The <strong>{rule.name}</strong> standard {rule.description.toLowerCase().startsWith('screens for') ? rule.description.toLowerCase() : `screens for ${rule.description.toLowerCase()}`}
+              </p>
+              <p class="text-xs text-emerald-800 leading-relaxed">
+                Across all {evaluation.totalIngredients} verified INCI ingredients in <strong>{product.brand} {product.name}</strong>, zero matches were detected against the {rule.triggers.length} screened triggers under this standard. Consequently, this formulation earns a verdict of <strong>{evaluation.verdictText}</strong> with a score of <strong>{evaluation.score.toFixed(1)}/10</strong> ({evaluation.tierLabel}).
+              </p>
+            </div>
+          </div>
+        </section>
       )}
 
       <!-- 5. Full INCI Ingredient Table (§5 requirement) -->

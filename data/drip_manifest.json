@@ -203,13 +203,6 @@
     "drip_day": 2
   },
   {
-    "url": "/brand/null",
-    "type": "brand_hub",
-    "priority": 0.8,
-    "changefreq": "weekly",
-    "drip_day": 3
-  },
-  {
     "url": "/brand/aroma-zone",
     "type": "brand_hub",
     "priority": 0.8,
@@ -443,7 +436,7 @@
     "drip_day": 1
   },
   {
-    "url": "/check/is-cerave-moisturizing-cream-nut-allergy-safe-safe",
+    "url": "/check/is-cerave-moisturizing-cream-nut-allergy-safe",
     "type": "check",
     "brand": "CeraVe",
     "product": "Moisturizing Cream",
@@ -564,7 +557,7 @@
     "drip_day": 1
   },
   {
-    "url": "/check/is-cerave-skin-renewing-night-cream-nut-allergy-safe-safe",
+    "url": "/check/is-cerave-skin-renewing-night-cream-nut-allergy-safe",
     "type": "check",
     "brand": "Cerave",
     "product": "Skin Renewing Night Cream",
@@ -718,7 +711,7 @@
     "drip_day": 1
   },
   {
-    "url": "/check/is-cerave-am-facial-moisturizing-lotion-spf-30-reef-safe-safe",
+    "url": "/check/is-cerave-am-facial-moisturizing-lotion-spf-30-reef-safe",
     "type": "check",
     "brand": "Cerave",
     "product": "AM Facial Moisturizing Lotion SPF 30",
@@ -927,7 +920,7 @@
     "drip_day": 1
   },
   {
-    "url": "/check/is-cerave-daily-moisturizing-cream-nut-allergy-safe-safe",
+    "url": "/check/is-cerave-daily-moisturizing-cream-nut-allergy-safe",
     "type": "check",
     "brand": "CeraVe",
     "product": "Daily Moisturizing Cream",
@@ -1125,7 +1118,7 @@
     "drip_day": 2
   },
   {
-    "url": "/check/is-the-ordinary-lactic-acid-10-ha-nut-allergy-safe-safe",
+    "url": "/check/is-the-ordinary-lactic-acid-10-ha-nut-allergy-safe",
     "type": "check",
     "brand": "The Ordinary",
     "product": "Lactic Acid 10% + HA",
@@ -1268,7 +1261,7 @@
     "drip_day": 2
   },
   {
-    "url": "/check/is-the-ordinary-wwwtheordinarycom-nut-allergy-safe-safe",
+    "url": "/check/is-the-ordinary-wwwtheordinarycom-nut-allergy-safe",
     "type": "check",
     "brand": "The Ordinary",
     "product": "www.THEORDINARY.COM",
@@ -1411,7 +1404,7 @@
     "drip_day": 2
   },
   {
-    "url": "/check/is-the-ordinary-caffeine-solution-5-egcg-nut-allergy-safe-safe",
+    "url": "/check/is-the-ordinary-caffeine-solution-5-egcg-nut-allergy-safe",
     "type": "check",
     "brand": "The Ordinary",
     "product": "Caffeine Solution 5% + EGCG",
@@ -1554,7 +1547,7 @@
     "drip_day": 2
   },
   {
-    "url": "/check/is-the-ordinary-natural-moisturizing-factors-ha-nut-allergy-safe-safe",
+    "url": "/check/is-the-ordinary-natural-moisturizing-factors-ha-nut-allergy-safe",
     "type": "check",
     "brand": "The Ordinary",
     "product": "Natural Moisturizing Factors + HA",
@@ -1697,7 +1690,7 @@
     "drip_day": 3
   },
   {
-    "url": "/check/is-the-ordinary-the-ordinary-glycolic-acid-7-toning-solution-soluo-tonificante-de-cido-gliclico-7-nut-allergy-safe-safe",
+    "url": "/check/is-the-ordinary-the-ordinary-glycolic-acid-7-toning-solution-soluo-tonificante-de-cido-gliclico-7-nut-allergy-safe",
     "type": "check",
     "brand": "The Ordinary",
     "product": "The Ordinary Glycolic Acid 7% Toning Solution (Solução tonificante de ácido glicólico 7%)",
@@ -1840,7 +1833,7 @@
     "drip_day": 3
   },
   {
-    "url": "/check/is-the-ordinary-granactive-retinoid-5-in-squalane-nut-allergy-safe-safe",
+    "url": "/check/is-the-ordinary-granactive-retinoid-5-in-squalane-nut-allergy-safe",
     "type": "check",
     "brand": "The Ordinary",
     "product": "Granactive Retinoid 5% in Squalane",
@@ -2027,7 +2020,7 @@
     "drip_day": 3
   },
   {
-    "url": "/check/is-la-roche-posay-anthelios-dermo-pediatrics-reef-safe-safe",
+    "url": "/check/is-la-roche-posay-anthelios-dermo-pediatrics-reef-safe",
     "type": "check",
     "brand": "La Roche Posay",
     "product": "Anthelios dermo-pediatrics",
@@ -2148,7 +2141,7 @@
     "drip_day": 3
   },
   {
-    "url": "/check/is-la-roche-posay-nutritic-lvres-soin-transformation-lvres-dessches-nut-allergy-safe-safe",
+    "url": "/check/is-la-roche-posay-nutritic-lvres-soin-transformation-lvres-dessches-nut-allergy-safe",
     "type": "check",
     "brand": "La Roche Posay",
     "product": "Nutritic Lèvres - soin transformation lèvres desséchées",
@@ -2156,7 +2149,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 4
+    "drip_day": 3
   },
   {
     "url": "/check/is-la-roche-posay-nutritic-lvres-soin-transformation-lvres-dessches-gluten-free-safe",
@@ -2203,7 +2196,7 @@
     "drip_day": 4
   },
   {
-    "url": "/check/is-la-roche-posay-cicaplast-baume-lvres-nut-allergy-safe-safe",
+    "url": "/check/is-la-roche-posay-cicaplast-baume-lvres-nut-allergy-safe",
     "type": "check",
     "brand": "La Roche Posay",
     "product": "Cicaplast Baume Lèvres",
@@ -2335,7 +2328,7 @@
     "drip_day": 4
   },
   {
-    "url": "/check/is-la-roche-posay-anthelios-pocket-dermo-pediatrics-nut-allergy-safe-safe",
+    "url": "/check/is-la-roche-posay-anthelios-pocket-dermo-pediatrics-nut-allergy-safe",
     "type": "check",
     "brand": "La Roche Posay",
     "product": "Anthelios Pocket  Dermo-Pediatrics",
@@ -2478,7 +2471,7 @@
     "drip_day": 4
   },
   {
-    "url": "/check/is-la-roche-posay-eau-micellaire-nut-allergy-safe-safe",
+    "url": "/check/is-la-roche-posay-eau-micellaire-nut-allergy-safe",
     "type": "check",
     "brand": "La Roche Posay",
     "product": "Eau micellaire",
@@ -2621,7 +2614,7 @@
     "drip_day": 4
   },
   {
-    "url": "/check/is-neutrogena-neutrogena-norve-forml-hzl-emilen-bakm-kremi-nut-allergy-safe-safe",
+    "url": "/check/is-neutrogena-neutrogena-norve-forml-hzl-emilen-bakm-kremi-nut-allergy-safe",
     "type": "check",
     "brand": "Neutrogena",
     "product": "Neutrogena Norveç Formülü Hızlı Emilen Bakım Kremi",
@@ -2750,7 +2743,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 5
+    "drip_day": 4
   },
   {
     "url": "/check/is-neutrogena-neutrogena-oil-free-acne-face-scrub-125ml-malassezia-free-safe",
@@ -2764,7 +2757,7 @@
     "drip_day": 5
   },
   {
-    "url": "/check/is-neutrogena-neutrogena-oil-free-acne-face-scrub-125ml-nut-allergy-safe-safe",
+    "url": "/check/is-neutrogena-neutrogena-oil-free-acne-face-scrub-125ml-nut-allergy-safe",
     "type": "check",
     "brand": "Neutrogena",
     "product": "Neutrogena Oil Free Acne Face Scrub 125mL",
@@ -2885,7 +2878,7 @@
     "drip_day": 5
   },
   {
-    "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-nut-allergy-safe-safe",
+    "url": "/check/is-neutrogena-acne-stress-control-power-cream-wash-nut-allergy-safe",
     "type": "check",
     "brand": "Neutrogena",
     "product": "Acne Stress Control Power-Cream Wash",
@@ -3039,7 +3032,7 @@
     "drip_day": 5
   },
   {
-    "url": "/check/is-neutrogena-ultra-sheeran-body-mist-sunscreen-reef-safe-safe",
+    "url": "/check/is-neutrogena-ultra-sheeran-body-mist-sunscreen-reef-safe",
     "type": "check",
     "brand": "Neutrogena",
     "product": "Ultra Sheeran Body Mist Sunscreen",
@@ -3325,7 +3318,7 @@
     "drip_day": 5
   },
   {
-    "url": "/check/is-bioderma-sbium-sensitive-nut-allergy-safe-safe",
+    "url": "/check/is-bioderma-sbium-sensitive-nut-allergy-safe",
     "type": "check",
     "brand": "Bioderma",
     "product": "Sébium sensitive",
@@ -3344,7 +3337,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 6
+    "drip_day": 5
   },
   {
     "url": "/check/is-bioderma-bioderma-fungal-acne-safe",
@@ -3446,7 +3439,7 @@
     "drip_day": 6
   },
   {
-    "url": "/check/is-bioderma-bioderma-nut-allergy-safe-safe",
+    "url": "/check/is-bioderma-bioderma-nut-allergy-safe",
     "type": "check",
     "brand": "Bioderma",
     "product": "Bioderma",
@@ -3534,7 +3527,7 @@
     "drip_day": 6
   },
   {
-    "url": "/check/is-bioderma-protector-solar-reef-safe-safe",
+    "url": "/check/is-bioderma-protector-solar-reef-safe",
     "type": "check",
     "brand": "Bioderma",
     "product": "Protector solar",
@@ -3743,7 +3736,7 @@
     "drip_day": 6
   },
   {
-    "url": "/check/is-bioderma-craline-lait-nut-allergy-safe-safe",
+    "url": "/check/is-bioderma-craline-lait-nut-allergy-safe",
     "type": "check",
     "brand": "Bioderma",
     "product": "Créaline lait",
@@ -3886,7 +3879,7 @@
     "drip_day": 6
   },
   {
-    "url": "/check/is-bioderma-abcderm-crme-raffermissante-nut-allergy-safe-safe",
+    "url": "/check/is-bioderma-abcderm-crme-raffermissante-nut-allergy-safe",
     "type": "check",
     "brand": "Bioderma",
     "product": "ABCDerm crème raffermissante",
@@ -3938,7 +3931,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 7
+    "drip_day": 6
   },
   {
     "url": "/check/is-bioderma-bioderma-sbium-global-fragrance-free-safe",
@@ -4007,7 +4000,7 @@
     "drip_day": 7
   },
   {
-    "url": "/check/is-bioderma-bioderma-sbium-global-nut-allergy-safe-safe",
+    "url": "/check/is-bioderma-bioderma-sbium-global-nut-allergy-safe",
     "type": "check",
     "brand": "Bioderma",
     "product": "Bioderma Sébium Global",
@@ -4326,7 +4319,7 @@
     "drip_day": 7
   },
   {
-    "url": "/check/is-cetaphil-cetaphil-cream-nut-allergy-safe-safe",
+    "url": "/check/is-cetaphil-cetaphil-cream-nut-allergy-safe",
     "type": "check",
     "brand": "Cetaphil",
     "product": "Cetaphil Cream",
@@ -4532,7 +4525,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 8
+    "drip_day": 7
   },
   {
     "url": "/check/is-cetaphil-cetaphil-moisturizing-cream-non-comedogenic-safe",
@@ -4623,7 +4616,7 @@
     "drip_day": 8
   },
   {
-    "url": "/check/is-cetaphil-cetaphil-moisturizing-cream-nut-allergy-safe-safe",
+    "url": "/check/is-cetaphil-cetaphil-moisturizing-cream-nut-allergy-safe",
     "type": "check",
     "brand": "Cetaphil",
     "product": "Cetaphil Moisturizing Cream",
@@ -4832,7 +4825,7 @@
     "drip_day": 8
   },
   {
-    "url": "/check/is-avene-ysthal-intense-concentr-antirides-rnovateur-de-peau-nut-allergy-safe-safe",
+    "url": "/check/is-avene-ysthal-intense-concentr-antirides-rnovateur-de-peau-nut-allergy-safe",
     "type": "check",
     "brand": "Avene",
     "product": "Ysthéal Intense concentré antirides rénovateur de peau",
@@ -4953,7 +4946,7 @@
     "drip_day": 8
   },
   {
-    "url": "/check/is-avene-cold-cream-crme-mains-concentre-nut-allergy-safe-safe",
+    "url": "/check/is-avene-cold-cream-crme-mains-concentre-nut-allergy-safe",
     "type": "check",
     "brand": "Avene",
     "product": "Cold Cream  - Crème mains concentrée",
@@ -5074,7 +5067,7 @@
     "drip_day": 8
   },
   {
-    "url": "/check/is-avene-soin-lvres-sensibles-nut-allergy-safe-safe",
+    "url": "/check/is-avene-soin-lvres-sensibles-nut-allergy-safe",
     "type": "check",
     "brand": "Avene",
     "product": "Soin lèvres sensibles",
@@ -5126,7 +5119,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 9
+    "drip_day": 8
   },
   {
     "url": "/check/is-avene-eau-thermale-crme-hydratante-avne-pdiatril-sterile-cosmetics-fragrance-free-safe",
@@ -5195,7 +5188,7 @@
     "drip_day": 9
   },
   {
-    "url": "/check/is-avene-eau-thermale-crme-hydratante-avne-pdiatril-sterile-cosmetics-nut-allergy-safe-safe",
+    "url": "/check/is-avene-eau-thermale-crme-hydratante-avne-pdiatril-sterile-cosmetics-nut-allergy-safe",
     "type": "check",
     "brand": "Avene Eau Thermale",
     "product": "Crème Hydratante Avène Pédiatril Sterile Cosmetics",
@@ -5404,7 +5397,7 @@
     "drip_day": 9
   },
   {
-    "url": "/check/is-avene-trixera-nut-allergy-safe-safe",
+    "url": "/check/is-avene-trixera-nut-allergy-safe",
     "type": "check",
     "brand": "Avene",
     "product": "Trixera",
@@ -5492,7 +5485,7 @@
     "drip_day": 9
   },
   {
-    "url": "/check/is-avene-sunsimed-reef-safe-safe",
+    "url": "/check/is-avene-sunsimed-reef-safe",
     "type": "check",
     "brand": "Avene",
     "product": "SunsiMed",
@@ -5613,7 +5606,7 @@
     "drip_day": 9
   },
   {
-    "url": "/check/is-eucerin-aquaphor-healing-ointment-fragrance-free-nut-allergy-safe-safe",
+    "url": "/check/is-eucerin-aquaphor-healing-ointment-fragrance-free-nut-allergy-safe",
     "type": "check",
     "brand": "Eucerin Aquaphor",
     "product": "healing ointment fragrance free",
@@ -5720,7 +5713,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 10
+    "drip_day": 9
   },
   {
     "url": "/check/is-eucerin-eucerin-aquaphor-cleanser-wash-shampoo-malassezia-free-safe",
@@ -5844,7 +5837,7 @@
     "drip_day": 10
   },
   {
-    "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-nut-allergy-safe-safe",
+    "url": "/check/is-eucerin-eucerin-original-healing-rice-creme-nut-allergy-safe",
     "type": "check",
     "brand": "Eucerin",
     "product": "Eucerin Original Healing Rice Creme",
@@ -5965,7 +5958,7 @@
     "drip_day": 10
   },
   {
-    "url": "/check/is-eucerin-daily-hydration-lotion-nut-allergy-safe-safe",
+    "url": "/check/is-eucerin-daily-hydration-lotion-nut-allergy-safe",
     "type": "check",
     "brand": "Eucerin",
     "product": "Daily Hydration Lotion",
@@ -6020,7 +6013,7 @@
     "drip_day": 10
   },
   {
-    "url": "/check/is-eucerin-skin-calming-body-lotion-for-dry-and-itchy-skin-nut-allergy-safe-safe",
+    "url": "/check/is-eucerin-skin-calming-body-lotion-for-dry-and-itchy-skin-nut-allergy-safe",
     "type": "check",
     "brand": "Eucerin",
     "product": "Skin Calming Body Lotion for Dry and Itchy Skin",
@@ -6163,7 +6156,7 @@
     "drip_day": 10
   },
   {
-    "url": "/check/is-eucerin-eucerin-roughness-relief-lotion-fragrance-free-nut-allergy-safe-safe",
+    "url": "/check/is-eucerin-eucerin-roughness-relief-lotion-fragrance-free-nut-allergy-safe",
     "type": "check",
     "brand": "Eucerin",
     "product": "Eucerin, Roughness Relief Lotion, Fragrance Free",
@@ -6218,7 +6211,7 @@
     "drip_day": 10
   },
   {
-    "url": "/check/is-eucerin-advanced-repair-hand-cream-nut-allergy-safe-safe",
+    "url": "/check/is-eucerin-advanced-repair-hand-cream-nut-allergy-safe",
     "type": "check",
     "brand": "Eucerin",
     "product": "Advanced Repair Hand Cream",
@@ -6314,7 +6307,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 11
+    "drip_day": 10
   },
   {
     "url": "/check/is-paula-s-choice-2-bha-body-smoothing-spot-exfoliant-alcohol-free-safe",
@@ -6361,7 +6354,7 @@
     "drip_day": 11
   },
   {
-    "url": "/check/is-paula-s-choice-2-bha-body-smoothing-spot-exfoliant-nut-allergy-safe-safe",
+    "url": "/check/is-paula-s-choice-2-bha-body-smoothing-spot-exfoliant-nut-allergy-safe",
     "type": "check",
     "brand": "Paula S Choice",
     "product": "2% BHA Body Smoothing Spot Exfoliant",
@@ -6515,7 +6508,7 @@
     "drip_day": 11
   },
   {
-    "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-nut-allergy-safe-safe",
+    "url": "/check/is-paula-s-choice-skin-perfecting-6-mandelic-acid-2-lactic-acid-liquid-exfoliant-nut-allergy-safe",
     "type": "check",
     "brand": "Paula S Choice",
     "product": "Skin Perfecting 6% Mandelic Acid + 2% Lactic Acid Liquid Exfoliant",
@@ -6592,7 +6585,7 @@
     "drip_day": 11
   },
   {
-    "url": "/check/is-vanicream-vanicream-shampoo-nut-allergy-safe-safe",
+    "url": "/check/is-vanicream-vanicream-shampoo-nut-allergy-safe",
     "type": "check",
     "brand": "Vanicream",
     "product": "Vanicream shampoo",
@@ -6669,7 +6662,7 @@
     "drip_day": 11
   },
   {
-    "url": "/check/is-vanicream-gentle-body-wash-nut-allergy-safe-safe",
+    "url": "/check/is-vanicream-gentle-body-wash-nut-allergy-safe",
     "type": "check",
     "brand": "Vanicream",
     "product": "Gentle Body Wash",
@@ -6812,7 +6805,7 @@
     "drip_day": 11
   },
   {
-    "url": "/check/is-vanicream-vanicream-moisturizing-lotion-nut-allergy-safe-safe",
+    "url": "/check/is-vanicream-vanicream-moisturizing-lotion-nut-allergy-safe",
     "type": "check",
     "brand": "Vanicream",
     "product": "Vanicream Moisturizing Lotion",
@@ -6908,7 +6901,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 12
+    "drip_day": 11
   },
   {
     "url": "/check/is-first-aid-beauty-ultra-repair-cream-pregnancy-safe",
@@ -7021,7 +7014,7 @@
     "drip_day": 12
   },
   {
-    "url": "/check/is-first-aid-beauty-ultra-repair-cream-nut-allergy-safe-safe",
+    "url": "/check/is-first-aid-beauty-ultra-repair-cream-nut-allergy-safe",
     "type": "check",
     "brand": "First Aid Beauty",
     "product": "Ultra Repair Cream",
@@ -7241,7 +7234,7 @@
     "drip_day": 12
   },
   {
-    "url": "/check/is-cosrx-two-in-one-poreless-power-liquid-nut-allergy-safe-safe",
+    "url": "/check/is-cosrx-two-in-one-poreless-power-liquid-nut-allergy-safe",
     "type": "check",
     "brand": "COSRX",
     "product": "Two in One Poreless Power Liquid",
@@ -7483,7 +7476,7 @@
     "drip_day": 12
   },
   {
-    "url": "/check/is-cosrx-aloe-soothing-sun-cream-nut-allergy-safe-safe",
+    "url": "/check/is-cosrx-aloe-soothing-sun-cream-nut-allergy-safe",
     "type": "check",
     "brand": "Cosrx",
     "product": "Aloe Soothing Sun Cream",
@@ -7502,7 +7495,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 13
+    "drip_day": 12
   },
   {
     "url": "/check/is-kiehl-s-since-1851-midnight-recovery-botanical-cleansing-oil-non-comedogenic-safe",
@@ -8096,7 +8089,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 14
+    "drip_day": 13
   },
   {
     "url": "/check/is-balea-hand-nagel-balsam-kamille-vegan-cruelty-free-safe",
@@ -8132,7 +8125,7 @@
     "drip_day": 14
   },
   {
-    "url": "/check/is-balea-hand-nagel-balsam-kamille-nut-allergy-safe-safe",
+    "url": "/check/is-balea-hand-nagel-balsam-kamille-nut-allergy-safe",
     "type": "check",
     "brand": "Balea",
     "product": "Hand & Nagel Balsam Kamille",
@@ -8275,7 +8268,7 @@
     "drip_day": 14
   },
   {
-    "url": "/check/is-balea-deo-bodyspray-black-secret-nut-allergy-safe-safe",
+    "url": "/check/is-balea-deo-bodyspray-black-secret-nut-allergy-safe",
     "type": "check",
     "brand": "Balea",
     "product": "deo-Bodyspray Black Secret",
@@ -8374,7 +8367,7 @@
     "drip_day": 14
   },
   {
-    "url": "/check/is-balea-volumen-shampoo-patchouli-jasmin-nut-allergy-safe-safe",
+    "url": "/check/is-balea-volumen-shampoo-patchouli-jasmin-nut-allergy-safe",
     "type": "check",
     "brand": "Balea",
     "product": "Volumen Shampoo Patchouli & Jasmin",
@@ -8473,7 +8466,7 @@
     "drip_day": 14
   },
   {
-    "url": "/check/is-balea-anti-schuppen-shampoo-wasserminze-bambus-nut-allergy-safe-safe",
+    "url": "/check/is-balea-anti-schuppen-shampoo-wasserminze-bambus-nut-allergy-safe",
     "type": "check",
     "brand": "Balea",
     "product": "Anti-Schuppen Shampoo Wasserminze & Bambus",
@@ -8616,7 +8609,7 @@
     "drip_day": 14
   },
   {
-    "url": "/check/is-balea-trend-it-up-nut-allergy-safe-safe",
+    "url": "/check/is-balea-trend-it-up-nut-allergy-safe",
     "type": "check",
     "brand": "Balea",
     "product": "Trend it up",
@@ -8690,7 +8683,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 15
+    "drip_day": 14
   },
   {
     "url": "/check/is-balea-men-arctic-fresh-duschgel-fragrance-free-safe",
@@ -8759,7 +8752,7 @@
     "drip_day": 15
   },
   {
-    "url": "/check/is-balea-men-arctic-fresh-duschgel-nut-allergy-safe-safe",
+    "url": "/check/is-balea-men-arctic-fresh-duschgel-nut-allergy-safe",
     "type": "check",
     "brand": "Balea MEN",
     "product": "Arctic Fresh Duschgel",
@@ -8858,7 +8851,7 @@
     "drip_day": 15
   },
   {
-    "url": "/check/is-balea-med-5-urea-dusche-shampoo-nut-allergy-safe-safe",
+    "url": "/check/is-balea-med-5-urea-dusche-shampoo-nut-allergy-safe",
     "type": "check",
     "brand": "Balea MED",
     "product": "5% UREA DUSCHE + SHAMPOO",
@@ -9001,7 +8994,7 @@
     "drip_day": 15
   },
   {
-    "url": "/check/is-nivea-nivea-men-black-white-invisible-ultimate-impact-long-lasting-protection-nut-allergy-safe-safe",
+    "url": "/check/is-nivea-nivea-men-black-white-invisible-ultimate-impact-long-lasting-protection-nut-allergy-safe",
     "type": "check",
     "brand": "Nivea",
     "product": "Nivea Men Black & White Invisible Ultimate Impact Long Lasting Protection",
@@ -9089,7 +9082,7 @@
     "drip_day": 15
   },
   {
-    "url": "/check/is-nivea-nivea-sun-hassas-annda-koruma-gne-alerjisine-kar-sprey-spf-50-reef-safe-safe",
+    "url": "/check/is-nivea-nivea-sun-hassas-annda-koruma-gne-alerjisine-kar-sprey-spf-50-reef-safe",
     "type": "check",
     "brand": "NIVEA",
     "product": "NIVEA SUN Hassas Anında Koruma Güneş Alerjisine Karşı Sprey SPF 50+",
@@ -9144,7 +9137,7 @@
     "drip_day": 15
   },
   {
-    "url": "/check/is-nivea-nivea-body-lotion-nut-allergy-safe-safe",
+    "url": "/check/is-nivea-nivea-body-lotion-nut-allergy-safe",
     "type": "check",
     "brand": "Nivea",
     "product": "nivea body lotion",
@@ -9284,10 +9277,10 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 16
+    "drip_day": 15
   },
   {
-    "url": "/check/is-nivea-nivea-nut-allergy-safe-safe",
+    "url": "/check/is-nivea-nivea-nut-allergy-safe",
     "type": "check",
     "brand": "Nivea",
     "product": "Nivea",
@@ -9430,7 +9423,7 @@
     "drip_day": 16
   },
   {
-    "url": "/check/is-nivea-creme-nut-allergy-safe-safe",
+    "url": "/check/is-nivea-creme-nut-allergy-safe",
     "type": "check",
     "brand": "NIVEA",
     "product": "Creme",
@@ -9485,7 +9478,7 @@
     "drip_day": 16
   },
   {
-    "url": "/check/is-nivea-men-sensitive-3in1-body-wash-nut-allergy-safe-safe",
+    "url": "/check/is-nivea-men-sensitive-3in1-body-wash-nut-allergy-safe",
     "type": "check",
     "brand": "Nivea Men",
     "product": "Sensitive 3in1 Body Wash",
@@ -9628,154 +9621,11 @@
     "drip_day": 16
   },
   {
-    "url": "/check/is-nivea-moisturizing-post-shave-balm-nut-allergy-safe-safe",
+    "url": "/check/is-nivea-moisturizing-post-shave-balm-nut-allergy-safe",
     "type": "check",
     "brand": "Nivea",
     "product": "Moisturizing Post Shave Balm",
     "rule": "Nut-Allergy Safe",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-pregnancy-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Pregnancy & Lactation",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-fungal-acne-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Fungal Acne (Malassezia)",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-non-comedogenic-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Non-Comedogenic",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-silicone-free-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Silicone-Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-fragrance-free-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Fragrance-Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-paraben-free-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Paraben-Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-alcohol-free-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Alcohol-Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-vegan-cruelty-free-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Vegan & Cruelty-Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-rosacea-eczema-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Rosacea & Eczema-Safe",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-malassezia-free-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Malassezia Yeast Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-nut-allergy-safe-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Nut-Allergy Safe",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-gluten-free-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Gluten-Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-13",
-    "drip_day": 16
-  },
-  {
-    "url": "/check/is-null-pure-collagne-marin-phthalate-free-safe",
-    "type": "check",
-    "brand": "Null",
-    "product": "pure collagène marin",
-    "rule": "Phthalate-Free",
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
@@ -9878,7 +9728,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-aroma-zone-base-lavante-malassezia-free-safe",
@@ -9889,10 +9739,10 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
-    "url": "/check/is-aroma-zone-base-lavante-nut-allergy-safe-safe",
+    "url": "/check/is-aroma-zone-base-lavante-nut-allergy-safe",
     "type": "check",
     "brand": "Aroma Zone",
     "product": "Base lavante",
@@ -9900,7 +9750,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-aroma-zone-base-lavante-gluten-free-safe",
@@ -9911,7 +9761,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-aroma-zone-base-lavante-phthalate-free-safe",
@@ -9922,7 +9772,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-pregnancy-safe",
@@ -9933,7 +9783,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-fungal-acne-safe",
@@ -9944,7 +9794,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-non-comedogenic-safe",
@@ -9955,7 +9805,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-silicone-free-safe",
@@ -9966,7 +9816,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-fragrance-free-safe",
@@ -9977,7 +9827,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-paraben-free-safe",
@@ -9988,7 +9838,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-alcohol-free-safe",
@@ -9999,7 +9849,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-vegan-cruelty-free-safe",
@@ -10010,7 +9860,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-rosacea-eczema-safe",
@@ -10021,7 +9871,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 17
+    "drip_day": 16
   },
   {
     "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-malassezia-free-safe",
@@ -10035,7 +9885,7 @@
     "drip_day": 17
   },
   {
-    "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-nut-allergy-safe-safe",
+    "url": "/check/is-nu-skin-nutricentials-day-dream-protective-cream-nut-allergy-safe",
     "type": "check",
     "brand": "Nu Skin",
     "product": "Nutricentials, day dream protective cream",
@@ -10090,7 +9940,7 @@
     "drip_day": 17
   },
   {
-    "url": "/check/is-aroma-zone-gel-douche-sorbet-de-verveine-nut-allergy-safe-safe",
+    "url": "/check/is-aroma-zone-gel-douche-sorbet-de-verveine-nut-allergy-safe",
     "type": "check",
     "brand": "Aroma Zone",
     "product": "Gel douche sorbet de verveine",
@@ -10233,7 +10083,7 @@
     "drip_day": 17
   },
   {
-    "url": "/check/is-aroma-zone-base-micellaire-concentre-nut-allergy-safe-safe",
+    "url": "/check/is-aroma-zone-base-micellaire-concentre-nut-allergy-safe",
     "type": "check",
     "brand": "Aroma Zone",
     "product": "Base micellaire concentrée",
@@ -10376,7 +10226,7 @@
     "drip_day": 17
   },
   {
-    "url": "/check/is-embryolisse-embryolisse-nut-allergy-safe-safe",
+    "url": "/check/is-embryolisse-embryolisse-nut-allergy-safe",
     "type": "check",
     "brand": "Embryolisse",
     "product": "Embryolisse",
@@ -10472,10 +10322,10 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
-    "url": "/check/is-aroma-zone-coloration-vgtale-henn-cuivr-nut-allergy-safe-safe",
+    "url": "/check/is-aroma-zone-coloration-vgtale-henn-cuivr-nut-allergy-safe",
     "type": "check",
     "brand": "Aroma Zone",
     "product": "Coloration végétale henné cuivré",
@@ -10483,7 +10333,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-coloration-vgtale-henn-cuivr-gluten-free-safe",
@@ -10494,7 +10344,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-coloration-vgtale-henn-cuivr-phthalate-free-safe",
@@ -10505,7 +10355,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-silicone-free-safe",
@@ -10516,7 +10366,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-fragrance-free-safe",
@@ -10527,7 +10377,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-paraben-free-safe",
@@ -10538,7 +10388,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-sulfate-free-safe",
@@ -10549,7 +10399,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-vegan-cruelty-free-safe",
@@ -10560,7 +10410,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-malassezia-free-safe",
@@ -10571,10 +10421,10 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
-    "url": "/check/is-aroma-zone-henn-chtain-fonc-nut-allergy-safe-safe",
+    "url": "/check/is-aroma-zone-henn-chtain-fonc-nut-allergy-safe",
     "type": "check",
     "brand": "Aroma Zone",
     "product": "Henné châtain foncé",
@@ -10582,7 +10432,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-gluten-free-safe",
@@ -10593,7 +10443,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
     "url": "/check/is-aroma-zone-henn-chtain-fonc-phthalate-free-safe",
@@ -10604,7 +10454,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-pregnancy-safe",
@@ -10615,7 +10465,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-13",
-    "drip_day": 18
+    "drip_day": 17
   },
   {
     "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-fungal-acne-safe",
@@ -10717,7 +10567,7 @@
     "drip_day": 18
   },
   {
-    "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-nut-allergy-safe-safe",
+    "url": "/check/is-eco-dent-extrabrite-baking-soda-toothpowder-nut-allergy-safe",
     "type": "check",
     "brand": "Eco Dent",
     "product": "ExtraBrite Baking Soda Toothpowder",
@@ -10860,7 +10710,7 @@
     "drip_day": 18
   },
   {
-    "url": "/check/is-ozenke-shampoing-texturisant-nut-allergy-safe-safe",
+    "url": "/check/is-ozenke-shampoing-texturisant-nut-allergy-safe",
     "type": "check",
     "brand": "Ozenke",
     "product": "Shampoing texturisant",

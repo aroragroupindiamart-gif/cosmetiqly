@@ -76,19 +76,27 @@ export async function getProductBySlugs(brandSlug, productSlug, db = null) {
 export async function getCheckPageData(slug, db = null) {
   if (!slug || !slug.startsWith('is-')) return null;
 
-  // Find matching rule from 15 rules
+  // Find matching rule from 15 rules (sorted by slug length descending for exact boundary matching)
   let matchedRule = null;
-  for (const rule of SAFETY_RULES) {
-    const suffix = `-${rule.slug}-safe`;
-    if (slug.endsWith(suffix)) {
+  let ruleSuffix = '';
+  const sortedRules = [...SAFETY_RULES].sort((a, b) => b.slug.length - a.slug.length);
+  for (const rule of sortedRules) {
+    const primarySuffix = rule.slug.endsWith('-safe') ? `-${rule.slug}` : `-${rule.slug}-safe`;
+    const fallbackSuffix = `-${rule.slug}-safe`;
+    if (slug.endsWith(primarySuffix)) {
       matchedRule = rule;
+      ruleSuffix = primarySuffix;
+      break;
+    } else if (slug.endsWith(fallbackSuffix)) {
+      matchedRule = rule;
+      ruleSuffix = fallbackSuffix;
       break;
     }
   }
   if (!matchedRule) return null;
 
-  // Extract core product identifier: is-[brand-product]-rule-safe
-  const core = slug.slice(3, -(matchedRule.slug.length + 6));
+  // Extract core product identifier: is-[brand-product]-[ruleSuffix]
+  const core = slug.slice(3, -ruleSuffix.length);
   if (!core) return null;
 
   // Query candidates matching brand_slug prefix
@@ -164,10 +172,12 @@ export async function getOtherProductChecks(product, currentRuleSlug) {
     if (!isRuleRelevant(rule, product.category)) continue;
 
     const evalRes = evaluateProductRule(product.ingredients_list, rule);
+    let checkSlug = `is-${product.brand_slug}-${product.product_slug}-${rule.slug}-safe`;
+    checkSlug = checkSlug.replace(/-safe-safe$/, '-safe');
     otherChecks.push({
       rule,
       evaluation: evalRes,
-      slug: `is-${product.brand_slug}-${product.product_slug}-${rule.slug}-safe`
+      slug: checkSlug
     });
   }
   return otherChecks;

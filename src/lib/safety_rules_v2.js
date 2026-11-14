@@ -754,14 +754,14 @@ export const SAFETY_RULES = [
       {
         name: 'fragrance',
         severity: 'HIGH',
-        citation: 'Johansen JD, Bonefeld CM, Rastogi SC, et al. European Society of Contact Dermatitis Guideline for Diagnostic Patch Testing-Recommendations on Best Practice. Contact Dermatitis.',
+        citation: 'Uter W, et al. European Society of Contact Dermatitis Guideline for Diagnostic Patch Testing-Recommendations on Best Practice. Contact Dermatitis. 2026.',
         source_url: 'https://pubmed.ncbi.nlm.nih.gov/42324086/',
         note: 'Leading cause of allergic contact dermatitis and flare-ups in rosacea and eczema patients.'
       },
       {
         name: 'parfum',
         severity: 'HIGH',
-        citation: 'Johansen JD, Bonefeld CM, Rastogi SC, et al. Contact Dermatitis.',
+        citation: 'Uter W, et al. European Society of Contact Dermatitis Guideline for Diagnostic Patch Testing-Recommendations on Best Practice. Contact Dermatitis. 2026.',
         source_url: 'https://pubmed.ncbi.nlm.nih.gov/42324086/',
         note: 'Synthetic aroma compound mixture triggering inflammatory responses in hyper-reactive facial skin.'
       }
@@ -917,22 +917,22 @@ export const SAFETY_RULES = [
       {
         name: 'hordeum vulgare seed extract',
         severity: 'HIGH',
-        citation: 'Celiac Disease Foundation (CDF). Gluten in Cosmetics and Personal Care Products Guide.',
-        source_url: 'https://celiac.org/gluten-free-living/gluten-in-cosmetics-and-personal-care-products/',
+        citation: 'Thompson T, Grace T. Gluten in cosmetics: is there a reason for concern? J Acad Nutr Diet. 2012;112(9):1316-1323.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/22939435/',
         note: 'Barley seed botanical extract containing hordein gluten proteins.'
       },
       {
         name: 'secale cereale seed extract',
         severity: 'HIGH',
-        citation: 'Celiac Disease Foundation (CDF). Gluten in Cosmetics Guide.',
-        source_url: 'https://celiac.org/gluten-free-living/gluten-in-cosmetics-and-personal-care-products/',
+        citation: 'Thompson T, Grace T. Gluten in cosmetics: is there a reason for concern? J Acad Nutr Diet. 2012;112(9):1316-1323.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/22939435/',
         note: 'Rye grain botanical extract containing secalin gluten proteins.'
       },
       {
         name: 'hydrolyzed wheat starch',
         severity: 'HIGH',
-        citation: 'Celiac Disease Foundation (CDF). Gluten in Cosmetics Guide.',
-        source_url: 'https://celiac.org/gluten-free-living/gluten-in-cosmetics-and-personal-care-products/',
+        citation: 'Thompson T, Grace T. Gluten in cosmetics: is there a reason for concern? J Acad Nutr Diet. 2012;112(9):1316-1323.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/22939435/',
         note: 'Starch derivative prepared from wheat grain; potential gluten peptide residues.'
       }
     ]
@@ -949,7 +949,7 @@ export const SAFETY_RULES = [
         name: 'diethyl phthalate',
         severity: 'HIGH',
         citation: 'SCCS. Opinion on Phthalates (Diethyl phthalate), SCCS/1183/08 (2008).',
-        source_url: 'https://ec.europa.eu/health/ph_risk/committees/04_sccs/docs/sccs_o_066.pdf',
+        source_url: 'https://ec.europa.eu/health/archive/ph_risk/committees/04_sccp/docs/sccp_o_138.pdf',
         note: 'Synthetic fragrance fixative under continuous toxicological scrutiny for potential endocrine disruption.'
       },
       {
