@@ -119,19 +119,4 @@ for (const [d, count] of Object.entries(dayCounts)) {
 // Save complete drip manifest
 const manifestPath = path.join(__dirname, '../data/drip_manifest.json');
 fs.writeFileSync(manifestPath, JSON.stringify(allEntries, null, 2));
-
-// Generate matching Day 1 static sitemap.xml
-const day1Entries = allEntries.filter(e => e.drip_day === 1);
-const SITE_DOMAIN = process.env.SITE_DOMAIN || 'https://cosmetiqlyy.com';
-const today = new Date().toISOString().split('T')[0];
-
-let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
-for (const item of day1Entries) {
-  const fullLoc = item.url === '/' ? `${SITE_DOMAIN}/` : `${SITE_DOMAIN}${item.url}`;
-  sitemapXml += `  <url><loc>${fullLoc}</loc><lastmod>${today}</lastmod><changefreq>${item.changefreq}</changefreq><priority>${item.priority.toFixed(1)}</priority></url>\n`;
-}
-sitemapXml += `</urlset>`;
-
-const sitemapPublicPath = path.join(__dirname, '../public/sitemap.xml');
-fs.writeFileSync(sitemapPublicPath, sitemapXml);
-console.log(`\n🗺️ Saved active Day 1 sitemap.xml to ${sitemapPublicPath} (${day1Entries.length} URLs).`);
+console.log(`\n💾 Saved complete drip manifest to ${manifestPath} (${allEntries.length} URLs across ${Object.keys(dayCounts).length} days).`);

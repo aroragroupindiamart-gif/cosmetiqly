@@ -712,29 +712,29 @@ export const SAFETY_RULES = [
       {
         name: 'lactic acid',
         severity: 'MODERATE',
-        citation: 'National Rosacea Society. Rosacea Triggers and Skin Sensitivity Survey. Rosacea Review.',
-        source_url: 'https://www.rosacea.org/patients/rosacea-triggers/factors-that-may-trigger-rosacea-flares',
+        citation: 'Wilkin J, Dahl M, Detmar M, et al. Standard classification of rosacea: Report of the National Rosacea Society Expert Committee on the Classification and Staging of Rosacea. J Am Acad Dermatol. 2002;46(4):584-587.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/11907512/',
         note: 'AHA exfoliant with moderate sting potential on compromised atopic barriers.'
       },
       {
         name: 'alcohol denat.',
         severity: 'HIGH',
-        citation: 'National Rosacea Society. Factors that may trigger rosacea flares: Skin care products. NRS Clinical Guidelines.',
-        source_url: 'https://www.rosacea.org/patients/rosacea-triggers/factors-that-may-trigger-rosacea-flares',
+        citation: 'Wilkin J, Dahl M, Detmar M, et al. Standard classification of rosacea: Report of the National Rosacea Society Expert Committee on the Classification and Staging of Rosacea. J Am Acad Dermatol. 2002;46(4):584-587.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/11907512/',
         note: 'Volatile drying alcohol inducing immediate neurovascular flushing, stinging, and lipid depletion.'
       },
       {
         name: 'menthol',
         severity: 'HIGH',
-        citation: 'National Rosacea Society. Tripwire Ingredients to Avoid in Rosacea. NRS Guidelines.',
-        source_url: 'https://www.rosacea.org/patients/skin-care/skin-care-and-cosmetics',
+        citation: 'Wilkin J, Dahl M, Detmar M, et al. Standard classification of rosacea: Report of the National Rosacea Society Expert Committee on the Classification and Staging of Rosacea. J Am Acad Dermatol. 2002;46(4):584-587.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/11907512/',
         note: 'Sensory counter-irritant that activates TRPM8 cold-sensing receptors, provoking reactive vasodilatory flush.'
       },
       {
         name: 'camphor',
         severity: 'HIGH',
-        citation: 'National Rosacea Society. Tripwire Ingredients to Avoid in Rosacea. NRS Guidelines.',
-        source_url: 'https://www.rosacea.org/patients/skin-care/skin-care-and-cosmetics',
+        citation: 'Wilkin J, Dahl M, Detmar M, et al. Standard classification of rosacea: Report of the National Rosacea Society Expert Committee on the Classification and Staging of Rosacea. J Am Acad Dermatol. 2002;46(4):584-587.',
+        source_url: 'https://pubmed.ncbi.nlm.nih.gov/11907512/',
         note: 'Known cutaneous sensory irritant triggering burning and facial erythema.'
       },
       {
