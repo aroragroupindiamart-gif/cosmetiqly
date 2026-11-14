@@ -206,7 +206,7 @@ export const SAFETY_RULES = [
     name: 'Non-Comedogenic',
     slug: 'non-comedogenic',
     type: 'risk',
-    description: 'Evaluates ingredients with published rabbit ear / human microcomedone ratings of 4 or 5 on the 0-5 comedogenicity scale.',
+    description: 'Screens for ingredients with published rabbit ear / human microcomedone ratings of 4 or 5 on the 0-5 comedogenicity scale.',
     relevantCategories: ['Skincare', 'Face', 'Moisturizer', 'Cleanser', 'Serum', 'Treatment', 'Eye Cream'],
     triggers: [
       {
@@ -772,7 +772,7 @@ export const SAFETY_RULES = [
     name: 'Malassezia Yeast Free',
     slug: 'malassezia-free',
     type: 'risk',
-    description: 'Strict yeast isolation screen targeting pityrosporum folliculitis and seborrheic dermatitis fungal nutrition.',
+    description: 'Screens for yeast-nutrition ingredients linked to pityrosporum folliculitis and seborrheic dermatitis.',
     relevantCategories: ['Skincare', 'Face', 'Hair', 'Cleanser', 'Moisturizer', 'Serum'],
     triggers: [
       {
