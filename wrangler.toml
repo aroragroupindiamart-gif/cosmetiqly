@@ -6,3 +6,7 @@ pages_build_output_dir = "./dist"
 binding = "DB"
 database_name = "cosmetiqly-db"
 database_id = "dda11c5e-f780-453e-9eff-f8fcf2cddca4"
+
+[vars]
+LAUNCH_DATE = "2026-11-24"
+SITE_DOMAIN = "https://cosmetiqlyy.com"
