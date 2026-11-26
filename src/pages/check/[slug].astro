@@ -214,11 +214,11 @@ const jsonLd = isFound ? {
               <h3 class="font-serif text-base font-semibold text-emerald-950 mb-1">
                 Formulation Analysis: Why This Product Passes
               </h3>
-              <p class="text-xs text-emerald-900 leading-relaxed mb-2">
-                The <strong>{rule.name}</strong> standard {rule.description.toLowerCase().startsWith('screens for') ? rule.description.toLowerCase() : `screens for ${rule.description.toLowerCase()}`}
+              <p class="text-xs text-emerald-900 leading-relaxed mb-1">
+                <strong>{product.brand} {product.name}:</strong> 0 of {rule.triggers.length} {rule.name} triggers matched across {evaluation.totalIngredients} INCI ingredients ({evaluation.score.toFixed(1)}/10 &mdash; {evaluation.verdictText}).
               </p>
               <p class="text-xs text-emerald-800 leading-relaxed">
-                Across all {evaluation.totalIngredients} verified INCI ingredients in <strong>{product.brand} {product.name}</strong>, zero matches were detected against the {rule.triggers.length} screened triggers under this standard. Consequently, this formulation earns a verdict of <strong>{evaluation.verdictText}</strong> with a score of <strong>{evaluation.score.toFixed(1)}/10</strong> ({evaluation.tierLabel}).
+                {rule.description}
               </p>
             </div>
           </div>
@@ -343,21 +343,13 @@ const jsonLd = isFound ? {
         </section>
       )}
 
-      <!-- 8. Provenance & Methodology Box (§5) -->
-      <section class="p-5 rounded-lg border border-slate-200 bg-white text-xs text-slate-600 leading-relaxed mb-10">
-        <h4 class="font-serif text-sm font-semibold text-slate-900 mb-2">Data Provenance & Reviewer Information</h4>
-        <ul class="space-y-1 text-xs">
-          <li><strong>Data Source:</strong> {product.source} &middot; Barcode: <code>{product.barcode}</code> (<a href={product.source_url} target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline">Verify on Source</a>)</li>
-          <li><strong>Last Data Verification:</strong> {product.verified_date}</li>
-          <li><strong>Editorial Supervisor:</strong> {SITE_CONFIG.reviewerName}, {SITE_CONFIG.reviewerTitle}</li>
-          <li><strong>Report an Error:</strong> If an ingredient list is inaccurate, <a href="/contact" class="text-emerald-800 underline">submit a correction</a> with product packaging proof (72-hour SLA).</li>
-        </ul>
+      <!-- 8. Provenance & Reviewer Box -->
+      <section class="p-4 rounded-lg border border-slate-200 bg-white text-xs text-slate-600 leading-relaxed">
+        <strong>Source:</strong> {product.source} (<code>{product.barcode}</code>, <a href={product.source_url} target="_blank" rel="noopener noreferrer" class="text-emerald-800 underline">verify</a>) &middot;
+        <strong>Verified:</strong> {product.verified_date} &middot;
+        <strong>Reviewer:</strong> {SITE_CONFIG.reviewerName} &middot;
+        <a href="/contact" class="text-emerald-800 underline">Report error (72h SLA)</a>
       </section>
-
-      <!-- 9. Prominent On-Page Medical Disclaimer (§5) -->
-      <div class="p-4 rounded-lg border border-amber-200 bg-amber-50/50 text-xs text-amber-900 leading-relaxed">
-        <strong>Important Disclaimer:</strong> This review is an automated toxicological and dermatological screening for educational purposes. It is not medical or dermatological advice. Chemical safety depends on user skin condition and exact concentration. Always patch-test new products.
-      </div>
     </article>
   )}
 </Layout>

@@ -141,47 +141,30 @@ const globalOrgSchema = {
     </main>
 
     <!-- Editorial Footer with E-E-A-T Links & Disclaimer -->
-    <footer class="border-t border-slate-200 bg-[#fbfbf9] mt-20">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          <div class="md:col-span-2">
-            <span class="font-serif text-xl font-semibold text-slate-900">Cosmetiqly</span>
-            <p class="text-xs text-slate-500 mt-2 max-w-md leading-relaxed">
-              Transparent, citation-backed INCI cosmetic safety reviews. We screen real formulation data against published toxicology, comedogenicity, and dermatological guidelines.
-            </p>
-            <p class="text-xs text-slate-400 mt-3">
-              Data sourced under Open Database Licence (ODbL) from Open Beauty Facts.
-            </p>
-          </div>
-
+    <footer class="border-t border-slate-200 bg-[#fbfbf9] mt-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 text-xs text-slate-500 space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Database</h4>
-            <ul class="space-y-2 text-xs text-slate-600">
-              <li><a href="/directory" class="hover:text-emerald-800">Brand Directory A-Z</a></li>
-              <li><a href="/rules" class="hover:text-emerald-800">15 Safety Rules</a></li>
-              <li><a href="/methodology" class="hover:text-emerald-800">Scoring Methodology</a></li>
-              <li><a href="/contact" class="hover:text-emerald-800">Report Wrong Formulation</a></li>
-            </ul>
+            <span class="font-serif text-base font-semibold text-slate-900">Cosmetiqly</span>
+            <span class="ml-2 text-slate-400">ODbL data via Open Beauty Facts.</span>
           </div>
-
-          <div>
-            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 mb-3">Editorial & Legal</h4>
-            <ul class="space-y-2 text-xs text-slate-600">
-              <li><a href="/about" class="hover:text-emerald-800">About & Reviewer Standards</a></li>
-              <li><a href="/privacy" class="hover:text-emerald-800">Privacy Policy</a></li>
-              <li><a href="/terms" class="hover:text-emerald-800">Terms of Service</a></li>
-              <li><a href="/contact" class="hover:text-emerald-800">Editorial Contact</a></li>
-            </ul>
-          </div>
+          <nav class="flex flex-wrap gap-x-4 gap-y-1 text-slate-600">
+            <a href="/directory" class="hover:text-emerald-800">Directory</a>
+            <a href="/rules" class="hover:text-emerald-800">Safety Rules</a>
+            <a href="/methodology" class="hover:text-emerald-800">Methodology</a>
+            <a href="/about" class="hover:text-emerald-800">About</a>
+            <a href="/contact" class="hover:text-emerald-800">Contact</a>
+            <a href="/privacy" class="hover:text-emerald-800">Privacy</a>
+            <a href="/terms" class="hover:text-emerald-800">Terms</a>
+          </nav>
         </div>
 
-        <!-- Prominent Medical Disclaimer (§5) -->
-        <div class="pt-8 border-t border-slate-200 text-xs text-slate-500 leading-relaxed">
-          <p class="mb-2">
-            <strong>Medical Disclaimer:</strong> Cosmetiqly provides educational ingredient analysis based on published scientific literature (CIR, SCCS, clinical dermatology studies). It does not constitute medical, diagnostic, or dermatological advice. Individual skin tolerances and allergic thresholds vary; patch-testing is advised prior to adopting new cosmetic formulations.
+        <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] text-slate-500">
+          <p>
+            <strong>Medical Disclaimer:</strong> Educational INCI screening only — not medical or dermatological advice; always patch-test.
           </p>
-          <p class="text-slate-400">
-            &copy; {new Date().getFullYear()} Cosmetiqly. Editorial review supervised by {SITE_CONFIG.reviewerName}, {SITE_CONFIG.reviewerTitle}.
+          <p class="text-slate-400 shrink-0">
+            &copy; {new Date().getFullYear()} Cosmetiqly &middot; {SITE_CONFIG.reviewerName} ({SITE_CONFIG.reviewerTitle})
           </p>
         </div>
       </div>

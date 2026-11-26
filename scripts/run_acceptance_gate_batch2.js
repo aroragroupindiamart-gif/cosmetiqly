@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { isExcludedBrand } from './brand_aliases.js';
+import { isExcludedBrand, normalizeBrand } from './brand_aliases.js';
 import { SAFETY_RULES } from '../src/lib/safety_rules_v2.js';
 import { isRuleRelevant } from '../src/lib/rule_engine_v2.js';
 
@@ -70,6 +70,11 @@ const seenCandidateSlugs = new Set(tierASlugs);
 const seenCandidateBarcodes = new Set(tierABarcodes);
 
 for (const p of allProducts) {
+  const aliased = normalizeBrand(p.brand);
+  if (aliased) {
+    p.brand = aliased.brand;
+    p.brand_slug = aliased.brand_slug;
+  }
   if (seenCandidateBarcodes.has(p.barcode)) {
     droppedCounts.tierAOverlap++;
     continue;

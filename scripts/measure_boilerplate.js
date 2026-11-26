@@ -4,20 +4,40 @@
  * Measures word-based and sentence-based boilerplate across 10 diverse check pages.
  */
 
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const baseUrl = (process.argv[2] || 'http://127.0.0.1:8788').replace(/\/+$/, '');
 
-const SAMPLE_SLUGS = [
-  '/check/is-cerave-moisturizing-cream-fungal-acne-safe',
-  '/check/is-cerave-cerave-foaming-facial-cleanser-sulfate-free-safe',
-  '/check/is-the-ordinary-granactive-retinoid-2-emulsion-pregnancy-safe',
-  '/check/is-la-roche-posay-toleriane-hydrating-gentle-face-cleanser-fragrance-free-safe',
-  '/check/is-neutrogena-neutrogena-oil-free-acne-face-scrub-125ml-rosacea-eczema-safe',
-  '/check/is-eucerin-aquaphor-healing-ointment-fragrance-free-fragrance-free-safe',
-  '/check/is-bioderma-sensibio-h2o-micellar-water-250ml-alcohol-free-safe',
-  '/check/is-cetaphil-gentle-skin-cleanser-paraben-free-safe',
-  '/check/is-avene-thermal-spring-water-spray-150ml-silicone-free-safe',
-  '/check/is-the-ordinary-niacinamide-10-zinc-1-non-comedogenic-safe'
-];
+// Select 10 diverse real check URLs from drip_manifest.json (10 distinct products across brands & rules)
+const manifest = JSON.parse(fs.readFileSync(path.join(__dirname, '../data/drip_manifest.json'), 'utf8'));
+const checks = manifest.filter(e => e.type === 'check' && e.drip_day <= 3);
+const SAMPLE_SLUGS = [];
+const seenProducts = new Set();
+const seenBrands = new Set();
+const seenRules = new Set();
+for (const c of checks) {
+  if (!seenProducts.has(c.product) && !seenBrands.has(c.brand) && !seenRules.has(c.rule)) {
+    SAMPLE_SLUGS.push(c.url);
+    seenProducts.add(c.product);
+    seenBrands.add(c.brand);
+    seenRules.add(c.rule);
+    if (SAMPLE_SLUGS.length >= 10) break;
+  }
+}
+for (const c of checks) {
+  if (SAMPLE_SLUGS.length >= 10) break;
+  if (!seenProducts.has(c.product)) {
+    SAMPLE_SLUGS.push(c.url);
+    seenProducts.add(c.product);
+  }
+}
+
+const BRAND_HUB_SLUGS = ['/brand/cerave', '/brand/kiehl-s-since-1851'];
+const ALL_TARGETS = [...SAMPLE_SLUGS, ...BRAND_HUB_SLUGS];
 
 function extractVisibleText(html) {
   return html
@@ -45,7 +65,7 @@ function getWordNgrams(words, n = 6) {
 }
 
 const pages = [];
-for (const slug of SAMPLE_SLUGS) {
+for (const slug of ALL_TARGETS) {
   const url = `${baseUrl}${slug}`;
   const res = await fetch(url);
   if (res.status !== 200) {
@@ -100,7 +120,7 @@ for (const p of pages) {
 
   sumWordPct += wordPct;
   sumSentPct += sentPct;
-  if (wordPct > 30) anyOver30 = true;
+  if (wordPct > 30 || sentPct > 30) anyOver30 = true;
 
   console.log(`- ${p.slug}`);
   console.log(`  Words: ${p.words.length} | Word-based boilerplate: ${wordPct.toFixed(1)}% | Sentence-based boilerplate: ${sentPct.toFixed(1)}%`);
@@ -108,7 +128,7 @@ for (const p of pages) {
 
 console.log(`\nAverage Word-based: ${(sumWordPct / pages.length).toFixed(1)}% | Average Sentence-based: ${(sumSentPct / pages.length).toFixed(1)}%`);
 if (anyOver30) {
-  console.error('❌ One or more pages exceeded 30% word-based boilerplate!');
+  console.error('❌ One or more pages exceeded 30% word-based or sentence-based boilerplate!');
   process.exit(1);
 }
-console.log('✅ All 10 pages <= 30% word-based boilerplate!');
+console.log('✅ All 12 pages (10 check + 2 brand hubs) <= 30% word-based AND sentence-based boilerplate!');

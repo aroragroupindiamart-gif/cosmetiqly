@@ -112,6 +112,7 @@ export const BRAND_ALIAS_MAP = {
   'simple': { brand: 'Simple', brand_slug: 'simple' },
   'pond s': { brand: "Pond's", brand_slug: 'ponds' },
   'ponds': { brand: "Pond's", brand_slug: 'ponds' },
+  'ponds s': { brand: "Pond's", brand_slug: 'ponds' },
   'minimalist': { brand: 'Minimalist', brand_slug: 'minimalist' },
   'the derma co': { brand: 'The Derma Co.', brand_slug: 'the-derma-co' },
   'derma co': { brand: 'The Derma Co.', brand_slug: 'the-derma-co' },

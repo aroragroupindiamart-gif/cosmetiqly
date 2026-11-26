@@ -51503,6 +51503,135 @@
     "drip_day": 87
   },
   {
+    "url": "/brand/ponds",
+    "type": "brand_hub",
+    "priority": 0.8,
+    "changefreq": "weekly",
+    "verified_date": "2026-11-26",
+    "drip_day": 87
+  },
+  {
+    "url": "/check/is-ponds-clarant-b3-pregnancy-safe",
+    "type": "check",
+    "brand": "Pond's",
+    "product": "clarant b3",
+    "rule": "Pregnancy & Lactation",
+    "priority": 0.7,
+    "changefreq": "monthly",
+    "verified_date": "2026-11-26",
+    "drip_day": 87
+  },
+  {
+    "url": "/check/is-ponds-clarant-b3-fungal-acne-safe",
+    "type": "check",
+    "brand": "Pond's",
+    "product": "clarant b3",
+    "rule": "Fungal Acne (Malassezia)",
+    "priority": 0.7,
+    "changefreq": "monthly",
+    "verified_date": "2026-11-26",
+    "drip_day": 87
+  },
+  {
+    "url": "/check/is-ponds-clarant-b3-non-comedogenic-safe",
+    "type": "check",
+    "brand": "Pond's",
+    "product": "clarant b3",
+    "rule": "Non-Comedogenic",
+    "priority": 0.7,
+    "changefreq": "monthly",
+    "verified_date": "2026-11-26",
+    "drip_day": 87
+  },
+  {
+    "url": "/check/is-ponds-clarant-b3-silicone-free-safe",
+    "type": "check",
+    "brand": "Pond's",
+    "product": "clarant b3",
+    "rule": "Silicone-Free",
+    "priority": 0.7,
+    "changefreq": "monthly",
+    "verified_date": "2026-11-26",
+    "drip_day": 87
+  },
+  {
+    "url": "/check/is-ponds-clarant-b3-fragrance-free-safe",
+    "type": "check",
+    "brand": "Pond's",
+    "product": "clarant b3",
+    "rule": "Fragrance-Free",
+    "priority": 0.7,
+    "changefreq": "monthly",
+    "verified_date": "2026-11-26",
+    "drip_day": 87
+  },
+  {
+    "url": "/check/is-ponds-clarant-b3-paraben-free-safe",
+    "type": "check",
+    "brand": "Pond's",
+    "product": "clarant b3",
+    "rule": "Paraben-Free",
+    "priority": 0.7,
+    "changefreq": "monthly",
+    "verified_date": "2026-11-26",
+    "drip_day": 87
+  },
+  {
+    "url": "/check/is-ponds-clarant-b3-alcohol-free-safe",
+    "type": "check",
+    "brand": "Pond's",
+    "product": "clarant b3",
+    "rule": "Alcohol-Free",
+    "priority": 0.7,
+    "changefreq": "monthly",
+    "verified_date": "2026-11-26",
+    "drip_day": 87
+  },
+  {
+    "url": "/check/is-ponds-clarant-b3-vegan-cruelty-free-safe",
+    "type": "check",
+    "brand": "Pond's",
+    "product": "clarant b3",
+    "rule": "Vegan & Cruelty-Free",
+    "priority": 0.7,
+    "changefreq": "monthly",
+    "verified_date": "2026-11-26",
+    "drip_day": 87
+  },
+  {
+    "url": "/check/is-ponds-clarant-b3-rosacea-eczema-safe",
+    "type": "check",
+    "brand": "Pond's",
+    "product": "clarant b3",
+    "rule": "Rosacea & Eczema-Safe",
+    "priority": 0.7,
+    "changefreq": "monthly",
+    "verified_date": "2026-11-26",
+    "drip_day": 87
+  },
+  {
+    "url": "/check/is-ponds-clarant-b3-malassezia-free-safe",
+    "type": "check",
+    "brand": "Pond's",
+    "product": "clarant b3",
+    "rule": "Malassezia Yeast Free",
+    "priority": 0.7,
+    "changefreq": "monthly",
+    "verified_date": "2026-11-26",
+    "drip_day": 87
+  },
+  {
+    "url": "/check/is-ponds-clarant-b3-nut-allergy-safe",
+    "type": "check",
+    "brand": "Pond's",
+    "product": "clarant b3",
+    "rule": "Nut-Allergy Safe",
+    "priority": 0.7,
+    "changefreq": "monthly",
+    "verified_date": "2026-11-26",
+    "drip_day": 87
+  },
+  {
     "url": "/brand/torriden",
     "type": "brand_hub",
     "priority": 0.8,
@@ -51530,7 +51659,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 87
+    "drip_day": 88
   },
   {
     "url": "/check/is-torriden-torriden-dive-in-serum-non-comedogenic-safe",
@@ -51541,7 +51670,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 87
+    "drip_day": 88
   },
   {
     "url": "/check/is-torriden-torriden-dive-in-serum-silicone-free-safe",
@@ -51552,7 +51681,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 87
+    "drip_day": 88
   },
   {
     "url": "/check/is-torriden-torriden-dive-in-serum-alcohol-free-safe",
@@ -51563,7 +51692,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 87
+    "drip_day": 88
   },
   {
     "url": "/check/is-torriden-torriden-dive-in-serum-rosacea-eczema-safe",
@@ -51574,7 +51703,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 87
+    "drip_day": 88
   },
   {
     "url": "/check/is-torriden-torriden-dive-in-serum-malassezia-free-safe",
@@ -51585,7 +51714,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 87
+    "drip_day": 88
   },
   {
     "url": "/brand/purito",
@@ -51593,7 +51722,7 @@
     "priority": 0.8,
     "changefreq": "weekly",
     "verified_date": "2026-11-26",
-    "drip_day": 87
+    "drip_day": 88
   },
   {
     "url": "/check/is-purito-purity-oat-pdrn-gentle-refining-toner-alcohol-free-safe",
@@ -51604,7 +51733,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 87
+    "drip_day": 88
   },
   {
     "url": "/brand/beauty-of-joseon",
@@ -51612,7 +51741,7 @@
     "priority": 0.8,
     "changefreq": "weekly",
     "verified_date": "2026-11-26",
-    "drip_day": 87
+    "drip_day": 88
   },
   {
     "url": "/check/is-beauty-of-joseon-green-plum-refreshing-toner-aha-bha-set-alcohol-free-safe",
@@ -51623,7 +51752,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 87
+    "drip_day": 88
   },
   {
     "url": "/brand/gold-bond",
@@ -51631,7 +51760,7 @@
     "priority": 0.8,
     "changefreq": "weekly",
     "verified_date": "2026-11-26",
-    "drip_day": 87
+    "drip_day": 88
   },
   {
     "url": "/check/is-gold-bond-age-renew-retinol-overnight-body-face-lotion-pregnancy-safe",
@@ -51642,7 +51771,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 87
+    "drip_day": 88
   },
   {
     "url": "/check/is-gold-bond-age-renew-retinol-overnight-body-face-lotion-fungal-acne-safe",
@@ -52112,7 +52241,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 88
+    "drip_day": 89
   },
   {
     "url": "/check/is-miss-jessies-pillow-soft-curls-styling-lotion-malassezia-free-safe",
@@ -52123,7 +52252,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 88
+    "drip_day": 89
   },
   {
     "url": "/check/is-miss-jessies-pillow-soft-curls-styling-lotion-nut-allergy-safe",
@@ -52134,7 +52263,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 88
+    "drip_day": 89
   },
   {
     "url": "/brand/elf",
@@ -52142,7 +52271,7 @@
     "priority": 0.8,
     "changefreq": "weekly",
     "verified_date": "2026-11-26",
-    "drip_day": 88
+    "drip_day": 89
   },
   {
     "url": "/check/is-elf-elf-eye-cream-pregnancy-safe",
@@ -52153,7 +52282,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 88
+    "drip_day": 89
   },
   {
     "url": "/check/is-elf-elf-eye-cream-fungal-acne-safe",
@@ -52164,7 +52293,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 88
+    "drip_day": 89
   },
   {
     "url": "/check/is-elf-elf-eye-cream-non-comedogenic-safe",
@@ -52175,7 +52304,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 88
+    "drip_day": 89
   },
   {
     "url": "/check/is-elf-elf-eye-cream-silicone-free-safe",
@@ -52186,7 +52315,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 88
+    "drip_day": 89
   },
   {
     "url": "/check/is-elf-elf-eye-cream-fragrance-free-safe",
@@ -52197,7 +52326,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 88
+    "drip_day": 89
   },
   {
     "url": "/check/is-elf-elf-eye-cream-paraben-free-safe",
@@ -52208,7 +52337,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 88
+    "drip_day": 89
   },
   {
     "url": "/check/is-elf-elf-eye-cream-alcohol-free-safe",
@@ -52219,7 +52348,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 88
+    "drip_day": 89
   },
   {
     "url": "/check/is-elf-elf-eye-cream-vegan-cruelty-free-safe",
@@ -52230,7 +52359,7 @@
     "priority": 0.7,
     "changefreq": "monthly",
     "verified_date": "2026-11-26",
-    "drip_day": 88
+    "drip_day": 89
   },
   {
     "url": "/check/is-elf-elf-eye-cream-rosacea-eczema-safe",
@@ -52388,135 +52517,6 @@
     "type": "check",
     "brand": "Sacara",
     "product": "Professional styling perfect curl",
-    "rule": "Nut-Allergy Safe",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-26",
-    "drip_day": 89
-  },
-  {
-    "url": "/brand/ponds-s",
-    "type": "brand_hub",
-    "priority": 0.8,
-    "changefreq": "weekly",
-    "verified_date": "2026-11-26",
-    "drip_day": 89
-  },
-  {
-    "url": "/check/is-ponds-s-clarant-b3-pregnancy-safe",
-    "type": "check",
-    "brand": "Ponds S",
-    "product": "clarant b3",
-    "rule": "Pregnancy & Lactation",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-26",
-    "drip_day": 89
-  },
-  {
-    "url": "/check/is-ponds-s-clarant-b3-fungal-acne-safe",
-    "type": "check",
-    "brand": "Ponds S",
-    "product": "clarant b3",
-    "rule": "Fungal Acne (Malassezia)",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-26",
-    "drip_day": 89
-  },
-  {
-    "url": "/check/is-ponds-s-clarant-b3-non-comedogenic-safe",
-    "type": "check",
-    "brand": "Ponds S",
-    "product": "clarant b3",
-    "rule": "Non-Comedogenic",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-26",
-    "drip_day": 89
-  },
-  {
-    "url": "/check/is-ponds-s-clarant-b3-silicone-free-safe",
-    "type": "check",
-    "brand": "Ponds S",
-    "product": "clarant b3",
-    "rule": "Silicone-Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-26",
-    "drip_day": 89
-  },
-  {
-    "url": "/check/is-ponds-s-clarant-b3-fragrance-free-safe",
-    "type": "check",
-    "brand": "Ponds S",
-    "product": "clarant b3",
-    "rule": "Fragrance-Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-26",
-    "drip_day": 89
-  },
-  {
-    "url": "/check/is-ponds-s-clarant-b3-paraben-free-safe",
-    "type": "check",
-    "brand": "Ponds S",
-    "product": "clarant b3",
-    "rule": "Paraben-Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-26",
-    "drip_day": 89
-  },
-  {
-    "url": "/check/is-ponds-s-clarant-b3-alcohol-free-safe",
-    "type": "check",
-    "brand": "Ponds S",
-    "product": "clarant b3",
-    "rule": "Alcohol-Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-26",
-    "drip_day": 89
-  },
-  {
-    "url": "/check/is-ponds-s-clarant-b3-vegan-cruelty-free-safe",
-    "type": "check",
-    "brand": "Ponds S",
-    "product": "clarant b3",
-    "rule": "Vegan & Cruelty-Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-26",
-    "drip_day": 89
-  },
-  {
-    "url": "/check/is-ponds-s-clarant-b3-rosacea-eczema-safe",
-    "type": "check",
-    "brand": "Ponds S",
-    "product": "clarant b3",
-    "rule": "Rosacea & Eczema-Safe",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-26",
-    "drip_day": 89
-  },
-  {
-    "url": "/check/is-ponds-s-clarant-b3-malassezia-free-safe",
-    "type": "check",
-    "brand": "Ponds S",
-    "product": "clarant b3",
-    "rule": "Malassezia Yeast Free",
-    "priority": 0.7,
-    "changefreq": "monthly",
-    "verified_date": "2026-11-26",
-    "drip_day": 89
-  },
-  {
-    "url": "/check/is-ponds-s-clarant-b3-nut-allergy-safe",
-    "type": "check",
-    "brand": "Ponds S",
-    "product": "clarant b3",
     "rule": "Nut-Allergy Safe",
     "priority": 0.7,
     "changefreq": "monthly",
