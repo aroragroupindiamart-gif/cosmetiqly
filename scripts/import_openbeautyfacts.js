@@ -4,6 +4,7 @@ import readline from 'readline';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { normalizeBrand, slugify } from './brand_aliases.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -12,6 +13,16 @@ const outputPath = path.join(__dirname, '../data/products_clean.json');
 console.log('🔄 Streaming and applying strict clinical INCI parsing on Open Beauty Facts...');
 
 const CSV_URL = 'https://static.openbeautyfacts.org/data/en.openbeautyfacts.org.products.csv.gz';
+
+function isValidObfImageUrl(url) {
+  if (!url || typeof url !== 'string') return false;
+  const u = url.trim();
+  if (!u.startsWith('https://images.openbeautyfacts.org/') && !u.startsWith('http://images.openbeautyfacts.org/')) {
+    return false;
+  }
+  if (u.includes('/invalid/')) return false;
+  return true;
+}
 
 const nonEnglishRegex = /\b(água|óleo|glicerina|conservante|ácido|fragrância|estearato|palmitato|extrato|álcool|manteiga|acqua|olio|acrilati|acido|profumo|estratto|huile|extrait|soin|visage|cheveux|ingredientes|composicion)\b/i;
 
@@ -28,22 +39,6 @@ function normalizeCategory(rawCategory) {
   if (/\b(hair|cheveux|shampoo|conditioner|apres-shampooing)\b/i.test(raw)) return 'Hair';
   if (/\b(body|corps|mains|hands|feet|pieds)\b/i.test(raw)) return 'Body';
   return 'Skincare';
-}
-
-function slugify(text) {
-  return text.toLowerCase().trim()
-    .replace(/[^\w\s-]/g, '')
-    .replace(/[\s_-]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-}
-
-function cleanBrandName(raw) {
-  if (!raw) return '';
-  let b = raw.split(',')[0].trim();
-  // Strip "is sold by unilever", "laboratoires", etc. if appended
-  b = b.replace(/\b(is sold by|distribué par|made in|by)\b.*/i, '').trim();
-  b = b.replace(/-/g, ' ');
-  return b.replace(/\b\w/g, c => c.toUpperCase()).trim();
 }
 
 function extractPureInci(raw) {
@@ -88,9 +83,12 @@ function parseIngredientsList(raw) {
 const seenBarcodes = new Set();
 const seenSlugs = new Set();
 const cleanProducts = [];
+const runDate = new Date().toISOString().split('T')[0];
 
 let totalRows = 0;
 let validCount = 0;
+let validImageUrlCount = 0;
+let validIngredientPhotoCount = 0;
 
 https.get(CSV_URL, res => {
   const gunzip = zlib.createGunzip();
@@ -107,7 +105,11 @@ https.get(CSV_URL, res => {
     const rawBrand = (cols[18] || cols[17] || '')?.trim();
     const category = normalizeCategory(cols[20] || cols[19] || '');
     const rawIngredients = cols[33]?.trim();
-    const imageUrl = cols[130]?.trim() || cols[131]?.trim() || '';
+    const rawImageUrl = cols[59]?.trim() || '';
+    const rawImageIngredientsUrl = cols[61]?.trim() || '';
+    const imageUrl = isValidObfImageUrl(rawImageUrl) ? rawImageUrl : '';
+    const imageIngredientsUrl = isValidObfImageUrl(rawImageIngredientsUrl) ? rawImageIngredientsUrl : '';
+    const hasIngredientPhoto = Boolean(imageIngredientsUrl);
 
     if (!barcode || seenBarcodes.has(barcode)) return;
     if (!rawName || !rawBrand) return;
@@ -128,17 +130,20 @@ https.get(CSV_URL, res => {
     const sampleIng = parsedIng.slice(0, 3).join(' ');
     if (/\b(caratteristiche|prodotto|per uso cutaneo|warnings|caution)\b/i.test(sampleIng)) return;
 
-    const brandName = cleanBrandName(rawBrand);
-    if (!brandName || brandName.length < 2) return;
+    const normalizedBrand = normalizeBrand(rawBrand);
+    if (!normalizedBrand) return;
+    const { brand: brandName, brand_slug: brandSlug } = normalizedBrand;
 
-    const brandSlug = slugify(brandName);
     const productSlug = slugify(rawName);
     const combinedSlug = `${brandSlug}-${productSlug}`;
 
-    if (!combinedSlug || seenSlugs.has(combinedSlug)) return;
+    if (!productSlug || !combinedSlug || seenSlugs.has(combinedSlug)) return;
 
     seenBarcodes.add(barcode);
     seenSlugs.add(combinedSlug);
+
+    if (imageUrl) validImageUrlCount++;
+    if (hasIngredientPhoto) validIngredientPhotoCount++;
 
     cleanProducts.push({
       barcode,
@@ -151,9 +156,11 @@ https.get(CSV_URL, res => {
       ingredients_list: parsedIng,
       ingredient_count: parsedIng.length,
       image_url: imageUrl,
+      image_ingredients_url: imageIngredientsUrl,
+      has_ingredient_photo: hasIngredientPhoto,
       source: 'Open Beauty Facts',
       source_url: `https://world.openbeautyfacts.org/product/${barcode}`,
-      verified_date: '2026-11-13'
+      verified_date: runDate
     });
 
     validCount++;
@@ -163,9 +170,19 @@ https.get(CSV_URL, res => {
   });
 
   rl.on('close', () => {
+    const imgPct = cleanProducts.length ? ((validImageUrlCount / cleanProducts.length) * 100).toFixed(1) : '0.0';
+    const ingPhotoPct = cleanProducts.length ? ((validIngredientPhotoCount / cleanProducts.length) * 100).toFixed(1) : '0.0';
+
     console.log(`\n🎉 Completed Scan!`);
     console.log(`Total scanned: ${totalRows}`);
     console.log(`Clean deduplicated products with strict clinical INCI: ${cleanProducts.length}`);
+    console.log(`Valid image_url (cols[59]): ${validImageUrlCount} (${imgPct}%)`);
+    console.log(`Valid image_ingredients_url (cols[61]): ${validIngredientPhotoCount} (${ingPhotoPct}%)`);
+
+    if (cleanProducts.length === 0 || (validImageUrlCount / cleanProducts.length) < 0.5) {
+      console.error(`❌ Image coverage (${imgPct}%) is below 50% threshold — check OBF dump header columns before proceeding!`);
+      process.exit(1);
+    }
 
     fs.writeFileSync(outputPath, JSON.stringify(cleanProducts, null, 2));
     console.log(`💾 Saved clean dataset to ${outputPath} (${(fs.statSync(outputPath).size / (1024 * 1024)).toFixed(2)} MB)`);

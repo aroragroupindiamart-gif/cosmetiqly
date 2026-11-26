@@ -17,13 +17,27 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const isAll = process.argv.includes('--all');
-const sourceFile = isAll 
-  ? path.join(__dirname, '../data/products_clean.json')
-  : path.join(__dirname, '../data/launch_tier_a_100.json');
+const isBatch2 = process.argv.includes('--batch2');
+const fileArgIdx = process.argv.indexOf('--file');
+const customFile = fileArgIdx !== -1 ? process.argv[fileArgIdx + 1] : null;
 
-const outputFile = isAll
-  ? path.join(__dirname, '../data/seed_d1_all.sql')
-  : path.join(__dirname, '../data/seed_d1_launch.sql');
+let sourceFile = path.join(__dirname, '../data/launch_tier_a_100.json');
+let outputFile = path.join(__dirname, '../data/seed_d1_launch.sql');
+
+if (customFile) {
+  sourceFile = path.resolve(customFile);
+  outputFile = path.join(__dirname, '../data/seed_d1_batch2.sql');
+} else if (isBatch2) {
+  const b2FourHundred = path.join(__dirname, '../data/launch_tier_b_400.json');
+  const b2Generic = path.join(__dirname, '../data/tier_b_products.json');
+  sourceFile = fs.existsSync(b2FourHundred) ? b2FourHundred : b2Generic;
+  outputFile = path.join(__dirname, '../data/seed_d1_batch2.sql');
+} else if (isAll) {
+  sourceFile = path.join(__dirname, '../data/products_clean.json');
+  outputFile = path.join(__dirname, '../data/seed_d1_all.sql');
+}
+
+const runDate = new Date().toISOString().split('T')[0];
 
 console.log(`🔄 Generating Cloudflare D1 SQL Seed from ${path.basename(sourceFile)}...`);
 
@@ -79,7 +93,7 @@ for (let i = 0; i < products.length; i += BATCH_SIZE) {
 ) VALUES\n`;
 
   const values = batch.map(p => {
-    return `  (${escapeSql(p.barcode)}, ${escapeSql(p.brand)}, ${escapeSql(p.brand_slug)}, ${escapeSql(p.name)}, ${escapeSql(p.product_slug)}, ${escapeSql(p.category)}, ${escapeSql(p.raw_category || p.category)}, ${escapeSql(p.ingredients_raw)}, ${escapeSql(JSON.stringify(p.ingredients_list))}, ${p.ingredient_count || p.ingredients_list.length}, ${escapeSql(p.image_url || '')}, ${escapeSql(p.source || 'Open Beauty Facts')}, ${escapeSql(p.source_url)}, ${escapeSql(p.verified_date || '2026-11-13')})`;
+    return `  (${escapeSql(p.barcode)}, ${escapeSql(p.brand)}, ${escapeSql(p.brand_slug)}, ${escapeSql(p.name)}, ${escapeSql(p.product_slug)}, ${escapeSql(p.category)}, ${escapeSql(p.raw_category || p.category)}, ${escapeSql(p.ingredients_raw)}, ${escapeSql(JSON.stringify(p.ingredients_list))}, ${p.ingredient_count || p.ingredients_list.length}, ${escapeSql(p.image_url || '')}, ${escapeSql(p.source || 'Open Beauty Facts')}, ${escapeSql(p.source_url)}, ${escapeSql(p.verified_date || runDate)})`;
   });
 
   sql += values.join(',\n') + ';\n\n';
