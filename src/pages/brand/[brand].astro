@@ -18,6 +18,10 @@ if (!products || products.length === 0) {
 
 const isFound = products && products.length > 0;
 const brandName = isFound ? products[0].brand : brand;
+const categories = isFound ? [...new Set(products.map((p: any) => p.category))] : [];
+const totalIngs = isFound ? products.reduce((sum: number, p: any) => sum + (p.ingredient_count || 0), 0) : 0;
+const avgIngs = isFound && products.length ? Math.round(totalIngs / products.length) : 0;
+const drippedCount = isFound ? products.filter((p: any) => Boolean(p.checkUrl)).length : 0;
 ---
 
 <Layout
@@ -59,7 +63,7 @@ const brandName = isFound ? products[0].brand : brand;
           {brandName} Ingredient Reviews
         </h1>
         <p class="text-sm text-slate-600 mt-1">
-          Showing {products.length} verified products from {brandName}.
+          {brandName} catalog includes {products.length} verified formulations across {categories.join(', ')} (averaging {avgIngs} INCI ingredients per product; {drippedCount} published safety reviews currently active).
         </p>
       </header>
 
@@ -70,9 +74,12 @@ const brandName = isFound ? products[0].brand : brand;
               <span class="text-[10px] font-bold uppercase tracking-wider text-slate-500 block mb-1">
                 {p.category} &middot; {p.ingredient_count} Ingredients
               </span>
-              <h3 class="font-serif text-base font-semibold text-slate-900 mb-2">
+              <h3 class="font-serif text-base font-semibold text-slate-900 mb-1">
                 {p.name}
               </h3>
+              <p class="text-xs text-slate-500 mb-2">
+                {p.brand} {p.name} ({p.category}) lists {p.ingredient_count} INCI ingredients for safety screening.
+              </p>
             </div>
 
             <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
