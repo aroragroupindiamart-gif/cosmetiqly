@@ -1,23 +1,31 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getTopBrands, searchProducts } from '../lib/db_v2.js';
+import { getTopBrands, searchProducts, getTotalProductCount } from '../lib/db_v2.js';
+import { getCurrentDripDay, isUrlDripped, getFirstRelevantCheckUrl } from '../lib/drip.js';
 
 const db = Astro.locals?.runtime?.env?.DB;
+const currentDay = getCurrentDripDay(Astro.locals?.runtime?.env);
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 const url = new URL(Astro.request.url);
 const query = url.searchParams.get('q') || '';
 
 let searchResults: any[] = [];
 if (query.trim().length >= 2) {
-  searchResults = await searchProducts(query.trim(), 24, db);
+  const rawResults = await searchProducts(query.trim(), 24, db);
+  searchResults = rawResults.map((p: any) => ({
+    ...p,
+    checkUrl: getFirstRelevantCheckUrl(p, currentDay)
+  }));
 }
 
-const topBrands = await getTopBrands(72, db);
+const totalProducts = await getTotalProductCount(db);
+const allTopBrands = await getTopBrands(100, db);
+const topBrands = allTopBrands.filter((b: any) => isUrlDripped(`/brand/${b.brand_slug}`, currentDay)).slice(0, 72);
 ---
 
 <Layout
   title={query ? `Search: "${query}" — Formulations Directory` : "Brand Directory A-Z — Cosmetiqly"}
-  description="Explore over 16,800+ real verified beauty, skincare, and cosmetic formulations. Search products or browse brands by letter."
+  description={`Explore ${totalProducts} verified beauty, skincare, and cosmetic formulations. Search products or browse brands by letter.`}
   canonicalPath="/directory"
 >
   <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12">
@@ -64,14 +72,22 @@ const topBrands = await getTopBrands(72, db);
         ) : (
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {searchResults.map(p => (
-              <a
-                href={`/check/is-${p.brand_slug}-${p.product_slug}-fungal-acne-safe`}
-                class="p-3.5 rounded-lg border border-slate-200 hover:border-emerald-700 bg-white transition-colors block text-xs"
-              >
-                <span class="font-semibold text-slate-900 block truncate">{p.brand}</span>
-                <span class="text-slate-700 block truncate font-medium mt-0.5">{p.name}</span>
-                <span class="text-[11px] text-slate-500 block mt-1">{p.ingredient_count} INCI ingredients &middot; {p.category}</span>
-              </a>
+              p.checkUrl ? (
+                <a
+                  href={p.checkUrl}
+                  class="p-3.5 rounded-lg border border-slate-200 hover:border-emerald-700 bg-white transition-colors block text-xs"
+                >
+                  <span class="font-semibold text-slate-900 block truncate">{p.brand}</span>
+                  <span class="text-slate-700 block truncate font-medium mt-0.5">{p.name}</span>
+                  <span class="text-[11px] text-slate-500 block mt-1">{p.ingredient_count} INCI ingredients &middot; {p.category}</span>
+                </a>
+              ) : (
+                <div class="p-3.5 rounded-lg border border-slate-200 bg-white block text-xs">
+                  <span class="font-semibold text-slate-900 block truncate">{p.brand}</span>
+                  <span class="text-slate-700 block truncate font-medium mt-0.5">{p.name}</span>
+                  <span class="text-[11px] text-slate-500 block mt-1">{p.ingredient_count} INCI ingredients &middot; {p.category}</span>
+                </div>
+              )
             ))}
           </div>
         )}

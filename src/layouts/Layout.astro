@@ -7,6 +7,8 @@ interface Props {
   canonicalPath?: string;
   jsonLd?: Record<string, any>;
   noindex?: boolean;
+  ogImage?: string;
+  ogImageAlt?: string;
 }
 
 const {
@@ -14,7 +16,9 @@ const {
   description = "Cosmetiqly is an independent cosmetic ingredient safety database. Clinical INCI analysis scored and cited across 15 sensitive skin and safety standards.",
   canonicalPath,
   jsonLd,
-  noindex = false
+  noindex = false,
+  ogImage,
+  ogImageAlt
 } = Astro.props;
 
 // Drip gate enforcement: if middleware marked isDripped === false, page is strictly noindexed
@@ -83,6 +87,15 @@ const globalOrgSchema = {
     <meta property="og:url" content={cleanCanonical} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Cosmetiqly" />
+    {ogImage && (
+      <>
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:alt" content={ogImageAlt || `${title} — Cosmetiqly`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:image:alt" content={ogImageAlt || `${title} — Cosmetiqly`} />
+      </>
+    )}
 
     <!-- Google Fonts: Newsreader (Editorial Serif) & Inter (UI/Body Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

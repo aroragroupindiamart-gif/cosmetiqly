@@ -1,13 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getBrandsByLetter } from '../../lib/db_v2.js';
+import { getCurrentDripDay, isUrlDripped } from '../../lib/drip.js';
 
 const db = Astro.locals?.runtime?.env?.DB;
+const currentDay = getCurrentDripDay(Astro.locals?.runtime?.env);
 const { letter = 'a' } = Astro.params;
 const cleanLetter = (letter || 'a').toUpperCase();
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-const brands = await getBrandsByLetter(cleanLetter, db);
+const allBrands = await getBrandsByLetter(cleanLetter, db);
+const brands = allBrands.filter((b: any) => isUrlDripped(`/brand/${b.brand_slug}`, currentDay));
 ---
 
 <Layout

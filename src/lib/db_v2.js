@@ -9,6 +9,7 @@
 
 import { SAFETY_RULES } from './safety_rules_v2.js';
 import { evaluateProductRule, isRuleRelevant } from './rule_engine_v2.js';
+import { buildCheckSlug } from './drip.js';
 
 /**
  * Executes a parameterized SQL query returning multiple rows against Cloudflare D1.
@@ -172,8 +173,7 @@ export async function getOtherProductChecks(product, currentRuleSlug) {
     if (!isRuleRelevant(rule, product.category)) continue;
 
     const evalRes = evaluateProductRule(product.ingredients_list, rule);
-    let checkSlug = `is-${product.brand_slug}-${product.product_slug}-${rule.slug}-safe`;
-    checkSlug = checkSlug.replace(/-safe-safe$/, '-safe');
+    const checkSlug = buildCheckSlug(product.brand_slug, product.product_slug, rule.slug);
     otherChecks.push({
       rule,
       evaluation: evalRes,
@@ -220,4 +220,12 @@ export async function getTopBrands(limit = 48, db = null) {
     ORDER BY product_count DESC
     LIMIT ?
   `, [limit]);
+}
+
+/**
+ * Gets total verified products count in D1
+ */
+export async function getTotalProductCount(db = null) {
+  const row = await queryFirst(db, `SELECT COUNT(*) as total FROM products`);
+  return row && typeof row.total === 'number' ? row.total : 0;
 }

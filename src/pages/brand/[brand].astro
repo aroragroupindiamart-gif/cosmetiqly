@@ -1,10 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getBrandProducts } from '../../lib/db_v2.js';
+import { getCurrentDripDay, getFirstRelevantCheckUrl } from '../../lib/drip.js';
 
 const db = Astro.locals?.runtime?.env?.DB;
+const currentDay = getCurrentDripDay(Astro.locals?.runtime?.env);
 const { brand = '' } = Astro.params;
-const products = await getBrandProducts(brand, db);
+const rawProducts = await getBrandProducts(brand, db);
+const products = (rawProducts || []).map((p: any) => ({
+  ...p,
+  checkUrl: getFirstRelevantCheckUrl(p, currentDay)
+}));
 
 if (!products || products.length === 0) {
   Astro.response.status = 404;
@@ -70,12 +76,16 @@ const brandName = isFound ? products[0].brand : brand;
             </div>
 
             <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-              <a
-                href={`/check/is-${p.brand_slug}-${p.product_slug}-fungal-acne-safe`}
-                class="text-emerald-800 font-semibold hover:underline"
-              >
-                View Safety Review &rarr;
-              </a>
+              {p.checkUrl ? (
+                <a
+                  href={p.checkUrl}
+                  class="text-emerald-800 font-semibold hover:underline"
+                >
+                  View Safety Review &rarr;
+                </a>
+              ) : (
+                <span class="text-slate-400 font-medium">Review scheduled</span>
+              )}
             </div>
           </div>
         ))}
